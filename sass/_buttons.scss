@@ -1,0 +1,222 @@
+.burger-nav {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 0;
+    color: transparent;
+    background-color: transparent;
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    z-index: 99999999;
+    outline: none;
+    &::before {
+        background-color: #fff;
+    }
+    &:hover, &.is_open {
+        &::before {
+            background-color: $dark-grey;
+        }
+        .hamburglar {
+            .bar {
+                &::before {
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    .hamburglar {
+        position: relative;
+        width: 19px;
+        margin-left: 14px;
+        margin-top: 17px;
+        opacity: 1;
+        transition: opacity .1s .3s ease-in;
+        user-select: none;
+
+        .bar {
+            position: absolute;
+            display: block;
+            height: 2px;
+            width: 19px;
+            &.top {
+                top: 0;
+                left: 0;    
+            }
+            &.middle {
+                top: 5px;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+            }
+            &.bottom {
+                top: 10px;
+                left: 0;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+                background: $dark-grey;
+                transition: color 0.2s ease-in-out;
+            }
+        }
+    
+
+
+        .bar.top, .bar.bottom {
+            transform-origin: 34px 2px;
+            transform: rotate(0deg);
+            transition: transform 0.4s cubic-bezier(0.8, -1.1, 0.5, 1.9);
+        }
+        .bar.middle {
+            transform-origin: 108px 2px;
+            transition: width 0.25s ease-in-out 0.125s;
+        }
+        
+    }
+    &.is_open {
+        .hamburglar {
+            .bar {
+                &.top {
+                    transform: translateX(-6px) translateY(-12px) rotate(-45deg);
+                }
+                &.middle {
+                    width: 0;
+                }
+                &.bottom {
+                    transform: translateX(-7.5px) translateY(12.5px) rotate(45deg);
+                }
+            }
+        }
+    }
+
+}
+
+.circular-anim {
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: -1;
+		border-radius: 50%;
+		transform-origin: 50% 50%;
+		box-sizing: border-box;
+		transition: transform 0.2s cubic-bezier(0.61, 1.8, 0.89, 1.62),background-color 0.12s ease-out;			
+	}
+	&:hover::before {
+		transform: scale(1.13);
+	}
+}
+
+.collapsed-button-container {
+    .collapsed-button {
+        position: relative;
+        margin-bottom: -22.5px;
+        height: 45px;
+        text-align: center;
+        cursor: pointer;    
+        &.back-to-top {
+            &.fixed {
+                position: fixed;
+                right: 87px;
+                bottom: 87px;
+            }   
+        } 
+        &.slide-nav {
+            display: inline-block;
+        }
+        .circle {
+            display: inline-block;
+            vertical-align: top;
+            width: 46px;
+            height: 46px;
+            // overflow: hidden;
+            position: relative;
+            z-index: 1;
+            border-radius: 50%;
+            transition: background .2s ease-out;
+            background-color: transparent;
+
+            .icon {
+                top: 14px;
+                margin-left: 1px;
+                position: absolute;
+                width: 16px;
+                height: 24px;
+                left: 8px;
+                opacity: 1;
+                transition: top .3s ease-in-out, opacity .1s .3s ease-in;
+                z-index: 9;
+                svg {
+                    #path-1 {
+                        fill: #fff;
+                    }
+                    #line-1 {
+                        stroke: black;
+                    }
+
+                }
+            }
+            &:before {
+                content: "";
+                background-color: transparent;
+            }
+        
+            .bg {
+                width: 46px;
+                height: 46px;
+                background-color: transparent;
+                position: absolute;
+                display: block;
+                z-index: 0;
+                top: 0px;  
+                &::before {
+                    background-color: white;//$dark-grey;//#41b6e6;
+                } 
+                // &:hover::before {
+                //     background-color: #e8e8e8;
+                //     transform: scale(1.13);
+                // }       
+            }
+            &:hover {
+                .icon {
+                    svg {
+                        #path-1 {
+                            fill: black;
+                        }
+                        #line-1 {
+                            stroke: white;
+                            // color: black;
+                            // fill: black;
+                        }
+
+                    }
+                }
+                .bg {
+                    &::before {
+                       background-color: $dark-grey;//#e8e8e8;
+                        transform: scale(1.13); 
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.back-to-top {
+    opacity: 0;
+    visibility: none;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,28 @@
+body {
+	&.single-projects {
+		.post-nav {
+			a {
+				line-height: 40px;
+				max-width: none;
+			}
+			.next-post-nav {
+				a {
+
+				}
+			}
+			.prev-post-nav {
+				a {
+
+				}
+			}
+		}
+	}
+}
+header {
+	#sidebar {
+		ul#tweets {
+			height: auto;
+			max-height: calc(80vh - 300px);
+		}
+	}
+}

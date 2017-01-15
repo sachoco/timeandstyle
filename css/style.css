@@ -1,0 +1,756 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.burger-nav {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 0;
+  color: transparent;
+  background-color: transparent;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  z-index: 99999999;
+  outline: none;
+}
+.burger-nav:before {
+  background-color: #fff;
+}
+.burger-nav:hover:before, .burger-nav.is_open:before {
+  background-color: #898989;
+}
+.burger-nav:hover .hamburglar .bar:before, .burger-nav.is_open .hamburglar .bar:before {
+  background-color: white;
+}
+.burger-nav .hamburglar {
+  position: relative;
+  width: 19px;
+  margin-left: 14px;
+  margin-top: 17px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  transition: opacity .1s .3s ease-in;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.burger-nav .hamburglar .bar {
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 19px;
+}
+.burger-nav .hamburglar .bar.top {
+  top: 0;
+  left: 0;
+}
+.burger-nav .hamburglar .bar.middle {
+  top: 5px;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.burger-nav .hamburglar .bar.bottom {
+  top: 10px;
+  left: 0;
+}
+.burger-nav .hamburglar .bar:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: #898989;
+  transition: color 0.2s ease-in-out;
+}
+.burger-nav .hamburglar .bar.top, .burger-nav .hamburglar .bar.bottom {
+  -webkit-transform-origin: 34px 2px;
+      -ms-transform-origin: 34px 2px;
+          transform-origin: 34px 2px;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  transition: -webkit-transform 0.4s cubic-bezier(0.8, -1.1, 0.5, 1.9);
+  transition: transform 0.4s cubic-bezier(0.8, -1.1, 0.5, 1.9);
+}
+.burger-nav .hamburglar .bar.middle {
+  -webkit-transform-origin: 108px 2px;
+      -ms-transform-origin: 108px 2px;
+          transform-origin: 108px 2px;
+  transition: width 0.25s ease-in-out 0.125s;
+}
+.burger-nav.is_open .hamburglar .bar.top {
+  -webkit-transform: translateX(-6px) translateY(-12px) rotate(-45deg);
+      -ms-transform: translateX(-6px) translateY(-12px) rotate(-45deg);
+          transform: translateX(-6px) translateY(-12px) rotate(-45deg);
+}
+.burger-nav.is_open .hamburglar .bar.middle {
+  width: 0;
+}
+.burger-nav.is_open .hamburglar .bar.bottom {
+  -webkit-transform: translateX(-7.5px) translateY(12.5px) rotate(45deg);
+      -ms-transform: translateX(-7.5px) translateY(12.5px) rotate(45deg);
+          transform: translateX(-7.5px) translateY(12.5px) rotate(45deg);
+}
+
+.circular-anim:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  box-sizing: border-box;
+  transition: -webkit-transform 0.2s cubic-bezier(0.61, 1.8, 0.89, 1.62), background-color 0.12s ease-out;
+  transition: transform 0.2s cubic-bezier(0.61, 1.8, 0.89, 1.62), background-color 0.12s ease-out;
+}
+.circular-anim:hover:before {
+  -webkit-transform: scale(1.13);
+      -ms-transform: scale(1.13);
+          transform: scale(1.13);
+}
+
+.collapsed-button-container .collapsed-button {
+  position: relative;
+  margin-bottom: -22.5px;
+  height: 45px;
+  text-align: center;
+  cursor: pointer;
+}
+.collapsed-button-container .collapsed-button.back-to-top.fixed {
+  position: fixed;
+  right: 87px;
+  bottom: 87px;
+}
+.collapsed-button-container .collapsed-button.slide-nav {
+  display: inline-block;
+}
+.collapsed-button-container .collapsed-button .circle {
+  display: inline-block;
+  vertical-align: top;
+  width: 46px;
+  height: 46px;
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  transition: background .2s ease-out;
+  background-color: transparent;
+}
+.collapsed-button-container .collapsed-button .circle .icon {
+  top: 14px;
+  margin-left: 1px;
+  position: absolute;
+  width: 16px;
+  height: 24px;
+  left: 8px;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  transition: top .3s ease-in-out, opacity .1s .3s ease-in;
+  z-index: 9;
+}
+.collapsed-button-container .collapsed-button .circle .icon svg #path-1 {
+  fill: #fff;
+}
+.collapsed-button-container .collapsed-button .circle .icon svg #line-1 {
+  stroke: black;
+}
+.collapsed-button-container .collapsed-button .circle:before {
+  content: "";
+  background-color: transparent;
+}
+.collapsed-button-container .collapsed-button .circle .bg {
+  width: 46px;
+  height: 46px;
+  background-color: transparent;
+  position: absolute;
+  display: block;
+  z-index: 0;
+  top: 0px;
+}
+.collapsed-button-container .collapsed-button .circle .bg:before {
+  background-color: white;
+}
+.collapsed-button-container .collapsed-button .circle:hover .icon svg #path-1 {
+  fill: black;
+}
+.collapsed-button-container .collapsed-button .circle:hover .icon svg #line-1 {
+  stroke: white;
+}
+.collapsed-button-container .collapsed-button .circle:hover .bg:before {
+  background-color: #898989;
+  -webkit-transform: scale(1.13);
+      -ms-transform: scale(1.13);
+          transform: scale(1.13);
+}
+
+.back-to-top {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  visibility: none;
+}
+.back-to-top.active {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  visibility: visible;
+}
+
+/*********************
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*********************/
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+p {
+  line-height: 150%;
+}
+
+.site-branding {
+  position: fixed;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  z-index: 999999;
+}
+.site-branding h1 {
+  float: left;
+  padding: 1em;
+  width: 200px;
+  position: relative;
+  left: 50px;
+  top: 7px;
+}
+.site-branding h1 img {
+  width: 100%;
+  height: auto;
+}
+.site-branding ul {
+  float: right;
+  padding: 1em;
+  display: none;
+}
+.site-branding ul li {
+  float: left;
+  font-size: 24px;
+  margin: 0 10px;
+  color: #DDDDDD;
+}
+.site-branding ul li.fb a {
+  color: #315096;
+}
+.site-branding ul li.our-shop {
+  color: #555;
+  font-size: 0.8em;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.site-branding ul li.our-shop.active {
+  text-decoration: underline;
+}
+
+#site-navigation {
+  position: fixed;
+  left: 0;
+  height: 100%;
+  background-color: white;
+  z-index: 999;
+  overflow: hidden;
+  width: 0px;
+  transition: width 0.6s ease;
+}
+#site-navigation.is_open {
+  width: 250px;
+}
+#site-navigation > div {
+  position: absolute;
+  height: 100%;
+  width: 250px;
+  background-color: white;
+}
+#site-navigation > div ul.menu {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  margin-right: 3em;
+  text-align: left;
+}
+#site-navigation > div ul.menu li {
+  margin: 3em 1.5em;
+}
+
+body.home {
+  color: black;
+  cursor: pointer;
+}
+body.home header {
+  display: none;
+}
+body.home .animsition {
+  position: relative;
+  height: 100%;
+}
+
+section#intro {
+  position: absolute;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: 150%;
+}
+section#title-flash {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+section#title-flash.active {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+section#title-flash div {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 10vh;
+  width: 100%;
+}
+section#title-flash div img {
+  max-width: 500px;
+  width: 80%;
+  height: auto;
+}
+section#slick {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+section.column {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  text-align: center;
+}
+section.column ul {
+  width: 100%;
+  margin: auto;
+  margin-top: 80px;
+  position: relative;
+  display: block;
+}
+section.column ul li {
+  margin: 1em 1em 3em;
+}
+section.column ul li h3 {
+  margin: 1em;
+}
+section.column ul li.footer {
+  margin-bottom: 0;
+}
+section.column ul li.contact-form {
+  text-align: left;
+}
+section.column ul li.contact-form .inner {
+  padding: 0;
+}
+section.column ul li.contact-form h2 {
+  text-transform: uppercase;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 3em 0;
+}
+section.column ul .image-wrapper {
+  position: relative;
+}
+section.column ul .image-wrapper .overlay-text {
+  position: absolute;
+  color: black;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+section.column ul .image-wrapper .overlay-text .storename {
+  margin-bottom: 2em;
+}
+section.column ul .image-wrapper .overlay-text .storename img {
+  width: 80%;
+  max-width: 500px;
+}
+section.column ul .image-wrapper .overlay-text .header {
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+section.column ul .image-wrapper .overlay-text h2 {
+  font-size: 2em;
+}
+section.column ul img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+section.column footer {
+  padding: 100px 1em 1em;
+  background-color: #EFEFEF;
+}
+section.column .shop-info-toggle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(20%, -50%) rotate(90deg);
+      -ms-transform: translate(20%, -50%) rotate(90deg);
+          transform: translate(20%, -50%) rotate(90deg);
+  cursor: pointer;
+}
+section.column .shop-info {
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  right: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  text-align: left;
+  max-height: 0px;
+  transition: max-height 1s;
+  overflow: scroll;
+}
+section.column .shop-info.is_open {
+  max-height: 90vh;
+}
+section.column .shop-info .inner {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 2em 1em;
+}
+section.column .shop-info .inner .close {
+  position: absolute;
+  top: 2em;
+  right: 1em;
+  cursor: pointer;
+}
+section.column .shop-info .inner h3 {
+  font-size: 2em;
+  margin: 1em 0;
+}
+section.column .shop-info .inner p {
+  margin: 0 0 1em;
+}
+section.column .shop-info .inner .left {
+  float: left;
+  width: calc(100% - 450px);
+}
+section.column .shop-info .inner .right {
+  width: 400px;
+  float: right;
+}
+section.column .page-content {
+  width: 100%;
+  margin: auto;
+  margin-top: 5em;
+}
+section.column .page-content .inner {
+  position: relative;
+  margin: 1em;
+  padding: 2em 0;
+}
+section.column .page-header {
+  float: left;
+  width: 40%;
+  min-width: 200px;
+  max-width: 400px;
+  text-align: left;
+}
+section.column .page-header h2 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-bottom: 2em;
+}
+section.column .page-body {
+  text-align: left;
+  float: left;
+  width: 100%;
+  max-width: 700px;
+}
+section.column .page-body p {
+  margin-bottom: 2em;
+}
+
+div.wpcf7 {
+  max-width: 500px;
+  width: 100%;
+}
+div.wpcf7 input, div.wpcf7 textarea {
+  background-color: #F7F8F8;
+  border: none;
+  font-size: 1.2em;
+  padding: 0.5em;
+  margin: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+div.wpcf7 p {
+  margin: 1em 0;
+}
+
+.slick-prev, .slick-next {
+  width: 50px;
+  height: 50px;
+  top: 90px;
+}
+.slick-prev:before, .slick-next:before {
+  display: none;
+}
+
+.slick-prev {
+  left: 5%;
+}
+
+.slick-next {
+  right: 5%;
+}
+
+.slick-disabled {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  visibility: hidden;
+}
+
+.clear {
+  clear: both;
+}
+
+.mobile-hide {
+  display: none;
+}
+
+.align-left {
+  text-align: left;
+}
+
+/*********************
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*********************/
+@media only screen and (min-width: 481px) {
+  section#intro .intro-text {
+    position: absolute;
+    z-index: 99999;
+    background-color: white;
+    width: 30%;
+    right: 0;
+    bottom: 40px;
+    padding: 20px 60px 20px 20px;
+  }
+  section#intro .intro-text p {
+    margin-bottom: 10px;
+  }
+  section#intro .intro-text .close {
+    cursor: pointer;
+  }
+}
+/*********************
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media only screen and (min-width: 768px) {
+  .site-branding {
+    width: 80%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .site-branding h1 {
+    position: relative;
+    left: 0px;
+    top: 0px;
+  }
+  .site-branding ul {
+    display: inline-block;
+  }
+
+  #site-navigation.is_open {
+    width: 350px;
+  }
+  #site-navigation > div {
+    width: 350px;
+  }
+
+  .burger-nav {
+    left: 50px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  section#intro {
+    font-size: 8vh;
+  }
+  section.column {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    text-align: center;
+  }
+  section.column ul {
+    width: 80%;
+  }
+  section.column ul li {
+    margin: 1em 1em 3em;
+  }
+  section.column ul li.contact-form .inner {
+    padding: 0 2em;
+  }
+  section.column ul .image-wrapper .overlay-text {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100%;
+    font-size: 3em;
+  }
+  section.column .shop-info {
+    width: 80%;
+  }
+  section.column .page-content {
+    width: 80%;
+  }
+
+  .mobile-hide {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}
+/*********************
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media only screen and (min-width: 1030px) {
+  body.single-projects .post-nav a {
+    line-height: 40px;
+    max-width: none;
+  }
+
+  header #sidebar ul#tweets {
+    height: auto;
+    max-height: calc(80vh - 300px);
+  }
+}
+/*********************
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*********************/
+/*********************
+RETINA (2x RESOLUTION DEVICES)
+This applies to the retina iPhone (4s) and iPad (2,3) along with
+other displays with a 2x resolution. You can also create a media
+query for retina AND a certain size if you want. Go Nuts.
+*********************/

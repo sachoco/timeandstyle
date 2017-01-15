@@ -1,0 +1,44 @@
+// import gridle
+@import "../bower_components/gridle/sass/gridle/gridle";
+
+// setting up the grid
+@include gridle_setup( (
+	context : 12,
+	gutter-width : 16px,
+	// direction : rtl,
+	// etc...
+) );
+
+// make the use of media queries really easy
+@include gridle_register_state ( mobile , (
+	max-width : 480px,
+	gutter-width : 10px
+) );
+
+@include gridle_register_state( tablet, (
+    min-width : 481px,
+    max-width : 767px,
+    gutter-width : 10px     // change the gutters for this state
+
+    // available options
+    // - min-width
+    // - max-width
+    // - query
+    // - gutter-width
+    // - gutter-height
+    // - gutter-top
+    // - gutter-right
+    // - gutter-bottom
+    // - gutter-left
+    // - classes : if need to generate classes
+) );
+
+@include gridle_register_state ( small , (
+	min-width : 767px,
+	max-width : 1180px,
+) );
+
+// even with full custom queries :
+@include gridle_register_state ( landscape, (
+	query : "(orientation : landscape)"
+) );

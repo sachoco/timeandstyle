@@ -1,0 +1,103 @@
+.site-branding {
+	width: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	h1 {
+	    position: relative;
+	    left: 0px;
+	    top: 0px;
+	}
+	ul {
+		display: inline-block;
+	}
+}
+#site-navigation {
+    &.is_open {
+    	width: 350px;
+    }
+    >div {
+    	
+		width: 350px;
+		
+    }
+
+
+}
+.burger-nav {
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+section {
+	&#intro {
+		font-size: 8vh;
+	}
+	&.column {
+		
+		width: 100%;
+		height: 100%;
+		overflow: scroll;
+		text-align: center;
+
+		ul {
+			width: 80%;
+			li {
+				margin: 1em 1em 3em;
+
+				h3 {
+				}
+				&.footer {
+				}
+				&.contact-form {
+					.inner {
+						padding: 0 2em;
+					}
+					h2 {
+						
+					}
+
+				}
+			}
+			.image-wrapper {
+				
+				.overlay-text {
+					// position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					width: 100%;
+					font-size: 3em;
+					.storename {
+						img {
+							// width: 100%;
+							// max-width: 500px;
+						}	
+						// margin-bottom: 2em;
+					}
+					.header {
+						// font-size: 0.8em;
+						// margin-bottom: 0.5em;
+					}
+					.date {
+					}
+				}
+			}
+		}
+		.shop-info {
+			width: 80%;
+		}
+		.page-content {
+			width: 80%;
+			.inner {
+				
+			}
+			
+		}
+	}
+
+}
+.mobile-hide {
+	display: block;
+}
+.mobile-only {
+	display: none;
+}
