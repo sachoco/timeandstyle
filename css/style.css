@@ -690,12 +690,6 @@ you can add resource intensive styles.
   section#intro {
     font-size: 8vh;
   }
-  section.column {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    text-align: center;
-  }
   section.column ul {
     width: 80%;
   }
