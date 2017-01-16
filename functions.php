@@ -20,6 +20,8 @@
 		wp_enqueue_script( 'slick' );
 		wp_register_script( 'velocity', get_stylesheet_directory_uri() . '/js/velocity.min.js', array(), '', true );
 		wp_enqueue_script( 'velocity' );
+		wp_register_script( 'custom-scrollbar', get_stylesheet_directory_uri() . '/js/jquery.mCustomScrollbar.concat.min.js', array(), '', true );
+		wp_enqueue_script( 'custom-scrollbar' );
 		wp_register_script( 'animsition', get_stylesheet_directory_uri() . '/bower_components/animsition/dist/js/animsition.min.js', array('jquery'), '', true );
 		wp_enqueue_script( 'animsition' );
 		// register main script
@@ -41,6 +43,8 @@
 		wp_register_style( 'slick-theme', get_stylesheet_directory_uri() . '/bower_components/slick.js/slick/slick-theme.css', array(), '', 'all' );
 		wp_enqueue_style( 'slick' );
 		wp_enqueue_style( 'slick-theme' );
+		wp_register_style( 'custom-scrollbar', get_stylesheet_directory_uri() . '/css/jquery.mCustomScrollbar.css', array(), '', 'all' );
+		wp_enqueue_style( 'custom-scrollbar' );
 
 		wp_register_style( 'main-css', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
 		wp_enqueue_style( 'main-css' );

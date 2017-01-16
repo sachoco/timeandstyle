@@ -6,7 +6,11 @@
   jQuery(function($) {
     var afterSlideChangeEvent, beforeSlideChangeEvent, resize;
     resize = function() {
-      return $('.column').height($(window).height());
+      $('.column').height($(window).height());
+      return $(".column ul").mCustomScrollbar({
+        axis: "x",
+        theme: "minimal"
+      });
     };
     $(window).resize(resize);
     resize();

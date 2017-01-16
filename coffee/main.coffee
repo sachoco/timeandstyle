@@ -3,6 +3,7 @@ img_path = images_path.url
 jQuery ($) ->
 	resize = ()->
 		$('.column').height $(window).height()
+		$(".column ul").mCustomScrollbar { axis:"x", theme:"minimal"}
 	$(window).resize resize
 	resize()
 
@@ -64,5 +65,8 @@ jQuery ($) ->
 				$("#back-to-top-page").addClass "active"
 			else
 				$("#back-to-top-page").removeClass "active"
+
+
+	
 
 	@
