@@ -7,8 +7,8 @@
     var afterSlideChangeEvent, beforeSlideChangeEvent, resize;
     resize = function() {
       $('.column').height($(window).height());
-      return $(".column ul").mCustomScrollbar({
-        axis: "x",
+      return $(".column").mCustomScrollbar({
+        axis: "y",
         theme: "minimal"
       });
     };

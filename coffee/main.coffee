@@ -3,7 +3,7 @@ img_path = images_path.url
 jQuery ($) ->
 	resize = ()->
 		$('.column').height $(window).height()
-		$(".column ul").mCustomScrollbar { axis:"x", theme:"minimal"}
+		$(".column").mCustomScrollbar { axis:"y", theme:"minimal"}
 	$(window).resize resize
 	resize()
 
