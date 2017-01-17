@@ -171,22 +171,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
           transform: scale(1.13);
 }
 
-.collapsed-button-container .collapsed-button {
+.collapsed-button {
   position: relative;
   margin-bottom: -22.5px;
   height: 45px;
   text-align: center;
   cursor: pointer;
 }
-.collapsed-button-container .collapsed-button.back-to-top.fixed {
+.collapsed-button.back-to-top.fixed {
   position: fixed;
   right: 87px;
   bottom: 87px;
 }
-.collapsed-button-container .collapsed-button.slide-nav {
+.collapsed-button.slide-nav {
   display: inline-block;
 }
-.collapsed-button-container .collapsed-button .circle {
+.collapsed-button .circle {
   display: inline-block;
   vertical-align: top;
   width: 46px;
@@ -197,7 +197,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: background .2s ease-out;
   background-color: transparent;
 }
-.collapsed-button-container .collapsed-button .circle .icon {
+.collapsed-button .circle .icon {
   top: 14px;
   margin-left: 1px;
   position: absolute;
@@ -209,17 +209,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   transition: top .3s ease-in-out, opacity .1s .3s ease-in;
   z-index: 9;
 }
-.collapsed-button-container .collapsed-button .circle .icon svg #path-1 {
+.collapsed-button .circle .icon.right {
+  top: 9px;
+  left: 16px;
+}
+.collapsed-button .circle .icon.left {
+  top: 9px;
+  left: 12px;
+}
+.collapsed-button .circle .icon svg #path-1 {
   fill: #fff;
 }
-.collapsed-button-container .collapsed-button .circle .icon svg #line-1 {
+.collapsed-button .circle .icon svg #line-1 {
   stroke: black;
 }
-.collapsed-button-container .collapsed-button .circle:before {
+.collapsed-button .circle:before {
   content: "";
   background-color: transparent;
 }
-.collapsed-button-container .collapsed-button .circle .bg {
+.collapsed-button .circle .bg {
   width: 46px;
   height: 46px;
   background-color: transparent;
@@ -228,16 +236,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   z-index: 0;
   top: 0px;
 }
-.collapsed-button-container .collapsed-button .circle .bg:before {
+.collapsed-button .circle .bg:before {
   background-color: white;
 }
-.collapsed-button-container .collapsed-button .circle:hover .icon svg #path-1 {
+.collapsed-button .circle:hover .icon svg #path-1 {
   fill: black;
 }
-.collapsed-button-container .collapsed-button .circle:hover .icon svg #line-1 {
+.collapsed-button .circle:hover .icon svg #line-1 {
   stroke: white;
 }
-.collapsed-button-container .collapsed-button .circle:hover .bg:before {
+.collapsed-button .circle:hover .bg:before {
   background-color: #898989;
   -webkit-transform: scale(1.13);
       -ms-transform: scale(1.13);
@@ -360,19 +368,24 @@ p {
   margin: 3em 1.5em;
 }
 
-body.home {
-  color: black;
-  cursor: pointer;
-}
 body.home header {
   display: none;
 }
-body.home .animsition {
-  position: relative;
-  height: 100%;
+body.home #slick {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 
 section#intro {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999999;
+  color: black;
+}
+section#intro #clock {
   position: absolute;
   text-transform: uppercase;
   text-align: center;
@@ -389,7 +402,6 @@ section#title-flash {
   height: 100%;
   width: 100%;
   text-align: center;
-  background-color: white;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
@@ -454,6 +466,10 @@ section.column ul li.contact-form h2 {
 }
 section.column ul .image-wrapper {
   position: relative;
+}
+section.column ul .image-wrapper img.bg {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 section.column ul .image-wrapper .overlay-text {
   position: absolute;

@@ -7,11 +7,11 @@
 <ul class="products">
 	<li class="product">
 		<div class="image-wrapper">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/grand-opening.jpg" >
+			<img class="bg" src="<?php echo get_template_directory_uri(); ?>/images/grand-opening.jpg" >
 			<div class="overlay-text">
 				<div class="storename"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" class="logo"></div>
 				<div class="header">Grand Opening</div>
-				<div class="date">May. 23. 2017</div>
+				<div class="date">March. 23. 2017</div>
 				
 			</div>
 		</div>
@@ -126,14 +126,56 @@
 <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369 
 	"/>
 </svg>
-<!-- 				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25.016px" viewBox="0 0 25 25.016" enable-background="new 0 0 25 25.016" xml:space="preserve">
-				<path id="path-1" fill="#FFFFFF" d="M0,1.001V0h13v1.001H0z M5,8.998v1H4v-1H5z M6,7.998V6.999h1v0.999h1v1H7V15H6V8.998H5v-1H6z
-					 M9,9.998H8v-1h1V9.998z M10,10.998H9v-1h1V10.998z M4,10.998H3v-1h1V10.998z"></path>
-				</svg> -->
 		    </div>
 		    <div class="bg circular-anim"></div>  
 		</div>
 		                            
 	</div>
 </div>
+
+<section id="intro" ><div id="clock" class="animsition"></div></section>
+<section id="title-flash"><div><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" class="logo"></div>
+</section>
+<script>
+
+jQuery(document).ready(function($) {
+    moment.tz.setDefault("Europe/Amsterdam");
+    function update() {
+      $('#clock').html(moment().format('H:mm:ss MMM. D. YYYY')+" AMSTERDAM");
+    }
+
+    setInterval(update, 200);
+
+$('#intro').on("click", function(){
+    showTitle();
+});
+
+function showTitle(){
+    $("#intro").velocity("fadeOut", { 
+        duration: 1500, 
+        mobileHA: false,
+        complete: function(elements) { 
+            $("#title-flash")
+                .velocity("fadeIn", { 
+                    duration: 1500,
+                    mobileHA: false,
+                    complete: function(){
+                        // window.location.href = "/home";
+                    }
+                });
+        //      .velocity("fadeOut", { 
+        //          delay: 500, 
+        //          duration: 1500, 
+        //          complete: function(){
+                    //  window.location.href = "/home";
+                    // }        
+
+        //      });
+
+        }
+    });
+}
+
+});
+</script>
 <?php get_footer(); ?>

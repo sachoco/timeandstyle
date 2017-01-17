@@ -116,101 +116,107 @@
 	}
 }
 
-.collapsed-button-container {
-    .collapsed-button {
+.collapsed-button {
+    position: relative;
+    margin-bottom: -22.5px;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;    
+    &.back-to-top {
+        &.fixed {
+            position: fixed;
+            right: 87px;
+            bottom: 87px;
+        }   
+    } 
+    &.slide-nav {
+        display: inline-block;
+    }
+    .circle {
+        display: inline-block;
+        vertical-align: top;
+        width: 46px;
+        height: 46px;
+        // overflow: hidden;
         position: relative;
-        margin-bottom: -22.5px;
-        height: 45px;
-        text-align: center;
-        cursor: pointer;    
-        &.back-to-top {
-            &.fixed {
-                position: fixed;
-                right: 87px;
-                bottom: 87px;
-            }   
-        } 
-        &.slide-nav {
-            display: inline-block;
+        z-index: 1;
+        border-radius: 50%;
+        transition: background .2s ease-out;
+        background-color: transparent;
+
+        .icon {
+            top: 14px;
+            margin-left: 1px;
+            position: absolute;
+            width: 16px;
+            height: 24px;
+            left: 8px;
+            opacity: 1;
+            transition: top .3s ease-in-out, opacity .1s .3s ease-in;
+            z-index: 9;
+            &.right {
+                top: 9px;
+                left: 16px;
+            }
+            &.left {
+                top: 9px;
+                left: 12px;
+            }
+            svg {
+                #path-1 {
+                    fill: #fff;
+                }
+                #line-1 {
+                    stroke: black;
+                }
+
+            }
         }
-        .circle {
-            display: inline-block;
-            vertical-align: top;
+        &:before {
+            content: "";
+            background-color: transparent;
+        }
+    
+        .bg {
             width: 46px;
             height: 46px;
-            // overflow: hidden;
-            position: relative;
-            z-index: 1;
-            border-radius: 50%;
-            transition: background .2s ease-out;
             background-color: transparent;
-
+            position: absolute;
+            display: block;
+            z-index: 0;
+            top: 0px;  
+            &::before {
+                background-color: white;//$dark-grey;//#41b6e6;
+            } 
+            // &:hover::before {
+            //     background-color: #e8e8e8;
+            //     transform: scale(1.13);
+            // }       
+        }
+        &:hover {
             .icon {
-                top: 14px;
-                margin-left: 1px;
-                position: absolute;
-                width: 16px;
-                height: 24px;
-                left: 8px;
-                opacity: 1;
-                transition: top .3s ease-in-out, opacity .1s .3s ease-in;
-                z-index: 9;
                 svg {
                     #path-1 {
-                        fill: #fff;
+                        fill: black;
                     }
                     #line-1 {
-                        stroke: black;
+                        stroke: white;
+                        // color: black;
+                        // fill: black;
                     }
 
                 }
             }
-            &:before {
-                content: "";
-                background-color: transparent;
-            }
-        
             .bg {
-                width: 46px;
-                height: 46px;
-                background-color: transparent;
-                position: absolute;
-                display: block;
-                z-index: 0;
-                top: 0px;  
                 &::before {
-                    background-color: white;//$dark-grey;//#41b6e6;
-                } 
-                // &:hover::before {
-                //     background-color: #e8e8e8;
-                //     transform: scale(1.13);
-                // }       
-            }
-            &:hover {
-                .icon {
-                    svg {
-                        #path-1 {
-                            fill: black;
-                        }
-                        #line-1 {
-                            stroke: white;
-                            // color: black;
-                            // fill: black;
-                        }
-
-                    }
-                }
-                .bg {
-                    &::before {
-                       background-color: $dark-grey;//#e8e8e8;
-                        transform: scale(1.13); 
-                    }
+                   background-color: $dark-grey;//#e8e8e8;
+                    transform: scale(1.13); 
                 }
             }
         }
     }
-
 }
+
 
 .back-to-top {
     opacity: 0;

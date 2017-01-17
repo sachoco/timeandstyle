@@ -127,28 +127,41 @@ p {
 
 body {
 	&.home {
-		color: black;
-		cursor: pointer;
+		// color: black;
+		// cursor: pointer;
 		header {
 			display: none;
 		}
-		.animsition {
-			position: relative;
-			height: 100%;
+		// .animsition {
+		// 	position: relative;
+		// 	height: 100%;
+		// }
+		#slick {
+			opacity: 0;
 		}
 	}
 
 }
 section {
 	&#intro {
+		display: none;
+		cursor: pointer;
 		position: absolute;
-		text-transform: uppercase;
-		text-align: center;
 		width: 100%;
-		top: 50%;
-		transform: translateY(-50%);
-		// font-size: 8vh;
-		line-height: 150%;
+		height: 100%;
+		z-index: 99999999999;
+		color: black;
+		#clock {
+			position: absolute;
+			text-transform: uppercase;
+			text-align: center;
+			width: 100%;
+			top: 50%;
+			transform: translateY(-50%);
+			// font-size: 8vh;
+			line-height: 150%;
+		}
+		
 	}
 	&#title-flash {
 		position: fixed;
@@ -156,7 +169,7 @@ section {
 		height: 100%;
 		width: 100%;
 		text-align: center;
-		background-color: white;
+		// background-color: white;
 		opacity: 0;
 		// transition: opacity 1s;
 		&.active {
@@ -226,6 +239,11 @@ section {
 			.image-wrapper {
 				position: relative;
 				// height: 90vh;
+				img {
+					&.bg {
+						opacity: 0.5;
+					}
+				}
 				.overlay-text {
 					position: absolute;
 					color: black;

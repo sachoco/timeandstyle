@@ -24,6 +24,10 @@
 		wp_enqueue_script( 'custom-scrollbar' );
 		wp_register_script( 'animsition', get_stylesheet_directory_uri() . '/bower_components/animsition/dist/js/animsition.min.js', array('jquery'), '', true );
 		wp_enqueue_script( 'animsition' );
+		wp_register_script( 'moment', get_stylesheet_directory_uri() . '/bower_components/moment/moment.js', array('jquery'), '', true );
+		wp_enqueue_script( 'moment' );
+		wp_register_script( 'moment-timezone', get_stylesheet_directory_uri() . '/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'moment-timezone' );
 		// register main script
 		wp_register_script( 'main-script', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '', true );
 		wp_enqueue_script( 'main-script' );

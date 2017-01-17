@@ -73,7 +73,7 @@ DEVELOPED BY
     <body <?php body_class(); ?>>
         <header>
             <div class="site-branding">
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/home/" rel="home">
+                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/#home" rel="home">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" class="logo">
                 </a></h1>
 <?php if( is_home() || is_front_page() || is_page(array( 'home', 'furniture') )): ?>

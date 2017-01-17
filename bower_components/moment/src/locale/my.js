@@ -1,6 +1,8 @@
 //! moment.js locale configuration
-//! locale : Burmese (my)
+//! locale : Burmese [my]
 //! author : Squar team, mysquar.com
+//! author : David Rossellat : https://github.com/gholadr
+//! author : Tin Aung Lin : https://github.com/thanyawzinmin
 
 import moment from '../moment';
 
@@ -40,8 +42,8 @@ export default moment.defineLocale('my', {
         LTS: 'HH:mm:ss',
         L: 'DD/MM/YYYY',
         LL: 'D MMMM YYYY',
-        LLL: 'D MMMM YYYY LT',
-        LLLL: 'dddd D MMMM YYYY LT'
+        LLL: 'D MMMM YYYY HH:mm',
+        LLLL: 'dddd D MMMM YYYY HH:mm'
     },
     calendar: {
         sameDay: '[ယနေ.] LT [မှာ]',
