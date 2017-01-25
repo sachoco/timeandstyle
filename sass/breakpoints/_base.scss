@@ -48,10 +48,20 @@ p {
 			float: left;
 			font-size: 24px;
 			margin: 0 10px;
-			color: $grey;
+			color: #828282;//$grey;
+			a {
+				color: #828282;
+			}
 			&.fb {
 				a {
-					color: #315096;
+					// color: #315096;
+				}
+				
+			}
+			&.clockBtn {
+				img {
+					width: 21px;
+				    margin-top: 2px;
 				}
 				
 			}

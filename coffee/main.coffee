@@ -9,6 +9,8 @@ jQuery ($) ->
 	$(window).resize resize
 	resize()
 
+
+
 	myCustomFn = (el)->
 		if el.mcs.top < 0 
 			$("#back-to-top-slick").addClass "active"
@@ -16,7 +18,9 @@ jQuery ($) ->
 		else
 			$("#back-to-top-slick").removeClass "active"
 			$("#back-to-top-page").removeClass "active"
-		# console.log(el.mcs.top)
+		# console.log(el.mcs.top)		
+
+
 
 	if $('#slick').length
 		$('#slick').on "init", ()->

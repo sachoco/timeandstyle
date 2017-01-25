@@ -54,18 +54,6 @@ DEVELOPED BY
 <script src="https://use.fontawesome.com/17d67b11a1.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto:100,300,400" rel="stylesheet">
 
-<!-- <script type="text/javascript">
-    (function() {
-        var path = '//easy.myfonts.net/v2/js?sid=10140(font-family=Univers+65+Bold)&sid=211226(font-family=Univers+Pro+65+Bold)&sid=218105(font-family=Univers+Pro+45+Light)&sid=218106(font-family=Univers+Pro+55+Roman)&key=IjSizbeh5L',
-            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-            trial = document.createElement('script');
-        trial.type = 'text/javascript';
-        trial.async = true;
-        trial.src = protocol + path;
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(trial);
-    })();
-</script> -->
         <?php wp_head(); ?>
 
     </head>
@@ -78,41 +66,11 @@ DEVELOPED BY
                 </a></h1>
 <?php if( is_home() || is_front_page() || is_page(array( 'home', 'furniture') )): ?>
 
-<!-- <div class="collapsed-button-container ">
-    <div id="slick-prev" class="collapsed-button slide-nav" role="button">
-        <div class="circle">
-            <div class="icon">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="31.131px" height="31.644px" viewBox="0 -6.924 31.131 31.644" enable-background="new 0 -6.924 31.131 31.644"
-     xml:space="preserve">
-<polyline id="line-1" fill="none" stroke="#000000" stroke-width="1" stroke-miterlimit="10" points="23.147,-5.93 8.281,8.936 23.147,23.803 
-    "/>
-</svg>
-            </div>
-            <div class="bg circular-anim"></div>  
-        </div>                         
-    </div>
-
-    <div id="slick-next" class="collapsed-button slide-nav" role="button">
-        <div class="circle">
-            <div class="icon">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="31.131px" height="31.644px" viewBox="0 -6.924 31.131 31.644" enable-background="new 0 -6.924 31.131 31.644"
-     xml:space="preserve">
-<polyline id="line-1" fill="none" stroke="#000000" stroke-width="1" stroke-miterlimit="10" points="8.281,23.803 23.147,8.937 8.281,-5.93 "/>
-</svg>
-            </div>
-            <div class="bg circular-anim"></div>  
-        </div>                         
-    </div>
-
-
-</div> -->
 <?php endif; ?> 
                 <ul>
 <?php if( is_home() || is_front_page() || is_page(array( 'home', 'furniture') )): ?>
 
-                    <li><i class="fa fa-th" aria-hidden="true"></i></li>
+                    <li class="clockBtn"><a href="/" id="clockBtn"><img src="<?php echo get_template_directory_uri(); ?>/images/clock.svg" alt=""></a></li>
 <?php endif; ?>
 <?php if( is_page(array( 'our-shop') )): ?>
 

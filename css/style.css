@@ -276,7 +276,7 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 html, body {
   height: 100%;
   position: relative;
-  font-family: "Roboto", sans-serif;
+  font-family: UniversLTPro-45Light, "Roboto", sans-serif;
   font-weight: 300;
   text-align: center;
   color: #555;
@@ -320,10 +320,14 @@ p {
   float: left;
   font-size: 24px;
   margin: 0 10px;
-  color: #DDDDDD;
+  color: #828282;
 }
-.site-branding ul li.fb a {
-  color: #315096;
+.site-branding ul li a {
+  color: #828282;
+}
+.site-branding ul li.clockBtn img {
+  width: 21px;
+  margin-top: 2px;
 }
 .site-branding ul li.our-shop {
   color: #555;
