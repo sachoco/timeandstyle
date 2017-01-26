@@ -314,16 +314,18 @@ p {
 .site-branding ul {
   float: right;
   padding: 1em;
-  display: none;
 }
 .site-branding ul li {
   float: left;
   font-size: 24px;
-  margin: 0 10px;
+  margin: 3px 5px;
   color: #828282;
+  position: relative;
 }
 .site-branding ul li a {
   color: #828282;
+  position: relative;
+  z-index: 9;
 }
 .site-branding ul li.clockBtn img {
   width: 21px;
@@ -380,6 +382,63 @@ body.home #slick {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 
+.shop-info-toggle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(20%, -50%) rotate(90deg);
+      -ms-transform: translate(20%, -50%) rotate(90deg);
+          transform: translate(20%, -50%) rotate(90deg);
+  cursor: pointer;
+}
+
+.shop-info {
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  right: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  text-align: left;
+  max-height: 0px;
+  transition: max-height 1s;
+  overflow: scroll;
+}
+.shop-info.is_open {
+  max-height: 90vh;
+}
+.shop-info .inner {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 2em 1em;
+}
+.shop-info .inner .close {
+  position: absolute;
+  top: 2em;
+  right: 1em;
+  cursor: pointer;
+}
+.shop-info .inner h3 {
+  font-size: 2em;
+  margin: 1em 0;
+}
+.shop-info .inner p {
+  margin: 0 0 1em;
+}
+.shop-info .inner .left {
+  float: left;
+  width: calc(100% - 450px);
+}
+.shop-info .inner .right {
+  width: 400px;
+  float: right;
+}
+
 section#intro {
   display: none;
   cursor: pointer;
@@ -388,6 +447,7 @@ section#intro {
   height: 100%;
   z-index: 99999999999;
   color: black;
+  font-size: 5vw;
 }
 section#intro #clock {
   position: absolute;
@@ -506,61 +566,6 @@ section.column ul img {
 section.column footer {
   padding: 100px 1em 1em;
   background-color: #EFEFEF;
-}
-section.column .shop-info-toggle {
-  position: fixed;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate(20%, -50%) rotate(90deg);
-      -ms-transform: translate(20%, -50%) rotate(90deg);
-          transform: translate(20%, -50%) rotate(90deg);
-  cursor: pointer;
-}
-section.column .shop-info {
-  position: absolute;
-  width: 100%;
-  margin: auto;
-  right: 0;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-color: white;
-  text-align: left;
-  max-height: 0px;
-  transition: max-height 1s;
-  overflow: scroll;
-}
-section.column .shop-info.is_open {
-  max-height: 90vh;
-}
-section.column .shop-info .inner {
-  position: relative;
-  float: left;
-  width: 100%;
-  padding: 2em 1em;
-}
-section.column .shop-info .inner .close {
-  position: absolute;
-  top: 2em;
-  right: 1em;
-  cursor: pointer;
-}
-section.column .shop-info .inner h3 {
-  font-size: 2em;
-  margin: 1em 0;
-}
-section.column .shop-info .inner p {
-  margin: 0 0 1em;
-}
-section.column .shop-info .inner .left {
-  float: left;
-  width: calc(100% - 450px);
-}
-section.column .shop-info .inner .right {
-  width: 400px;
-  float: right;
 }
 section.column .page-content {
   width: 100%;
@@ -691,6 +696,9 @@ you can add resource intensive styles.
   .site-branding ul {
     display: inline-block;
   }
+  .site-branding ul li {
+    margin: 0 10px;
+  }
 
   #site-navigation.is_open {
     width: 350px;
@@ -707,8 +715,12 @@ you can add resource intensive styles.
             transform: translateY(-50%);
   }
 
+  .shop-info {
+    width: calc(80% - 30px);
+  }
+
   section#intro {
-    font-size: 8vh;
+    font-size: 5vw;
   }
   section.column ul {
     width: 80%;
@@ -726,9 +738,6 @@ you can add resource intensive styles.
             transform: translateY(-50%);
     width: 100%;
     font-size: 3em;
-  }
-  section.column .shop-info {
-    width: 80%;
   }
   section.column .page-content {
     width: 80%;

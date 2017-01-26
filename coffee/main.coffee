@@ -67,6 +67,7 @@ jQuery ($) ->
 			# 		$("#back-to-top-slick").removeClass "active"
 
 		beforeSlideChangeEvent = ()->
+			$(".shop-info").removeClass 'is_open'
 			# currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
 			# # $("#back-to-top-slick").removeClass "active"
 			# $(currentSlide).off "scroll"
@@ -78,7 +79,15 @@ jQuery ($) ->
 		$(".burger-nav").toggleClass("is_open")
 
 	$(".shop-info-toggle").on "click", ()->
+		if !$(".shop-info").hasClass 'is_open'
+			currentSlideIndex = $("#slick").slick('slickCurrentSlide')
+			currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex]
+			content = $(currentSlide).find(".shop-info-content")
+			# console.log content.html()
+			$(".shop-info").find(".content").html(content.html())
 		$(".shop-info").toggleClass 'is_open'
+
+
 	$(".shop-info .close").on "click", ()->
 		$(".shop-info").removeClass 'is_open'
 	$(".animsition").animsition {inClass: 'fade-in',outClass: 'fade-out',inDuration: 1500,outDuration: 800,loading: false}
@@ -99,6 +108,12 @@ jQuery ($) ->
 				$("#back-to-top-page").addClass "active"
 			else
 				$("#back-to-top-page").removeClass "active"
+
+	$(".site-branding .our-shop").on "click", ()->
+		slideID = $(this).data("slideid")
+		$(".site-branding .our-shop").removeClass "active"
+		$("#slick").slick('slickGoTo', slideID)
+		$(this).addClass "active"
 
 
 	

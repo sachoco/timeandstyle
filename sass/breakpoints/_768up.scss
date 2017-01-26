@@ -9,6 +9,9 @@
 	}
 	ul {
 		display: inline-block;
+		li {
+			margin: 0 10px;
+		}
 	}
 }
 #site-navigation {
@@ -28,9 +31,13 @@
     top: 50%;
     transform: translateY(-50%);
 }
+.shop-info {
+	width: calc(80% - 30px);
+}
 section {
 	&#intro {
-		font-size: 8vh;
+		// font-size: 8vh;
+		font-size: 5vw;
 	}
 	&.column {
 		ul {
@@ -76,9 +83,7 @@ section {
 				}
 			}
 		}
-		.shop-info {
-			width: 80%;
-		}
+		
 		.page-content {
 			width: 80%;
 			.inner {

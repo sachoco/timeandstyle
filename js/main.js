@@ -52,7 +52,9 @@
           return $("#back-to-top-slick").removeClass("active");
         }
       };
-      beforeSlideChangeEvent = function() {};
+      beforeSlideChangeEvent = function() {
+        return $(".shop-info").removeClass('is_open');
+      };
       afterSlideChangeEvent();
     }
     $(".burger-nav").on("click", function() {
@@ -60,6 +62,13 @@
       return $(".burger-nav").toggleClass("is_open");
     });
     $(".shop-info-toggle").on("click", function() {
+      var content, currentSlide, currentSlideIndex;
+      if (!$(".shop-info").hasClass('is_open')) {
+        currentSlideIndex = $("#slick").slick('slickCurrentSlide');
+        currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex];
+        content = $(currentSlide).find(".shop-info-content");
+        $(".shop-info").find(".content").html(content.html());
+      }
       return $(".shop-info").toggleClass('is_open');
     });
     $(".shop-info .close").on("click", function() {
@@ -94,6 +103,13 @@
         }
       });
     }
+    $(".site-branding .our-shop").on("click", function() {
+      var slideID;
+      slideID = $(this).data("slideid");
+      $(".site-branding .our-shop").removeClass("active");
+      $("#slick").slick('slickGoTo', slideID);
+      return $(this).addClass("active");
+    });
     return this;
   });
 

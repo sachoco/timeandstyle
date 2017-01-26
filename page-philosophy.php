@@ -6,58 +6,16 @@
         <div class="page-header"><h2>Philosophy</h2></div>
         <div class="page-body">
          <p>
-        Dummy-A long time ago I noticed an andon lamp was lit around the corner of the room at dusk in a Japanese ryokan. Its soft light through Japanese paper washi made me feel relaxed.    
-            </p>
-            <p>
-        As for the top lid of the andon, the cedar grain tells the passage of a long history. When I took off the top lid and looked inside, there was a trace that has been used rapeseed oil and candles since Edo period. The impression of the gentle light through the handmade washi paper still remain in memory. However, andon has left behind from the present life and it has been used only in a tea room and Japanese style inn.      
-
-            </p>
-            <p>
-         When it comes to Japanese light, there is an image of lantern but andon has been used more often in Japanese living space since Edo era. I have been thinking to get back the light in the modern life space.       
-
-            </p>
-            <p>
-              However, there is nothing more difficult than replacing some of the old traditions into modern ones. It is necessary to inherit traditional style such as formality, basic methods and materials without deviating the rules. What to preserve, what to throw away, and what to add, I am still exploring how to put it in our daily living space not only in Japan, but in other countries as well.  
-            </p>
+        We offer different kinds of tools that are necessary in our daily lives such as furniture, lighting equipment, tableware, and towels, covering a wide range of products from small tea cups to tables. They are all original products created from our consistent concept.
+        </p>
 <p>
-    As for the top lid of the andon, the cedar grain tells the passage of a long history. When I took off the top lid and looked inside, there was a trace that has been used rapeseed oil and candles since Edo period. The impression of the gentle light through the handmade washi paper still remain in memory. However, andon has left behind from the present life and it has been used only in a tea room and Japanese style inn.
-
+With the fusion of modern lifestyle with the traditional aesthetics of Japan as a theme, we are pursuing a comprehensive quality that is meant to be used over generations, such as universality that is not affected by the changing times, receptiveness to blend into our daily lives, and functionality as a living tool.
 </p>
 <p>
-    When it comes to Japanese light, there is an image of lantern but andon has been used more often in Japanese living space since Edo era. I have been thinking to get back the light in the modern life space.
-
+Our products have a pleasant sense of tension within a simple form, and are achieved through the faithful handiwork of Japanese artisans. The appearance of each product is not always in Japanese style. However, these carefully and thoughtfully designed and sincerely created products definitely have a certain presence. Although they may appear neutral and neither Japanese nor Western, the small details and dignified air that surrounds the products give off a genuine taste of Japan.
 </p>
 <p>
-    As for the top lid of the andon, the cedar grain tells the passage of a long history. When I took off the top lid and looked inside, there was a trace that has been used rapeseed oil and candles since Edo period. The impression of the gentle light through the handmade washi paper still remain in memory. However, andon has left behind from the present life and it has been used only in a tea room and Japanese style inn.
-
-</p>
-<p>
-    When it comes to Japanese light, there is an image of lantern but andon has been used more often in Japanese living space since Edo era. I have been thinking to get back the light in the modern life space.
-
-</p>
-<p>
-    However, there is nothing more difficult than replacing some of the old traditions into modern ones. It is necessary to inherit traditional style such as formality, basic methods and materials without deviating the rules. What to preserve, what to throw away, and what to add, I am still exploring how to put it in our daily living space not only in Japan, but in other countries as well.
-
-</p>
-<p>
-    As for the top lid of the andon, the cedar grain tells the passage of a long history. When I took off the top lid and looked inside, there was a trace that has been used rapeseed oil and candles since Edo period. The impression of the gentle light through the handmade washi paper still remain in memory. However, andon has left behind from the present life and it has been used only in a tea room and Japanese style inn.
-
-</p>
-<p>
-    When it comes to Japanese light, there is an image of lantern but andon has been used more often in Japanese living space since Edo era. I have been thinking to get back the light in the modern life space.However, there is nothing more difficult than replacing some of the old traditions into modern ones. It is necessary to inherit traditional style such as formality, basic methods and materials without deviating the rules. What to preserve, what to throw away, and what to add, I am still exploring how to put it in our daily living space not only in Japan, but in other countries as well.
-
-</p>
-<p>
-    As for the top lid of the andon, the cedar grain tells the passage of a long history. When I took off the top lid and looked inside, there was a trace that has been used rapeseed oil and candles since Edo period. The impression of the gentle light through the handmade washi paper still remain in memory. However, andon has left behind from the present life and it has been used only in a tea room and Japanese style inn.
-
-</p>
-<p>
-   When it comes to Japanese light, there is an image of lantern but andon has been used more often in Japanese living space since Edo era. I have been thinking to get back the light in the modern life space.
- 
-</p>
-<p>
-    However, there is nothing more difficult than replacing some of the old traditions into modern ones. It is necessary to inherit traditional style such as formality, basic methods and materials without deviating the rules. What to preserve, what to throw away, and what to add, I am still exploring how to put it in our daily living space not only in Japan, but in other countries as well.
-
+In Japan, there are many artisans with advanced skills that were passed down over a long history. We keep challenging with like-minded artisans in various regions of Japan to create a new tradition of monozukuri.
 </p>
         </div>
     </div>
