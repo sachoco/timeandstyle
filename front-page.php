@@ -17,6 +17,19 @@
 		</div>
 
 	</li>
+    
+	<li class="footer">
+    	<footer class="footer">
+			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
+        </footer>
+	</li>
+</ul><!--/.products-->	
+
+</section>
+<section class="column">
+
+
+<ul class="products">
     <?php
         $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'chairs' );
         $loop = new WP_Query( $args );
