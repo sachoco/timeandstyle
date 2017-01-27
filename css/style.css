@@ -495,6 +495,7 @@ section#title-text-flash {
   text-align: center;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  cursor: pointer;
   letter-spacing: 2px;
 }
 section#title-text-flash.active {

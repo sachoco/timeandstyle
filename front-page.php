@@ -255,8 +255,25 @@
 
 
 jQuery(document).ready(function($) {
+	function start(){
+		 $("#title-text-flash")
+	        .velocity("fadeOut", {  
+             mobileHA: false,
+             duration: 1500, 
+             complete: function(){
+		 		$("#slick, header").velocity("fadeIn", {
+		 			delay: 500,
+					duration: 1500,
+					mobileHA: false
+				});                
+             }        
+         });
+	}
 	function showSite(){
 		window.location.hash = "home";
+		$("#title-text-flash").on("click", function(){
+		    start();
+		});
 		$("#title-text-flash")
             .velocity("fadeIn", { 
                 duration: 1500,
@@ -265,17 +282,17 @@ jQuery(document).ready(function($) {
                     // window.location.href = "/home";
                 }
             })
-         .velocity("fadeOut", { 
-             delay: 500, 
-             mobileHA: false,
-             duration: 1500, 
-             complete: function(){
-		 		$("#slick, header").velocity("fadeIn", {
-					duration: 1500,
-					mobileHA: false
-				});                
-             }        
-         });
+    //      .velocity("fadeOut", { 
+    //          delay: 500, 
+    //          mobileHA: false,
+    //          duration: 1500, 
+    //          complete: function(){
+		 	// 	$("#slick, header").velocity("fadeIn", {
+				// 	duration: 1500,
+				// 	mobileHA: false
+				// });                
+    //          }        
+    //      });
 	}
 
 	var hash = window.location.hash;
@@ -333,6 +350,7 @@ jQuery(document).ready(function($) {
 		}		
 
 	}
+
 });
 </script>
 <?php get_footer(); ?>
