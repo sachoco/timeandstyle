@@ -487,6 +487,37 @@ section#title-flash div img {
   width: 80%;
   height: auto;
 }
+section#title-text-flash {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  letter-spacing: 2px;
+}
+section#title-text-flash.active {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+section#title-text-flash > div {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 5vw;
+  width: 100%;
+}
+section#title-text-flash > div .header {
+  font-size: 1em;
+  margin-bottom: 0.1em;
+}
+section#title-text-flash > div .date {
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
 section#slick {
   position: fixed;
   width: 100%;
@@ -531,29 +562,26 @@ section.column ul li.contact-form h2 {
 section.column ul .image-wrapper {
   position: relative;
 }
-section.column ul .image-wrapper img.bg {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-}
 section.column ul .image-wrapper .overlay-text {
+  color: white;
   position: absolute;
-  color: black;
-  top: 10%;
+  bottom: 5%;
   width: 100%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.2em;
   letter-spacing: 2px;
-}
-section.column ul .image-wrapper .overlay-text .storename {
-  margin-bottom: 2em;
 }
 section.column ul .image-wrapper .overlay-text .storename img {
   width: 80%;
   max-width: 500px;
 }
 section.column ul .image-wrapper .overlay-text .header {
+  font-size: 1em;
+  margin-bottom: 0.1em;
+}
+section.column ul .image-wrapper .overlay-text .date {
+  text-transform: uppercase;
   font-size: 0.8em;
-  margin-bottom: 0.5em;
 }
 section.column ul .image-wrapper .overlay-text h2 {
   font-size: 2em;
@@ -722,6 +750,9 @@ you can add resource intensive styles.
   section#intro {
     font-size: 5vw;
   }
+  section#title-text-flash > div {
+    font-size: 3vw;
+  }
   section.column ul {
     width: 80%;
   }
@@ -732,12 +763,8 @@ you can add resource intensive styles.
     padding: 0 2em;
   }
   section.column ul .image-wrapper .overlay-text {
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
     width: 100%;
-    font-size: 3em;
+    font-size: 2em;
   }
   section.column .page-content {
     width: 80%;

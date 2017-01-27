@@ -274,6 +274,40 @@ section {
 			}
 		}
 	}
+	&#title-text-flash {
+		position: fixed;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		// background-color: white;
+		opacity: 0;
+		// transition: opacity 1s;
+		
+		letter-spacing: 2px;
+		&.active {
+			opacity: 1;
+		}
+		>div {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 5vw;
+			width: 100%;
+			.header {
+				font-size: 1em;
+				margin-bottom: 0.1em;
+				// @include animation(fadeInDown);
+				// @include animation-delay(1s);
+			}
+			.date {
+				text-transform: uppercase;
+				font-size: 0.8em;
+				// @include animation(fadeInDown);
+				// @include animation-delay(1s);
+			}
+		}		
+	}
 	&#slick {
 		position: fixed;
 		width: 100%;
@@ -327,32 +361,35 @@ section {
 				// height: 90vh;
 				img {
 					&.bg {
-						opacity: 0.5;
+						// opacity: 0.5;
 					}
 				}
 				.overlay-text {
+					color: white;
 					position: absolute;
-					color: black;
-					top: 10%;
+					// top: 50%;
+					bottom: 5%;
 					width: 100%;
 					text-align: center;
-					font-size: 1.5em;
+					font-size: 1.2em;
 					letter-spacing: 2px;
 					.storename {
 						img {
 							width: 80%;
 							max-width: 500px;
 						}	
-						margin-bottom: 2em;
+						// margin-bottom: 2em;
 						// @include animation(fadeInDown);
 					}
 					.header {
-						font-size: 0.8em;
-						margin-bottom: 0.5em;
+						font-size: 1em;
+						margin-bottom: 0.1em;
 						// @include animation(fadeInDown);
 						// @include animation-delay(1s);
 					}
 					.date {
+						text-transform: uppercase;
+						font-size: 0.8em;
 						// @include animation(fadeInDown);
 						// @include animation-delay(1s);
 					}

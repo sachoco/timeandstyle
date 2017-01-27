@@ -53,7 +53,16 @@
         }
       };
       beforeSlideChangeEvent = function() {
-        return $(".shop-info").removeClass('is_open');
+        var currentSlide;
+        $(".shop-info").removeClass('is_open');
+        currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')];
+        if ($(currentSlide).hasClass("shop-amsterdam")) {
+          $(".site-branding .our-shop").removeClass("active");
+          return $(".site-branding .our-shop.shop-tokyo").addClass("active");
+        } else if ($(currentSlide).hasClass("shop-tokyo")) {
+          $(".site-branding .our-shop").removeClass("active");
+          return $(".site-branding .our-shop.shop-amsterdam").addClass("active");
+        }
       };
       afterSlideChangeEvent();
     }

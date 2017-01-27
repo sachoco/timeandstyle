@@ -68,7 +68,13 @@ jQuery ($) ->
 
 		beforeSlideChangeEvent = ()->
 			$(".shop-info").removeClass 'is_open'
-			# currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
+			currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
+			if $(currentSlide).hasClass "shop-amsterdam"
+				$(".site-branding .our-shop").removeClass "active"
+				$(".site-branding .our-shop.shop-tokyo").addClass "active"
+			else if $(currentSlide).hasClass "shop-tokyo"
+				$(".site-branding .our-shop").removeClass "active"
+				$(".site-branding .our-shop.shop-amsterdam").addClass "active"
 			# # $("#back-to-top-slick").removeClass "active"
 			# $(currentSlide).off "scroll"
 
