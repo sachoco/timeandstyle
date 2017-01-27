@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <!-- <section id="slick" class=""> -->
 
-<section class="column">
+<section class="column animsition">
 
 
 <ul>

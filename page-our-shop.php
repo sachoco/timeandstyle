@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="slick">
+<section id="slick" class="animsition">
 
 <section class="column shop-amsterdam">
 <ul>

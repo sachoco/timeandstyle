@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="column">
+<section class="column animsition">
     <div class="page-content">
     <div class="inner">
         <div class="page-header"><h2>Philosophy</h2></div>
