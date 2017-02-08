@@ -16,8 +16,7 @@ Category: Sales assistant<br>
 Eligibility: Those interested in Japanese interior and furniture, Japanese culture, tradition, goods<br>
 Language skills: Dutch ＋ English or Japanese<br>
 Employment form: Negotiable<br>
-Working hours: Shift system 8 hours 2 days a week<br>
-(limited to those who can work on Saturday and Sunday)<br>
+Working hours: Negotiable<br>
 Location of work: Amsterdam<br><br>
 
 Please send CV to e-mail.<br><br>
