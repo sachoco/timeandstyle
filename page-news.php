@@ -5,7 +5,16 @@
     <div class="inner">
         <div class="page-header"><h2>News</h2></div>
         <div class="page-body">
-         <p>
+    <?php
+        $args = array( 'post_type' => 'post', 'posts_per_page' => -1 );
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post(); global $post; ?>
+            <p><?php the_title(); ?></p>
+            <?php the_content(); ?>
+
+    <?php endwhile; ?>
+    <?php wp_reset_query(); ?>
+<!--          <p>
 Recruit<br><br>
 
 Industry: Retail / Sales<br>
@@ -23,7 +32,7 @@ Please send CV to e-mail.<br><br>
 
 Ryoichi Satake<br>
 rsatake@timeandstyle.nl
-        </p>
+        </p> -->
 
         </div>
     </div>

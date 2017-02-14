@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="slick" class="animsition">
+<section id="slick" class="animsition loop">
 <section class="column">
 
 

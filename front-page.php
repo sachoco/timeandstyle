@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="slick" class="">
+<section id="slick" class="loop">
 
 <!-- <section class="column">
 <ul class="products">
