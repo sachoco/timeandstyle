@@ -1,13 +1,29 @@
 <?php get_header(); ?>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<section class="column animsition">
+    <div class="page-content">
+    <div class="inner">
+        <div class="page-header"><h2><?php the_title(); ?></h2></div>
+        <div class="page-body">
 
-<section>
-	<div class="wrapper container">
-		<div class="section-title grid-8 prefix-4 suffix-2"><span><?php echo get_post_type( get_the_ID() ); ?></span></div>
+            <?php the_content(); ?>
 
-	</div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="clear"></div>
+<ul>
+    <li class="footer">
+        <footer class="footer">
+             &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
+        </footer>
+    </li>    
+</ul>
+
 </section>
+
 
 		<?php endwhile; ?>
 
