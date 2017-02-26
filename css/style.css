@@ -383,6 +383,21 @@ body.home #slick {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
+body.single-product .page-header {
+  margin-right: 60px;
+}
+body.single-product .page-header h1 {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 1em;
+  margin-top: 3em;
+}
+body.single-product .page-header p {
+  margin-bottom: 2em;
+}
+body.single-product .page-content img {
+  margin-bottom: 5em;
+}
 
 .shop-info-toggle {
   position: fixed;

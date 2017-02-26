@@ -172,6 +172,25 @@ body {
 			opacity: 0;
 		}
 	}
+	&.single-product {
+		.page-header {
+			margin-right: 60px;
+			h1 {
+				font-weight: bold;
+				font-size: 1.4em;
+				margin-bottom: 1em;
+				margin-top: 3em;
+			}
+			p {
+				margin-bottom: 2em;
+			}
+		}
+		.page-content {
+			img {
+				margin-bottom: 5em;
+			}
+		}
+	}
 
 }
 
