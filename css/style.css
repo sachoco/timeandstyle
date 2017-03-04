@@ -499,6 +499,9 @@ section#title-text-flash {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   cursor: pointer;
   letter-spacing: 2px;
+  background: url(../images/opening-bg.jpg) center center;
+  background-size: cover;
+  color: black;
 }
 section#title-text-flash.active {
   opacity: 1;
@@ -514,12 +517,12 @@ section#title-text-flash > div {
   width: 100%;
 }
 section#title-text-flash > div .header {
-  font-size: 1em;
+  font-size: 0.9em;
   margin-bottom: 0.1em;
 }
 section#title-text-flash > div .date {
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 section#slick {
   position: fixed;
