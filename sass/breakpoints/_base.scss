@@ -304,8 +304,11 @@ section {
 		// background-color: white;
 		opacity: 0;
 		// transition: opacity 1s;
+		background: url(../images/opening-bg.jpg) center center;
+		background-size: cover;
 		cursor: pointer;		
 		letter-spacing: 2px;
+		color: black;
 		&.active {
 			opacity: 1;
 		}
@@ -316,14 +319,14 @@ section {
 			font-size: 5vw;
 			width: 100%;
 			.header {
-				font-size: 1em;
+				font-size: 0.9em;
 				margin-bottom: 0.1em;
 				// @include animation(fadeInDown);
 				// @include animation-delay(1s);
 			}
 			.date {
 				text-transform: uppercase;
-				font-size: 0.8em;
+				font-size: 0.7em;
 				// @include animation(fadeInDown);
 				// @include animation-delay(1s);
 			}
