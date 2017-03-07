@@ -383,19 +383,19 @@ body.home #slick {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
-body.single-product .page-header {
+body.single-product .page-header, body.single-monozukuri .page-header {
   margin-right: 60px;
 }
-body.single-product .page-header h1 {
+body.single-product .page-header h1, body.single-monozukuri .page-header h1 {
   font-weight: bold;
   font-size: 1.4em;
   margin-bottom: 1em;
   margin-top: 3em;
 }
-body.single-product .page-header p {
+body.single-product .page-header p, body.single-monozukuri .page-header p {
   margin-bottom: 2em;
 }
-body.single-product .page-content img {
+body.single-product .page-content img, body.single-monozukuri .page-content img {
   margin-bottom: 5em;
 }
 

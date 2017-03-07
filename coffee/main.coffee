@@ -38,6 +38,7 @@ jQuery ($) ->
 
 		$('#slick.loop').slick(
 			infinite: true, 
+			initialSlide: Math.floor(Math.random() * $('#slick.loop .column').length),
 			# prevArrow: '<button type="button" class="slick-prev"><img src="'+img_path+'/arrow-left.svg" ></button>', 
 			# nextArrow: '<button type="button" class="slick-next"><img src="'+img_path+'/arrow-right.svg" ></button>'
 			prevArrow: '<button type="button" class="slick-prev"><div class="collapsed-button"><div class="circle"><div class="icon left"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -64,11 +65,12 @@ jQuery ($) ->
 		)
 		afterSlideChangeEvent = ()->
 			currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
-			if typeof currentSlide.mcs != 'undefined'
-				if currentSlide.mcs.top < 0 
-					$("#back-to-top-slick").addClass "active"
-				else
-					$("#back-to-top-slick").removeClass "active"
+			if typeof currentSlide != 'undefined'
+				if typeof currentSlide.mcs != 'undefined'
+					if currentSlide.mcs.top < 0 
+						$("#back-to-top-slick").addClass "active"
+					else
+						$("#back-to-top-slick").removeClass "active"
 
 			# if currentSlide.scrollTop > 0 
 			# 	$("#back-to-top-slick").addClass "active"
