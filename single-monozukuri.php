@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="product-<?php the_ID(); ?>" <?php post_class("column animsition"); ?>>
+<section id="monozukuri-<?php the_ID(); ?>" <?php post_class("column animsition"); ?>>
 
 <!-- <section class="column animsition"> -->
     <div class="page-content">

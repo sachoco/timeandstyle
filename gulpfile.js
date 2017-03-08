@@ -29,7 +29,7 @@ gulp.task("js", function(){
 });
 
 gulp.task("sass", function(){
-	gulp.src("sass/**/*.scss")
+	gulp.src('!sass/grid.scss',"sass/**/*.scss")
 		.pipe(plumber())
 		.pipe(frontnote({
 			css:'../css/style.css'

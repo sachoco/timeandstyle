@@ -129,6 +129,12 @@
       $("#slick").slick('slickGoTo', slideID);
       return $(this).addClass("active");
     });
+    $(".product-description").readmore({
+      moreLink: '<a class="square-btn" href="#">more caption</a>',
+      lessLink: '<a class="square-btn" href="#">less caption</a>',
+      embedCSS: true,
+      blockCSS: 'margin-bottom: 2em;'
+    });
     return this;
   });
 

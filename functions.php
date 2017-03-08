@@ -28,6 +28,8 @@
 		wp_enqueue_script( 'moment' );
 		wp_register_script( 'moment-timezone', get_stylesheet_directory_uri() . '/bower_components/moment-timezone/builds/moment-timezone-with-data.min.js', array('jquery'), '', true );
 		wp_enqueue_script( 'moment-timezone' );
+		wp_register_script( 'readmore', get_stylesheet_directory_uri() . '/js/readmore.min.js', array('jquery'), '', true );
+		wp_enqueue_script( 'readmore' );
 		// register main script
 		wp_register_script( 'main-script', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '', true );
 		wp_enqueue_script( 'main-script' );

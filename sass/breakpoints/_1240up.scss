@@ -1,0 +1,21 @@
+
+body {
+	&.single-product, &.single-monozukuri {
+		section.column {
+			.page-header {
+
+				p {
+					margin-bottom: 2em;
+				}
+			}
+			.page-body {
+				padding-left: 60px;
+				img {
+					// margin-bottom: 5em;
+				}
+			}	
+		}
+		
+	}
+
+}

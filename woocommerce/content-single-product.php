@@ -57,7 +57,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 					 */
 					do_action( 'woocommerce_single_product_summary' );
 				?>
-				<?php the_content(); ?>
+				<article class="product-description">
+						<?php the_content(); ?>
+				</article>
+				<p>
+					<?php the_field("technical_information"); ?>
+				</p>	
+				<p>
+					<a class="square-btn" href="#fabric" target="_blank">fabric</a><br>
+					<a class="square-btn" href="#leather" target="_blank">leather</a><br>
+					<a class="square-btn" href="#wood_material" target="_blank">wood material</a>
+				</p>
+				<p>
+					<a class="square-btn" href="#price_variations" target="_blank">price / variations</a>
+				</p>
+				
 			</div><!-- .summary -->
 
 			<?php
@@ -86,11 +100,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 			</div>
         </div>
-    </div>
-    </div>
+
 <!-- </div> -->
 
+	<?php
+	// get categories
+	$terms = wp_get_post_terms( $post->ID, 'product_cat' );
+	foreach ( $terms as $term ) $cats_array[] = $term->term_id;
+	$query_args = array( 'post__not_in' => array( $post->ID ), 'posts_per_page' => -1, 'no_found_rows' => 1, 'post_status' => 'publish', 'post_type' => 'product', 'tax_query' => array( 
+	array(
+	  'taxonomy' => 'product_cat',
+	  'field' => 'id',
+	  'terms' => $cats_array
+	)));
+	$r = new WP_Query($query_args);
+		
+	if ($r->have_posts()) {
+	?>
+	<ul class="product_list_widget">
+	  <?php while ($r->have_posts()) : $r->the_post(); global $product; ?>
+	    <li><a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>">
+	    	<div class="inner">
+		<?php if (has_post_thumbnail()) the_post_thumbnail('medium'); else echo '<img src="'. woocommerce_placeholder_img_src() .'" alt="Placeholder" width="'.$woocommerce->get_image_size('shop_thumbnail_image_width').'" height="'.$woocommerce->get_image_size('shop_thumbnail_image_height').'" />'; ?>
+				<div class="overlay"><h4><?php if ( get_the_title() ) the_title(); else the_ID(); ?></h4></div>
+			</div>
+	    </a> <?php //echo $product->get_price_html(); ?></li>
+	  <?php endwhile; ?>
+	</ul>
+	<?php
+	// Reset the global $the_post as this query will have stomped on it
+	wp_reset_query();
+	}
+	?>
+    </div>
+    </div>
+
 	<div class="clear"></div>
+
 	<ul>
 	    <li class="footer">
 	        <footer class="footer">

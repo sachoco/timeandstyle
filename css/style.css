@@ -287,6 +287,20 @@ a {
   text-decoration: none;
   color: #555;
 }
+a.square-btn {
+  border: 1px solid;
+  padding: 8px;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 1em;
+  transition: all 0.2s;
+  line-height: 150%;
+}
+a.square-btn:hover {
+  background-color: #555;
+  color: white;
+}
 
 p {
   line-height: 150%;
@@ -383,20 +397,69 @@ body.home #slick {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
-body.single-product .page-header, body.single-monozukuri .page-header {
-  margin-right: 60px;
+body.single-product section.column .page-header, body.single-monozukuri section.column .page-header {
+  max-width: none;
+  width: 100%;
 }
-body.single-product .page-header h1, body.single-monozukuri .page-header h1 {
+body.single-product section.column .page-header .summary, body.single-monozukuri section.column .page-header .summary {
+  max-width: 540px;
+}
+body.single-product section.column .page-header h1, body.single-monozukuri section.column .page-header h1 {
   font-weight: bold;
   font-size: 1.4em;
   margin-bottom: 1em;
-  margin-top: 3em;
 }
-body.single-product .page-header p, body.single-monozukuri .page-header p {
+body.single-product section.column .page-header p, body.single-monozukuri section.column .page-header p {
   margin-bottom: 2em;
 }
-body.single-product .page-content img, body.single-monozukuri .page-content img {
-  margin-bottom: 5em;
+body.single-product section.column .page-body, body.single-monozukuri section.column .page-body {
+  padding-left: 0px;
+  width: 100%;
+  max-width: none;
+}
+body.single-product section.column .page-body img, body.single-monozukuri section.column .page-body img {
+  margin-bottom: 7px;
+  width: 100%;
+}
+body.single-product ul.product_list_widget, body.single-monozukuri ul.product_list_widget {
+  width: 100%;
+  float: left;
+  margin-top: 20em;
+}
+body.single-product ul.product_list_widget li, body.single-monozukuri ul.product_list_widget li {
+  display: inline-block;
+  position: relative;
+  width: 25%;
+  padding: 7px;
+  float: left;
+}
+body.single-product ul.product_list_widget li img, body.single-monozukuri ul.product_list_widget li img {
+  width: 100%;
+}
+body.single-product ul.product_list_widget li .inner, body.single-monozukuri ul.product_list_widget li .inner {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+body.single-product ul.product_list_widget li .inner .overlay, body.single-monozukuri ul.product_list_widget li .inner .overlay {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: left;
+  transition: opacity 0.2s;
+}
+body.single-product ul.product_list_widget li .inner .overlay h4, body.single-monozukuri ul.product_list_widget li .inner .overlay h4 {
+  margin: 1em;
+  font-size: 2em;
+}
+body.single-product ul.product_list_widget li .inner:hover .overlay, body.single-monozukuri ul.product_list_widget li .inner:hover .overlay {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 .shop-info-toggle {
@@ -730,6 +793,25 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 *********************/
 @media only screen and (min-width: 768px) {
+  body.home header {
+    display: none;
+  }
+  body.home #slick {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  body.single-product section.column .page-header, body.single-monozukuri section.column .page-header {
+    max-width: none;
+    width: 40%;
+  }
+  body.single-product section.column .page-header h1, body.single-monozukuri section.column .page-header h1 {
+    margin-top: 3em;
+  }
+  body.single-product section.column .page-body, body.single-monozukuri section.column .page-body {
+    padding-left: 30px;
+    width: 60%;
+  }
+
   .site-branding {
     width: 80%;
     left: 50%;
@@ -820,6 +902,14 @@ you can add resource intensive styles.
 LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
 *********************/
+@media only screen and (min-width: 1240px) {
+  body.single-product section.column .page-header p, body.single-monozukuri section.column .page-header p {
+    margin-bottom: 2em;
+  }
+  body.single-product section.column .page-body, body.single-monozukuri section.column .page-body {
+    padding-left: 60px;
+  }
+}
 /*********************
 RETINA (2x RESOLUTION DEVICES)
 This applies to the retina iPhone (4s) and iPad (2,3) along with
