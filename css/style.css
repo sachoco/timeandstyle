@@ -429,7 +429,7 @@ body.single-product ul.product_list_widget, body.single-monozukuri ul.product_li
 body.single-product ul.product_list_widget li, body.single-monozukuri ul.product_list_widget li {
   display: inline-block;
   position: relative;
-  width: 25%;
+  width: 33%;
   padding: 7px;
   float: left;
 }
@@ -441,6 +441,7 @@ body.single-product ul.product_list_widget li .inner, body.single-monozukuri ul.
   float: left;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 body.single-product ul.product_list_widget li .inner .overlay, body.single-monozukuri ul.product_list_widget li .inner .overlay {
   opacity: 0;
@@ -455,7 +456,7 @@ body.single-product ul.product_list_widget li .inner .overlay, body.single-monoz
 }
 body.single-product ul.product_list_widget li .inner .overlay h4, body.single-monozukuri ul.product_list_widget li .inner .overlay h4 {
   margin: 1em;
-  font-size: 2em;
+  font-size: 1em;
 }
 body.single-product ul.product_list_widget li .inner:hover .overlay, body.single-monozukuri ul.product_list_widget li .inner:hover .overlay {
   opacity: 1;
@@ -908,6 +909,12 @@ This is for the larger monitors and possibly full screen viewers.
   }
   body.single-product section.column .page-body, body.single-monozukuri section.column .page-body {
     padding-left: 60px;
+  }
+  body.single-product ul.product_list_widget li, body.single-monozukuri ul.product_list_widget li {
+    width: 25%;
+  }
+  body.single-product ul.product_list_widget li .inner .overlay h4, body.single-monozukuri ul.product_list_widget li .inner .overlay h4 {
+    font-size: 2em;
   }
 }
 /*********************

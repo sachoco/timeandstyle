@@ -15,6 +15,19 @@ body {
 				}
 			}	
 		}
+		ul.product_list_widget {
+			li {
+				width: 25%;
+				.inner {
+					.overlay {
+						h4 {
+							font-size: 2em;
+						}
+
+					}
+				}
+			}
+		}
 		
 	}
 

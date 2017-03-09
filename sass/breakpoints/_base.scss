@@ -221,7 +221,7 @@ body {
 			li {
 				display: inline-block;
 				position: relative;
-				width: 25%;
+				width: 33%;
 				padding: 7px;
 				// padding-right: 15px;
 				float: left;
@@ -236,6 +236,7 @@ body {
 					float: left;
 					margin: 0;
 					padding: 0;
+					width: 100%;
 					.overlay {
 						opacity: 0;
 						position: absolute;
@@ -247,7 +248,7 @@ body {
 						transition: opacity 0.2s;
 						h4 {
 							margin: 1em;
-							font-size: 2em;
+							font-size: 1em;
 						}
 
 					}
