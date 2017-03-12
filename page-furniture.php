@@ -3,8 +3,10 @@
 
 <?php
 
-
-$product_categories = get_terms( 'product_cat' );
+$args = array(
+    'exclude_tree'  => array("13")
+); 
+$product_categories = get_terms( 'product_cat', $args );
 
 foreach($product_categories as $cat):
 
