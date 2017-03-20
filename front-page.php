@@ -75,55 +75,20 @@ foreach($product_categories as $cat):
 <section id="title-flash"><div><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" class="logo"></div>
 </section>
 </div>
-<section id="title-text-flash">
-	<div>
-		<div class="header">AMSTERDAM</div>
-		<div class="date">Grand Opening on 23 March 2017</div>
-	</div>
-</section>
+
 <script>
 
 
 
 jQuery(document).ready(function($) {
-	function start(){
-		 $("#title-text-flash")
-	        .velocity("fadeOut", {  
-             mobileHA: false,
-             duration: 1500, 
-             complete: function(){
-		 		$("#slick, header").velocity("fadeIn", {
-		 			delay: 500,
-					duration: 1500,
-					mobileHA: false
-				});                
-             }        
-         });
-	}
+
 	function showSite(){
 		window.location.hash = "home";
-		$("#title-text-flash").on("click", function(){
-		    start();
-		});
-		$("#title-text-flash")
-            .velocity("fadeIn", { 
-                duration: 1500,
-                mobileHA: false,
-                complete: function(){
-                    // window.location.href = "/home";
-                }
-            })
-    //      .velocity("fadeOut", { 
-    //          delay: 500, 
-    //          mobileHA: false,
-    //          duration: 1500, 
-    //          complete: function(){
-		 	// 	$("#slick, header").velocity("fadeIn", {
-				// 	duration: 1500,
-				// 	mobileHA: false
-				// });                
-    //          }        
-    //      });
+ 		$("#slick, header").velocity("fadeIn", {
+ 			delay: 500,
+			duration: 1500,
+			mobileHA: false
+		});     
 	}
 
 	var hash = window.location.hash;
