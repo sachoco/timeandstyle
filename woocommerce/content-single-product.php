@@ -68,9 +68,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<a class="square-btn" href="#leather" target="_blank">leather</a><br>
 					<a class="square-btn" href="#wood_material" target="_blank">wood material</a>
 				</p>
+				<?php 
+					$file = get_field("price_variations");
+					if($file):
+				?>
 				<p>
-					<a class="square-btn" href="#price_variations" target="_blank">price / variations</a>
+					<a class="square-btn" href="<?php echo $file[url]; ?>" target="_blank">price / variations</a>
 				</p>
+				<?php endif; ?>
 				
 			</div><!-- .summary -->
 
