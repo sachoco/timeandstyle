@@ -18,20 +18,24 @@
             <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Amsterdam/T&S-AMS2.jpg" >
         </div>
     </li>   
-    <!-- <li class="mobile-hide">
-        <div class="image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/amsterdam-4.jpg" >
-        </div>
-    </li>   
-    <li class="mobile-hide">
-        <div class="image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/amsterdam-5.jpg" >
-        </div>
-    </li>  -->
     <li class="mobile-only align-left shop-info-content">
-
-        <h3>TIME & STYLE</h3>
-        <div class="left">
+<?php
+$the_slug = 'shop-amsterdam';
+$args = array(
+  'name'        => $the_slug,
+  'post_type'   => 'page',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$my_posts = get_posts($args);
+if( $my_posts ) :
+    $title = $my_posts[0]->post_title;
+    $content = $my_posts[0]->post_content;
+endif;
+?>
+        <h3><?php echo $title; ?></h3>
+        <?php echo $content; ?>
+       <!--  <div class="left">
             <p>
         Marnixstraat 148, 1016 TE AMSTERDAM<br>
         +31 (0)20 210 3176<br>
@@ -42,7 +46,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.8222726891754!2d4.873788115802014!3d52.37364257978664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609dbe2585b3f%3A0xebaef0de954f510a!2sMarnixstraat+148%2C+1016+TE+Amsterdam!5e0!3m2!1sen!2snl!4v1484441682046" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
             Marnixstraat 148, 1016 TE Amsterdam<br>
             +31 20 210 3176
-        </div>
+        </div> -->
 
     </li>
     <li class="contact-form">
@@ -58,25 +62,6 @@
         </footer>
 	</li>
 </ul>
-<!-- <div class="shop-info-toggle mobile-hide">Shop Information</div> -->
-<!-- <div class="shop-info">
-    <div class="inner">
-        <img class="close" src="<?php echo get_template_directory_uri(); ?>/images/close.svg" alt="close">
-            <h3>TIME & STYLE</h3>
-        <div class="left">
-            <p>
-        Marnixstraat 148, 1016 TE AMSTERDAM<br>
-        +31 (0)20 210 3176<br>
-        info@timeandstyle.nl  
-            </p>    
-        </div>
-        <div class="right">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.8222726891754!2d4.873788115802014!3d52.37364257978664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609dbe2585b3f%3A0xebaef0de954f510a!2sMarnixstraat+148%2C+1016+TE+Amsterdam!5e0!3m2!1sen!2snl!4v1484441682046" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-            Marnixstraat 148, 1016 TE Amsterdam<br>
-            +31 20 210 3176
-        </div>
-    </div>
-</div> -->
 </section>
 
 
@@ -109,8 +94,22 @@
     </li> 
     <li class="mobile-only align-left shop-info-content">
 
-        <h3>TIME & STYLE MIDTOWN</h3>
-        <div class="left">
+<?php
+$the_slug = 'shop-tokyo';
+$args = array(
+  'name'        => $the_slug,
+  'post_type'   => 'page',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$my_posts = get_posts($args);
+if( $my_posts ) :
+    $title = $my_posts[0]->post_title;
+    $content = $my_posts[0]->post_content;
+endif;
+?>
+        <h3><?php echo $title; ?></h3>
+        <?php echo $content; ?>        <!-- <div class="left">
             <p>
         Tokyo-Midtown Galleria 3F<br>
         9-7-4 Akasaka Minato-ku TOKYO 107-0052<br>
@@ -119,7 +118,7 @@
         </div>
         <div class="right">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.4571060285675!2d139.727570614729!3d35.665745138429614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b78df47a0bf%3A0x9d539ec75eaa42cc!2z77y077yp77yt77yl77yG77yz77y077y577ys77yl44O777yt77yp77yk77y077yv77y377yu!5e0!3m2!1sen!2stw!4v1485484503182" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
+        </div> -->
 
     </li>
     <li class="contact-form">
@@ -135,34 +134,12 @@
         </footer>
     </li>
 </ul>
-<!-- <div class="shop-info-toggle mobile-hide">Shop Information</div> -->
-<<!-- div class="shop-info">
-    <div class="inner">
-        <img class="close" src="<?php echo get_template_directory_uri(); ?>/images/close.svg" alt="close">
-            <h3>TIME & STYLE MIDTOWN</h3>
-        <div class="left">
-
- 
-            <p>
-        Tokyo-Midtown Galleria 3F<br>
-        9-7-4 Akasaka Minato-ku TOKYO 107-0052<br>
-        +81 (0)3 5413 3501      
-            </p>
-         
-        </div>
-        <div class="right">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.8222726891754!2d4.873788115802014!3d52.37364257978664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609dbe2585b3f%3A0xebaef0de954f510a!2sMarnixstraat+148%2C+1016+TE+Amsterdam!5e0!3m2!1sen!2snl!4v1484441682046" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-            Marnixstraat 148, 1016 TE Amsterdam<br>
-            +31 20 210 3176
-        </div>
-    </div>
-</div> -->
 </section>
 
 </section>
 
 <div class="shop-info-toggle mobile-hide">Shop Information</div>
-<div class="shop-info">
+<div id="shop-info" class="shop-info">
     <div class="inner">
         <img class="close" src="<?php echo get_template_directory_uri(); ?>/images/close.svg" alt="close">
         <div class="content">

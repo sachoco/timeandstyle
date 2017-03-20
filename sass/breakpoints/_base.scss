@@ -281,7 +281,7 @@ body {
 	right: 0;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	// transform: translate(-50%,-50%);
 	background-color: white;
 	text-align: left;
 	max-height: 0px;
@@ -310,13 +310,13 @@ body {
 			margin: 0 0 1em;
 		}
 		.left {
-			float: left;
-			width: calc(100% - 450px);
+			// float: left;
+			// width: calc(100% - 450px);
 			
 		}
 		.right {
-			width: 400px;
-			float: right;
+			// width: 400px;
+			// float: right;
 		}
 	}
 }		

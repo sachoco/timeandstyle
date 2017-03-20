@@ -6,8 +6,9 @@
   jQuery(function($) {
     var afterSlideChangeEvent, beforeSlideChangeEvent, myCustomFn, resize;
     resize = function() {
+      var height;
       $('.column').height($(window).height());
-      return $(".column").mCustomScrollbar({
+      $(".column").mCustomScrollbar({
         axis: "y",
         theme: "minimal",
         callbacks: {
@@ -16,6 +17,13 @@
           }
         }
       });
+      if ($(".shop-info").length) {
+        height = Math.min($(".shop-info .inner").outerHeight(), $(window).height());
+        return $(".shop-info").css({
+          "margin-left": $(".shop-info").width() / 2 * -1,
+          "margin-top": height / 2 * -1
+        });
+      }
     };
     $(window).resize(resize);
     resize();
@@ -81,13 +89,19 @@
       return $(".burger-nav").toggleClass("is_open");
     });
     $(".shop-info-toggle").on("click", function() {
-      var content, currentSlide, currentSlideIndex;
+      var content, currentSlide, currentSlideIndex, height;
       if (!$(".shop-info").hasClass('is_open')) {
         currentSlideIndex = $("#slick").slick('slickCurrentSlide');
         currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex];
         content = $(currentSlide).find(".shop-info-content");
         $(".shop-info").find(".content").html(content.html());
       }
+      height = Math.min($(".shop-info .inner").outerHeight(), $(window).height());
+      $(".shop-info").css({
+        "margin-left": $(".shop-info").width() / 2 * -1,
+        "margin-top": height / 2 * -1
+      });
+      console.log(height);
       return $(".shop-info").toggleClass('is_open');
     });
     $(".shop-info .close").on("click", function() {

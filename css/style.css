@@ -480,9 +480,6 @@ body.single-product ul.product_list_widget li .inner:hover .overlay, body.single
   right: 0;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   background-color: white;
   text-align: left;
   max-height: 0px;
@@ -510,14 +507,6 @@ body.single-product ul.product_list_widget li .inner:hover .overlay, body.single
 }
 .shop-info .inner p {
   margin: 0 0 1em;
-}
-.shop-info .inner .left {
-  float: left;
-  width: calc(100% - 450px);
-}
-.shop-info .inner .right {
-  width: 400px;
-  float: right;
 }
 
 section#intro {
@@ -897,6 +886,15 @@ you can add resource intensive styles.
   header #sidebar ul#tweets {
     height: auto;
     max-height: calc(80vh - 300px);
+  }
+
+  .shop-info .inner .left {
+    float: left;
+    width: calc(100% - 450px);
+  }
+  .shop-info .inner .right {
+    width: 400px;
+    float: right;
   }
 }
 /*********************

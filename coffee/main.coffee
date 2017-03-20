@@ -6,6 +6,12 @@ jQuery ($) ->
 		$(".column").mCustomScrollbar { axis:"y", theme:"minimal", callbacks:{ onScroll: ()->
 			myCustomFn(this)
 			}}
+		# roundCssTransformMatrix("shop-info")
+		if $(".shop-info").length
+			height = Math.min $(".shop-info .inner").outerHeight(), $(window).height()
+			$(".shop-info").css "margin-left" : $(".shop-info").width()/2*-1, "margin-top" : height/2*-1
+
+		# Math.ceil($("#shop-info").width()/2*-1)
 	$(window).resize resize
 	resize()
 
@@ -105,8 +111,10 @@ jQuery ($) ->
 			currentSlideIndex = $("#slick").slick('slickCurrentSlide')
 			currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex]
 			content = $(currentSlide).find(".shop-info-content")
-			# console.log content.html()
 			$(".shop-info").find(".content").html(content.html())
+		height = Math.min $(".shop-info .inner").outerHeight(), $(window).height()
+		$(".shop-info").css "margin-left" : $(".shop-info").width()/2*-1, "margin-top" : height/2*-1
+		console.log height
 		$(".shop-info").toggleClass 'is_open'
 
 
@@ -143,6 +151,18 @@ jQuery ($) ->
 		embedCSS: true,
 		blockCSS: 'margin-bottom: 2em;'
 
-	
+	# $("#shop-info").one "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", ()->
+		# roundCssTransformMatrix("shop-info")
+
+
+	# roundCssTransformMatrix = (element)->
+	# 	el = document.getElementById(element)
+	# 	mx = window.getComputedStyle(el, null)
+	# 	mx = mx.getPropertyValue("-webkit-transform") || mx.getPropertyValue("-moz-transform") || mx.getPropertyValue("-ms-transform") || mx.getPropertyValue("-o-transform") || mx.getPropertyValue("transform") || false;
+	# 	values = mx.replace(/ |\(|\)|matrix/g,"").split(",")
+	# 	for v, i in values
+	# 		if v>4 or v<-4
+	# 			values[i] = Math.ceil(v)
+	# 	$("#"+element).css({transform:"matrix("+values.join()+")"});
 
 	@
