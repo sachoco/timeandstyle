@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="slick" class="loop">
+<!-- <section id="slick" class="loop">
 
 <?php
 
@@ -42,7 +42,7 @@ foreach($categories as $cat):
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>
-</ul><!--/.products-->  
+</ul>
 
 </section>
 
@@ -78,9 +78,9 @@ foreach($categories as $cat):
         <div class="header">AMSTERDAM</div>
         <div class="date">Grand Opening on 23 March 2017</div>
     </div>
-</section>
+</section> -->
 
-<!-- 
+
 <section class="column animsition">
 
 
@@ -133,7 +133,7 @@ foreach($categories as $cat):
 		</div>
 		                            
 	</div>
-</div> -->
+</div>
 
 
 <?php get_footer(); ?>

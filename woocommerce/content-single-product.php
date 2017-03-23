@@ -63,11 +63,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<p>
 					<?php the_field("technical_information"); ?>
 				</p>	
-				<p>
+<!-- 				<p>
 					<a class="square-btn" href="#fabric" target="_blank">fabric</a><br>
 					<a class="square-btn" href="#leather" target="_blank">leather</a><br>
 					<a class="square-btn" href="#wood_material" target="_blank">wood material</a>
-				</p>
+				</p> -->
 				<?php 
 					$file = get_field("price_variations");
 					if($file):
