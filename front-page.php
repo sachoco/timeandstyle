@@ -1,41 +1,29 @@
 <?php get_header(); ?>
 <section id="slick" class="loop">
 
-<!-- <section class="column">
-<ul class="products">
-	<li class="product">
-		<div class="image-wrapper">
-			<img class="bg" src="<?php echo get_template_directory_uri(); ?>/images/Grand-Open.jpg" >
-			<div class="overlay-text">
-				<div class="storename"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" class="logo"></div>
-				<div class="header">AMSTERDAM</div>
-				<div class="date">Grand Opening on 23 March 2017</div>
-				
-			</div>
-		</div>
+<?php
 
-	</li>
-    
-	<li class="footer">
-    	<footer class="footer">
-			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
-        </footer>
-	</li>
-</ul>
-</section> -->
+$args = array(
+    'exclude_tree'  => array("13")
+); 
+$product_categories = get_terms( 'product_cat', $args );
+
+foreach($product_categories as $cat):
+
+?>
 
 <section class="column">
 
 
 <ul class="products">
     <?php
-        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'chairs' );
+        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $cat->slug );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 
                 <li class="product">    
 
-                    <!-- <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>"> -->
+                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
 						<div class="image-wrapper">
                         <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
 
@@ -44,7 +32,7 @@
                         <h3><?php the_title(); ?></h3>
 
 
-                    <!-- </a> -->
+                    </a>
 
 
                 </li>
@@ -59,167 +47,10 @@
 </ul><!--/.products-->	
 
 </section>
-<section class="column">
 
-<ul class="products">
-    <?php
-        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'tables' );
-        $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-
-                <li class="product">    
-
-                    <!-- <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>"> -->
-						<div class="image-wrapper">
-                        <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
-
-                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
-						</div>
-                        <h3><?php the_title(); ?></h3>
+<?php endforeach; ?>
 
 
-                    <!-- </a> -->
-
-
-                </li>
-
-    <?php endwhile; ?>
-    <?php wp_reset_query(); ?>
-	<li class="footer">
-    	<footer class="footer">
-			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
-        </footer>
-	</li>
-</ul><!--/.products-->	
-</section>
-<section class="column">
-<ul class="products">
-    <?php
-        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'cabinet' );
-        $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-
-                <li class="product">    
-
-                    <!-- <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>"> -->
-						<div class="image-wrapper">
-                        <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
-
-                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
-						</div>
-                        <h3><?php the_title(); ?></h3>
-
-
-                    <!-- </a> -->
-
-
-                </li>
-
-    <?php endwhile; ?>
-    <?php wp_reset_query(); ?>
-	<li class="footer">
-    	<footer class="footer">
-			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
-        </footer>
-	</li>
-</ul><!--/.products-->	
-</section>
-<section class="column">
-<ul class="products">
-    <?php
-        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'sofa' );
-        $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-
-                <li class="product">    
-
-                    <!-- <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>"> -->
-						<div class="image-wrapper">
-                        <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
-
-                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
-						</div>
-                        <h3><?php the_title(); ?></h3>
-
-
-                    <!-- </a> -->
-
-
-                </li>
-
-    <?php endwhile; ?>
-    <?php wp_reset_query(); ?>
-	<li class="footer">
-    	<footer class="footer">
-			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
-        </footer>
-	</li>
-</ul><!--/.products-->	
-</section>
-<section class="column">
-<ul class="products">
-    <?php
-        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'lowtable' );
-        $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-
-                <li class="product">    
-
-                    <!-- <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>"> -->
-						<div class="image-wrapper">
-                        <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
-
-                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
-						</div>
-                        <h3><?php the_title(); ?></h3>
-
-
-                    <!-- </a> -->
-
-
-                </li>
-
-    <?php endwhile; ?>
-    <?php wp_reset_query(); ?>
-	<li class="footer">
-    	<footer class="footer">
-			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
-        </footer>
-	</li>
-</ul><!--/.products-->	
-</section>
-<section class="column">
-<ul class="products">
-    <?php
-        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'light' );
-        $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-
-                <li class="product">    
-
-                    <!-- <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>"> -->
-						<div class="image-wrapper">
-                        <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
-
-                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
-						</div>
-                        <h3><?php the_title(); ?></h3>
-
-
-                    <!-- </a> -->
-
-
-                </li>
-
-    <?php endwhile; ?>
-    <?php wp_reset_query(); ?>
-	<li class="footer">
-    	<footer class="footer">
-			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
-        </footer>
-	</li>
-</ul><!--/.products-->	
-</section>
 
 
 </section>
@@ -244,55 +75,20 @@
 <section id="title-flash"><div><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" class="logo"></div>
 </section>
 </div>
-<section id="title-text-flash">
-	<div>
-		<div class="header">AMSTERDAM</div>
-		<div class="date">Grand Opening on 23 March 2017</div>
-	</div>
-</section>
+
 <script>
 
 
 
 jQuery(document).ready(function($) {
-	function start(){
-		 $("#title-text-flash")
-	        .velocity("fadeOut", {  
-             mobileHA: false,
-             duration: 1500, 
-             complete: function(){
-		 		$("#slick, header").velocity("fadeIn", {
-		 			delay: 500,
-					duration: 1500,
-					mobileHA: false
-				});                
-             }        
-         });
-	}
+
 	function showSite(){
 		window.location.hash = "home";
-		$("#title-text-flash").on("click", function(){
-		    start();
-		});
-		$("#title-text-flash")
-            .velocity("fadeIn", { 
-                duration: 1500,
-                mobileHA: false,
-                complete: function(){
-                    // window.location.href = "/home";
-                }
-            })
-    //      .velocity("fadeOut", { 
-    //          delay: 500, 
-    //          mobileHA: false,
-    //          duration: 1500, 
-    //          complete: function(){
-		 	// 	$("#slick, header").velocity("fadeIn", {
-				// 	duration: 1500,
-				// 	mobileHA: false
-				// });                
-    //          }        
-    //      });
+ 		$("#slick, header").velocity("fadeIn", {
+ 			delay: 500,
+			duration: 1500,
+			mobileHA: false
+		});     
 	}
 
 	var hash = window.location.hash;

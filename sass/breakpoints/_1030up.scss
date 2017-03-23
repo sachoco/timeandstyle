@@ -26,3 +26,18 @@ header {
 		}
 	}
 }
+.shop-info {
+	.inner {
+		.left {
+			float: left;
+			width: calc(100% - 450px);
+			
+		}
+		.right {
+			width: 400px;
+			float: right;
+		}
+	}
+
+
+}	

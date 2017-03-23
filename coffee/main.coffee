@@ -6,6 +6,12 @@ jQuery ($) ->
 		$(".column").mCustomScrollbar { axis:"y", theme:"minimal", callbacks:{ onScroll: ()->
 			myCustomFn(this)
 			}}
+		# roundCssTransformMatrix("shop-info")
+		if $(".shop-info").length
+			height = Math.min $(".shop-info .inner").outerHeight(), $(window).height()
+			$(".shop-info").css "margin-left" : $(".shop-info").width()/2*-1, "margin-top" : height/2*-1
+
+		# Math.ceil($("#shop-info").width()/2*-1)
 	$(window).resize resize
 	resize()
 
@@ -38,6 +44,7 @@ jQuery ($) ->
 
 		$('#slick.loop').slick(
 			infinite: true, 
+			initialSlide: Math.floor(Math.random() * $('#slick.loop .column').length),
 			# prevArrow: '<button type="button" class="slick-prev"><img src="'+img_path+'/arrow-left.svg" ></button>', 
 			# nextArrow: '<button type="button" class="slick-next"><img src="'+img_path+'/arrow-right.svg" ></button>'
 			prevArrow: '<button type="button" class="slick-prev"><div class="collapsed-button"><div class="circle"><div class="icon left"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -64,11 +71,12 @@ jQuery ($) ->
 		)
 		afterSlideChangeEvent = ()->
 			currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
-			if typeof currentSlide.mcs != 'undefined'
-				if currentSlide.mcs.top < 0 
-					$("#back-to-top-slick").addClass "active"
-				else
-					$("#back-to-top-slick").removeClass "active"
+			if typeof currentSlide != 'undefined'
+				if typeof currentSlide.mcs != 'undefined'
+					if currentSlide.mcs.top < 0 
+						$("#back-to-top-slick").addClass "active"
+					else
+						$("#back-to-top-slick").removeClass "active"
 
 			# if currentSlide.scrollTop > 0 
 			# 	$("#back-to-top-slick").addClass "active"
@@ -103,8 +111,10 @@ jQuery ($) ->
 			currentSlideIndex = $("#slick").slick('slickCurrentSlide')
 			currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex]
 			content = $(currentSlide).find(".shop-info-content")
-			# console.log content.html()
 			$(".shop-info").find(".content").html(content.html())
+		height = Math.min $(".shop-info .inner").outerHeight(), $(window).height()
+		$(".shop-info").css "margin-left" : $(".shop-info").width()/2*-1, "margin-top" : height/2*-1
+		console.log height
 		$(".shop-info").toggleClass 'is_open'
 
 
@@ -135,7 +145,24 @@ jQuery ($) ->
 		$("#slick").slick('slickGoTo', slideID)
 		$(this).addClass "active"
 
+	$(".product-description").readmore 
+		moreLink: '<a class="square-btn" href="#">more caption</a>',
+		lessLink: '<a class="square-btn" href="#">less caption</a>',
+		embedCSS: true,
+		blockCSS: 'margin-bottom: 2em;'
 
-	
+	# $("#shop-info").one "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", ()->
+		# roundCssTransformMatrix("shop-info")
+
+
+	# roundCssTransformMatrix = (element)->
+	# 	el = document.getElementById(element)
+	# 	mx = window.getComputedStyle(el, null)
+	# 	mx = mx.getPropertyValue("-webkit-transform") || mx.getPropertyValue("-moz-transform") || mx.getPropertyValue("-ms-transform") || mx.getPropertyValue("-o-transform") || mx.getPropertyValue("transform") || false;
+	# 	values = mx.replace(/ |\(|\)|matrix/g,"").split(",")
+	# 	for v, i in values
+	# 		if v>4 or v<-4
+	# 			values[i] = Math.ceil(v)
+	# 	$("#"+element).css({transform:"matrix("+values.join()+")"});
 
 	@

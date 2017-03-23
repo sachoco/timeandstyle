@@ -1,3 +1,37 @@
+body {
+	&.home {
+		// color: black;
+		// cursor: pointer;
+		header {
+			display: none;
+		}
+		// .animsition {
+		// 	position: relative;
+		// 	height: 100%;
+		// }
+		#slick {
+			opacity: 0;
+		}
+	}
+	&.single-product, &.single-monozukuri {
+		section.column {
+			.page-header {
+				max-width: none;
+				width: 40%;
+				h1 {
+					margin-top: 3em;
+				}
+			}
+			.page-body {
+				padding-left: 30px;
+				width: 60%;
+			}	
+		}
+		
+	}
+
+}
+
 .site-branding {
 	width: 80%;
 	left: 50%;
@@ -33,7 +67,20 @@
 }
 .shop-info {
 	width: calc(80% - 30px);
-}
+	.inner {
+		// .left {
+		// 	float: left;
+		// 	width: calc(100% - 450px);
+			
+		// }
+		// .right {
+		// 	width: 400px;
+		// 	float: right;
+		// }
+	}
+
+
+}	
 section {
 	&#intro {
 		// font-size: 8vh;

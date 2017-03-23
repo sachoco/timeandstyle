@@ -1,0 +1,34 @@
+
+body {
+	&.single-product, &.single-monozukuri {
+		section.column {
+			.page-header {
+
+				p {
+					margin-bottom: 2em;
+				}
+			}
+			.page-body {
+				padding-left: 60px;
+				img {
+					// margin-bottom: 5em;
+				}
+			}	
+		}
+		ul.product_list_widget {
+			li {
+				width: 25%;
+				.inner {
+					.overlay {
+						h4 {
+							font-size: 2em;
+						}
+
+					}
+				}
+			}
+		}
+		
+	}
+
+}

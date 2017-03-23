@@ -6,8 +6,9 @@
   jQuery(function($) {
     var afterSlideChangeEvent, beforeSlideChangeEvent, myCustomFn, resize;
     resize = function() {
+      var height;
       $('.column').height($(window).height());
-      return $(".column").mCustomScrollbar({
+      $(".column").mCustomScrollbar({
         axis: "y",
         theme: "minimal",
         callbacks: {
@@ -16,6 +17,13 @@
           }
         }
       });
+      if ($(".shop-info").length) {
+        height = Math.min($(".shop-info .inner").outerHeight(), $(window).height());
+        return $(".shop-info").css({
+          "margin-left": $(".shop-info").width() / 2 * -1,
+          "margin-top": height / 2 * -1
+        });
+      }
     };
     $(window).resize(resize);
     resize();
@@ -40,6 +48,7 @@
       });
       $('#slick.loop').slick({
         infinite: true,
+        initialSlide: Math.floor(Math.random() * $('#slick.loop .column').length),
         prevArrow: '<button type="button" class="slick-prev"><div class="collapsed-button"><div class="circle"><div class="icon left"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve"> <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="15.565,0.324 0.699,15.19 15.565,30.057 "/> </svg></div><div class="bg circular-anim"></div></div></div></button>',
         nextArrow: '<button type="button" class="slick-next "><div class="collapsed-button"><div class="circle"><div class="icon right"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve"> <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="0.543,30.034 15.409,15.168 0.543,0.301 "/> </svg></div><div class="bg circular-anim"></div></div></div></button>'
       });
@@ -51,11 +60,13 @@
       afterSlideChangeEvent = function() {
         var currentSlide;
         currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')];
-        if (typeof currentSlide.mcs !== 'undefined') {
-          if (currentSlide.mcs.top < 0) {
-            return $("#back-to-top-slick").addClass("active");
-          } else {
-            return $("#back-to-top-slick").removeClass("active");
+        if (typeof currentSlide !== 'undefined') {
+          if (typeof currentSlide.mcs !== 'undefined') {
+            if (currentSlide.mcs.top < 0) {
+              return $("#back-to-top-slick").addClass("active");
+            } else {
+              return $("#back-to-top-slick").removeClass("active");
+            }
           }
         }
       };
@@ -78,13 +89,19 @@
       return $(".burger-nav").toggleClass("is_open");
     });
     $(".shop-info-toggle").on("click", function() {
-      var content, currentSlide, currentSlideIndex;
+      var content, currentSlide, currentSlideIndex, height;
       if (!$(".shop-info").hasClass('is_open')) {
         currentSlideIndex = $("#slick").slick('slickCurrentSlide');
         currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex];
         content = $(currentSlide).find(".shop-info-content");
         $(".shop-info").find(".content").html(content.html());
       }
+      height = Math.min($(".shop-info .inner").outerHeight(), $(window).height());
+      $(".shop-info").css({
+        "margin-left": $(".shop-info").width() / 2 * -1,
+        "margin-top": height / 2 * -1
+      });
+      console.log(height);
       return $(".shop-info").toggleClass('is_open');
     });
     $(".shop-info .close").on("click", function() {
@@ -125,6 +142,12 @@
       $(".site-branding .our-shop").removeClass("active");
       $("#slick").slick('slickGoTo', slideID);
       return $(this).addClass("active");
+    });
+    $(".product-description").readmore({
+      moreLink: '<a class="square-btn" href="#">more caption</a>',
+      lessLink: '<a class="square-btn" href="#">less caption</a>',
+      embedCSS: true,
+      blockCSS: 'margin-bottom: 2em;'
     });
     return this;
   });
