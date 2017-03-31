@@ -3,20 +3,24 @@
 <section class="column animsition">
     <div class="page-content">
     <div class="inner">
-        <div class="page-header"><h2>Philosophy</h2></div>
+<?php
+$the_slug = 'philosophy';
+$args = array(
+  'name'        => $the_slug,
+  'post_type'   => 'page',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$my_posts = get_posts($args);
+if( $my_posts ) :
+    $title = $my_posts[0]->post_title;
+    $content = $my_posts[0]->post_content;
+endif;
+?>
+
+        <div class="page-header"><h2><?php echo $title; ?></h2></div>
         <div class="page-body">
-         <p>
-        We offer different kinds of tools that are necessary in our daily lives such as furniture, lighting equipment, tableware, and towels, covering a wide range of products from small tea cups to tables. They are all original products created from our consistent concept.
-        </p>
-<p>
-With the fusion of modern lifestyle with the traditional aesthetics of Japan as a theme, we are pursuing a comprehensive quality that is meant to be used over generations, such as universality that is not affected by the changing times, receptiveness to blend into our daily lives, and functionality as a living tool.
-</p>
-<p>
-Our products have a pleasant sense of tension within a simple form, and are achieved through the faithful handiwork of Japanese artisans. The appearance of each product is not always in Japanese style. However, these carefully and thoughtfully designed and sincerely created products definitely have a certain presence. Although they may appear neutral and neither Japanese nor Western, the small details and dignified air that surrounds the products give off a genuine taste of Japan.
-</p>
-<p>
-In Japan, there are many artisans with advanced skills that were passed down over a long history. We keep challenging with like-minded artisans in various regions of Japan to create a new tradition of monozukuri.
-</p>
+        <?php echo wpautop($content); ?>
         </div>
     </div>
     </div>
