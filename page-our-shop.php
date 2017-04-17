@@ -1,24 +1,5 @@
 <?php get_header(); ?>
 <section id="slick" class="animsition noloop">
-
-<section class="column shop-amsterdam">
-<ul>
-	<li>
-		<div class="image-wrapper">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Amsterdam/T&S-AMS0.jpg" >
-		</div>
-	</li>
-    <li class="mobile-hide">
-        <div class="image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Amsterdam/T&S-AMS1.jpg" >
-        </div>
-    </li>   
-    <li class="mobile-hide">
-        <div class="image-wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Amsterdam/T&S-AMS2.jpg" >
-        </div>
-    </li>   
-    <li class="mobile-only align-left shop-info-content">
 <?php
 $the_slug = 'shop-amsterdam';
 $args = array(
@@ -33,6 +14,39 @@ if( $my_posts ) :
     $content = $my_posts[0]->post_content;
 endif;
 ?>
+<section class="column shop-amsterdam">
+<ul>
+<?php
+$images = get_field('shop_images',$my_posts[0]->ID);
+
+if( $images ): 
+$i=0;
+?>
+        <?php foreach( $images as $image ): ?>
+    <li <?php if($i>0) echo 'class="mobile-hide"'; ?>>
+        <div class="image-wrapper">
+             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+        </div>
+    </li>
+        <?php $i++; endforeach; ?>
+<?php endif; ?>
+<!-- 	<li>
+		<div class="image-wrapper">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Amsterdam/T&S-AMS0.jpg" >
+		</div>
+	</li>
+    <li class="mobile-hide">
+        <div class="image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Amsterdam/T&S-AMS1.jpg" >
+        </div>
+    </li>   
+    <li class="mobile-hide">
+        <div class="image-wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Amsterdam/T&S-AMS2.jpg" >
+        </div>
+    </li>    -->
+    <li class="mobile-only align-left shop-info-content">
+
         <h3><?php echo $title; ?></h3>
         <?php echo $content; ?>
        <!--  <div class="left">
@@ -65,9 +79,37 @@ endif;
 </section>
 
 
+<?php
+$the_slug = 'shop-tokyo';
+$args = array(
+  'name'        => $the_slug,
+  'post_type'   => 'page',
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+$my_posts = get_posts($args);
+if( $my_posts ) :
+    $title = $my_posts[0]->post_title;
+    $content = $my_posts[0]->post_content;
+endif;
+?>
 <section class="column shop-tokyo">
 <ul>
-    <li>
+<?php
+$images = get_field('shop_images',$my_posts[0]->ID);
+
+if( $images ): 
+$i=0;
+?>
+        <?php foreach( $images as $image ): ?>
+    <li <?php if($i>0) echo 'class="mobile-hide"'; ?>>
+        <div class="image-wrapper">
+             <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+        </div>
+    </li>
+        <?php $i++; endforeach; ?>
+<?php endif; ?>
+<!--     <li>
         <div class="image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Tokyo/MIDTOWN1.jpg" >
         </div>
@@ -91,23 +133,8 @@ endif;
         <div class="image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/images/our-shop/Tokyo/MIDTOWN5.jpg" >
         </div>
-    </li> 
+    </li>  -->
     <li class="mobile-only align-left shop-info-content">
-
-<?php
-$the_slug = 'shop-tokyo';
-$args = array(
-  'name'        => $the_slug,
-  'post_type'   => 'page',
-  'post_status' => 'publish',
-  'numberposts' => 1
-);
-$my_posts = get_posts($args);
-if( $my_posts ) :
-    $title = $my_posts[0]->post_title;
-    $content = $my_posts[0]->post_content;
-endif;
-?>
         <h3><?php echo $title; ?></h3>
         <?php echo $content; ?>        <!-- <div class="left">
             <p>
