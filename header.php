@@ -57,7 +57,7 @@ DEVELOPED BY
 <?php endif; ?> 
                 <ul>
 
-<?php if( is_page(array( 'our-shop') )): ?>
+<?php if( is_page(array( 'our-shop' )) || is_front_page()): ?>
 
                     <li class="our-shop shop-amsterdam active" data-slideid="0">Amsterdam</li>
                     <li class="our-shop shop-tokyo" data-slideid="1">Tokyo</li>
