@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="slick" class="animsition noloop">
+<section id="slick" class=" noloop">
 <?php
 $the_slug = 'shop-amsterdam';
 $args = array(

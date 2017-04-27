@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
 
 	function showSite(){
 		window.location.hash = "home";
- 		$("#slick, header").velocity("fadeIn", {
+ 		$("#slick, header, .shop-info-toggle").velocity("fadeIn", {
  			delay: 500,
 			duration: 1500,
 			mobileHA: false
