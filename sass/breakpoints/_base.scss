@@ -96,6 +96,7 @@ p {
 			&.clockBtn {
 				img {
 					width: 21px;
+					height: 21px;
 				    margin-top: 2px;
 				    display: inline-block;
 				}
@@ -289,7 +290,8 @@ body {
 	text-align: left;
 	max-height: 0px;
 	transition: max-height 1s;
-	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	&.is_open {
 		max-height: 90vh;
 	}
