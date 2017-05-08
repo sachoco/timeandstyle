@@ -164,27 +164,71 @@
 		)
 	);
 
-	// register_taxonomy( 'mention_category',
-	// 	array('mention'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
-	// 	array('hierarchical' => true,     /* if this is true, it acts like categories */
-	// 		'labels' => array(
-	// 			'name' => __( 'Mention Categories', 'tas' ), /* name of the custom taxonomy */
-	// 			'singular_name' => __( 'Mention Category', 'tas' ), /* single taxonomy name */
-	// 			'search_items' =>  __( 'Search Mention Categories', 'tas' ), /* search title for taxomony */
-	// 			'all_items' => __( 'All Mention Categories', 'tas' ), /* all title for taxonomies */
-	// 			'parent_item' => __( 'Parent Mention Category', 'tas' ), /* parent title for taxonomy */
-	// 			'parent_item_colon' => __( 'Parent Mention Category:', 'tas' ), /* parent taxonomy title */
-	// 			'edit_item' => __( 'Edit Mention Category', 'tas' ), /* edit custom taxonomy title */
-	// 			'update_item' => __( 'Update Mention Category', 'tas' ), /* update title for taxonomy */
-	// 			'add_new_item' => __( 'Add New Mention Category', 'tas' ), /* add new title for taxonomy */
-	// 			'new_item_name' => __( 'New Mention Category Name', 'tas' ) /* name title for taxonomy */
-	// 		),
-	// 		'show_admin_column' => true,
-	// 		'show_ui' => true,
-	// 		'query_var' => true,
-	// 		'rewrite' => array( 'slug' => 'mention-category' ),
-	// 	)
-	// );
+	// let's create the function for the custom type
+	function custom_post_project() {
+		// creating (registering) the custom type
+		register_post_type( 'project', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+			// let's now add all the options for this post type
+			array( 'labels' => array(
+				'name' => __( 'Project', 'tas' ), /* This is the Title of the Group */
+				'singular_name' => __( 'Project', 'tas' ), /* This is the individual type */
+				'all_items' => __( 'All Project', 'tas' ), /* the all items menu item */
+				'add_new' => __( 'Add New', 'tas' ), /* The add new menu item */
+				'add_new_item' => __( 'Add New Project', 'tas' ), /* Add New Display Title */
+				'edit' => __( 'Edit', 'tas' ), /* Edit Dialog */
+				'edit_item' => __( 'Edit Project', 'tas' ), /* Edit Display Title */
+				'new_item' => __( 'New Project', 'tas' ), /* New Display Title */
+				'view_item' => __( 'View Project', 'tas' ), /* View Display Title */
+				'search_items' => __( 'Search Project', 'tas' ), /* Search Custom Type Title */
+				'not_found' =>  __( 'Nothing found in the Database.', 'tas' ), /* This displays if there are no entries yet */
+				'not_found_in_trash' => __( 'Nothing found in Trash', 'tas' ), /* This displays if there is nothing in the trash */
+				'parent_item_colon' => ''
+				), /* end of arrays */
+				'description' => __( 'Project', 'tas' ), /* Custom Type Description */
+				'public' => true,
+				'publicly_queryable' => true,
+				'exclude_from_search' => false,
+				'show_ui' => true,
+				'query_var' => true,
+				'menu_position' => 7, /* this is what order you want it to appear in on the left hand side menu */
+				'menu_icon' => 'dashicons-admin-generic', /* the icon for the custom post type menu */
+				// 'rewrite'	=> array( 'slug' => 'project', 'with_front' => false ), /* you can specify its url slug */
+				'has_archive' => 'project', /* you can rename the slug here */
+				'capability_type' => 'post',
+				'hierarchical' => false,
+				/* the next one is important, it tells what's enabled in the post editor */
+				'supports' => array( 'title', 'editor', 'author', 'excerpt', 'custom-fields', 'thumbnail', 'revisions', 'sticky')
+			) /* end of options */
+		); /* end of register post type */
+
+	}
+
+	// // adding the function to the Wordpress init
+	add_action( 'init', 'custom_post_project');
+
+
+
+	register_taxonomy( 'project_category',
+		array('project'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+		array('hierarchical' => true,     /* if this is true, it acts like categories */
+			'labels' => array(
+				'name' => __( 'Project Categories', 'tas' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Project Category', 'tas' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Project Categories', 'tas' ), /* search title for taxomony */
+				'all_items' => __( 'All Project Categories', 'tas' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Project Category', 'tas' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Project Category:', 'tas' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Project Category', 'tas' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Project Category', 'tas' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Project Category', 'tas' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Project Category Name', 'tas' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true,
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'project-category' ),
+		)
+	);
 
 
 

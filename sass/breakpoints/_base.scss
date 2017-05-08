@@ -181,7 +181,7 @@ body {
 		}
 		// .animsition {
 		// 	position: relative;
-		// 	height: 100%;
+		// 	height: 100%;t
 		// }
 		#slick {
 			opacity: 0;
@@ -190,7 +190,7 @@ body {
 			opacity: 0;
 		}
 	}
-	&.single-product, &.single-monozukuri {
+	&.single-product, &.single-monozukuri, &.single-project {
 		section.column {
 			.page-header {
 				max-width: none;

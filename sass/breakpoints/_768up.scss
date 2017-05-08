@@ -13,7 +13,7 @@ body {
 			opacity: 0;
 		}
 	}
-	&.single-product, &.single-monozukuri {
+	&.single-product, &.single-monozukuri, &.single-project {
 		section.column {
 			.page-header {
 				max-width: none;
