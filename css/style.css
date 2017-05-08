@@ -344,6 +344,7 @@ p {
 }
 .site-branding ul li.clockBtn img {
   width: 21px;
+  height: 21px;
   margin-top: 2px;
   display: inline-block;
 }
@@ -488,7 +489,8 @@ body.single-product ul.product_list_widget li .inner:hover .overlay, body.single
   text-align: left;
   max-height: 0px;
   transition: max-height 1s;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .shop-info.is_open {
   max-height: 90vh;
