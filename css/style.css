@@ -674,6 +674,7 @@ section.column ul img {
 section.column footer {
   padding: 100px 1em 1em;
   background-color: #EFEFEF;
+  font-size: 0.7em;
 }
 section.column .page-content {
   width: 100%;
