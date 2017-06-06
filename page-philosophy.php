@@ -19,7 +19,7 @@ endif;
 ?>
 
         <div class="page-header"><h2><?php echo $title; ?></h2></div>
-        <div class="page-body">
+        <div class="page-body w700">
         <?php echo wpautop($content); ?>
         </div>
     </div>
