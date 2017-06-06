@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     1.6.4
+ * @version     3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,28 +35,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 	return;
 	 }
 ?>
-<section itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class("column animsition"); ?>>
+<section class="column animsition">
+<div id="product-<?php the_ID(); ?>" <?php post_class(""); ?>>
 
-<!-- <section class="column animsition"> -->
     <div class="page-content">
     <div class="inner">
         <div class="page-header">
 			<div class="summary entry-summary">
 
-				<?php
-					/**
-					 * woocommerce_single_product_summary hook.
-					 *
-					 * @hooked woocommerce_template_single_title - 5
-					 * @hooked woocommerce_template_single_rating - 10
-					 * @hooked woocommerce_template_single_price - 10
-					 * @hooked woocommerce_template_single_excerpt - 20
-					 * @hooked woocommerce_template_single_add_to_cart - 30
-					 * @hooked woocommerce_template_single_meta - 40
-					 * @hooked woocommerce_template_single_sharing - 50
-					 */
-					do_action( 'woocommerce_single_product_summary' );
-				?>
+		<?php
+			/**
+			 * woocommerce_single_product_summary hook.
+			 *
+			 * @hooked woocommerce_template_single_title - 5
+			 * @hooked woocommerce_template_single_rating - 10
+			 * @hooked woocommerce_template_single_price - 10
+			 * @hooked woocommerce_template_single_excerpt - 20
+			 * @hooked woocommerce_template_single_add_to_cart - 30
+			 * @hooked woocommerce_template_single_meta - 40
+			 * @hooked woocommerce_template_single_sharing - 50
+			 * @hooked WC_Structured_Data::generate_product_data() - 60
+			 */
+			do_action( 'woocommerce_single_product_summary' );
+		?>
+
+
 				<article class="product-description">
 						<?php the_content(); ?>
 				</article>
@@ -76,37 +79,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<a class="square-btn" href="<?php echo $file[url]; ?>" target="_blank">price / variations</a>
 				</p>
 				<?php endif; ?>
-				
-			</div><!-- .summary -->
+		</div><!-- .summary -->
 
-			<?php
-				/**
-				 * woocommerce_after_single_product_summary hook.
-				 *
-				 * @hooked woocommerce_output_product_data_tabs - 10
-				 * @hooked woocommerce_upsell_display - 15
-				 * @hooked woocommerce_output_related_products - 20
-				 */
-				// do_action( 'woocommerce_after_single_product_summary' );
-			?>
+	<?php
+		/**
+		 * woocommerce_after_single_product_summary hook.
+		 *
+		 * @hooked woocommerce_output_product_data_tabs - 10
+		 * @hooked woocommerce_upsell_display - 15
+		 * @hooked woocommerce_output_related_products - 20
+		 */
+		do_action( 'woocommerce_after_single_product_summary' );
+	?>
 
-			<meta itemprop="url" content="<?php the_permalink(); ?>" />
-        </div>
-        <div class="page-body">
-		 	<div class="product_image">
-			<?php
-				/**
-				 * woocommerce_before_single_product_summary hook.
-				 *
-				 * @hooked woocommerce_show_product_sale_flash - 10
-				 * @hooked woocommerce_show_product_images - 20
-				 */
-				do_action( 'woocommerce_before_single_product_summary' );
-			?>
-			</div>
-        </div>
 
-<!-- </div> -->
+		<meta itemprop="url" content="<?php the_permalink(); ?>" />
+    </div>
+    <div class="page-body">
+	 	<div class="product_image">
+	<?php
+		/**
+		 * woocommerce_before_single_product_summary hook.
+		 *
+		 * @hooked woocommerce_show_product_sale_flash - 10
+		 * @hooked woocommerce_show_product_images - 20
+		 */
+		do_action( 'woocommerce_before_single_product_summary' );
+	?>
+
+		</div>
+    </div>
 
 	<?php
 	// get categories
@@ -150,7 +152,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	    </li>    
 	</ul>
 
+</div>
 </section>
+
 <div class="collapsed-button-container">
     <div id="back-to-top-page" class="collapsed-button back-to-top fixed" role="button">
         <div class="circle">
@@ -167,7 +171,5 @@ if ( ! defined( 'ABSPATH' ) ) {
                                     
     </div>
 </div>
-
-
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

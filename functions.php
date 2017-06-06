@@ -4,6 +4,13 @@
 	}
 	add_action( 'init', 'register_my_menu' );
 
+// add_action( 'after_setup_theme', 'tas_setup' );
+ 
+function tas_setup() {
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
 	// if ( function_exists( 'add_image_size' ) ) { 
 	// 	add_image_size( 'thumbnail-crop', 152, 152, true );
 	// }
@@ -57,6 +64,17 @@
 		wp_enqueue_style( 'main-css' );
 		// wp_register_style( 'magnific-popup', get_stylesheet_directory_uri() . '/bower_components/magnific-popup/dist/magnific-popup.css', array(), '', 'all' );
 		// wp_enqueue_style( 'magnific-popup' );
+
+		// if ( !is_product()) {
+			wp_register_script( 'photoswipe', get_stylesheet_directory_uri() . '/js/photoswipe.min.js', array('jquery'), '', true );
+			wp_register_script( 'photoswipe-ui', get_stylesheet_directory_uri() . '/js/photoswipe-ui-default.min.js', array('jquery'), '', true );
+			wp_register_style( 'photoswipe', get_stylesheet_directory_uri() . '/css/photoswipe.css', array(), '', 'all' );
+			wp_register_style( 'photoswipe-style', get_stylesheet_directory_uri() . '/css/default-skin/default-skin.css', array(), '', 'all' );
+			wp_enqueue_script( 'photoswipe' );
+			wp_enqueue_script( 'photoswipe-ui' );
+			wp_enqueue_style( 'photoswipe' );
+			wp_enqueue_style( 'photoswipe-style' );
+		// }	
 
 /*
 		wp_register_style( 'calendar', get_stylesheet_directory_uri() . '/bower_components/fullcalendar/dist/fullcalendar.css', array(), '', 'all' );
@@ -280,6 +298,34 @@
 // add_filter('woocommerce_related_products_args','wc_remove_related_products', 10); 
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_single_add_to_cart', 15 );
+
+/**
+ * Ensure cart contents update when products are added to the cart via AJAX
+ */
+function my_header_add_to_cart_fragment( $fragments ) {
+ 
+    ob_start();
+    $count = WC()->cart->cart_contents_count;
+    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
+    if ( $count > 0 ) {
+        ?>
+        <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+        <?php            
+    }
+        ?></a><?php
+ 
+    $fragments['a.cart-contents'] = ob_get_clean();
+     
+    return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
 

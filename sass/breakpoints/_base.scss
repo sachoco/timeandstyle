@@ -212,11 +212,16 @@ body {
 				padding-left: 0px;
 				width: 100%;
 				max-width: none;
-				img {
-					margin-bottom: 7px;
-					width: 100%;
+				.image-list{
+					img {
+						margin-bottom: 7px;
+						width: 100%;
+					}
 				}
-			}	
+				
+
+			}
+
 		}
 		ul.product_list_widget {
 			width: 100%;
@@ -458,57 +463,64 @@ section {
 
 				}
 			}
-			.image-wrapper {
-				position: relative;
-				// height: 90vh;
+			
+			// &.products {
 				img {
-					&.bg {
-						// opacity: 0.5;
-					}
-				}
-				.overlay-text {
-					color: white;
-					position: absolute;
-					// top: 50%;
-					bottom: 5%;
+					// width: auto;
 					width: 100%;
-					text-align: center;
-					font-size: 1.2em;
-					letter-spacing: 2px;
-					.storename {
-						img {
-							width: 80%;
-							max-width: 500px;
-						}	
-						// margin-bottom: 2em;
-						// @include animation(fadeInDown);
-					}
-					.header {
-						font-size: 1em;
-						margin-bottom: 0.1em;
-						// @include animation(fadeInDown);
-						// @include animation-delay(1s);
-					}
-					.date {
-						text-transform: uppercase;
-						font-size: 0.8em;
-						// @include animation(fadeInDown);
-						// @include animation-delay(1s);
-					}
-					h2 {
-						font-size: 2em;
-					}
-				}
-			}
+					height: auto;
+					// max-width: 100%;
+					// max-height: 100%;
+					display: inline-block;
+				}	
+			// }
+			
+
+		}
+		.image-wrapper {
+			position: relative;
+			// height: 90vh;
 			img {
-				// width: auto;
 				width: 100%;
 				height: auto;
-				// max-width: 100%;
-				// max-height: 100%;
 				display: inline-block;
+				&.bg {
+					// opacity: 0.5;
+				}
 			}
-
+			.overlay-text {
+				color: white;
+				position: absolute;
+				// top: 50%;
+				bottom: 5%;
+				width: 100%;
+				text-align: center;
+				font-size: 1.2em;
+				letter-spacing: 2px;
+				.storename {
+					img {
+						width: 80%;
+						max-width: 500px;
+					}	
+					// margin-bottom: 2em;
+					// @include animation(fadeInDown);
+				}
+				.header {
+					font-size: 1em;
+					margin-bottom: 0.1em;
+					// @include animation(fadeInDown);
+					// @include animation-delay(1s);
+				}
+				.date {
+					text-transform: uppercase;
+					font-size: 0.8em;
+					// @include animation(fadeInDown);
+					// @include animation-delay(1s);
+				}
+				h2 {
+					font-size: 2em;
+				}
+			}
 		}
 		footer {
 			padding: 100px 1em 1em;
@@ -543,7 +555,9 @@ section {
 			text-align: left;
 			float: left;
 			width: 100%;
-			max-width: 700px;
+			&.w700 {
+				max-width: 700px;
+			}
 			p {
 				margin-bottom: 2em;
 			}
@@ -595,4 +609,64 @@ div.wpcf7 {
 }
 .align-left {
 	text-align: left;
+}
+
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+	// position: absolute;
+	z-index: 99999999;
+	// width: 100%;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+	border: 1px solid #e6e6e6;
+    appearance: none;
+    border-radius: 3px;
+    padding: .461em;
+    font-size: 1em;	
+}
+
+.woocommerce form .form-row label {
+    font-size: 0.8em;
+}
+.woocommerce form .form-row {
+    padding: 3px !important;
+    margin: 0 0 7px !important;
+}
+
+.cart-contents:before {
+    font-family:WooCommerce;
+    content: "\e01d";
+    margin-top:10px;
+    font-style:normal;
+    font-weight:400;
+    padding-right:5px;
+    vertical-align: bottom;
+}
+.cart-contents:hover {
+    text-decoration: none;
+}
+.cart-contents-count {
+    color: #fff;
+    background-color: #828282;
+    border-radius: 15px;
+    padding: 3px 4px 2px;
+    vertical-align: top;
+    font-size: 10px;
+    position: absolute;
+    top: -4px;
+}
+
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+    float: none;
+    width: auto;
+}
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+    float: none;
+    width: auto;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+    width: 100%;
+    display: inline-block;
 }

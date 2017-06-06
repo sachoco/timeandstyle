@@ -41,7 +41,9 @@ DEVELOPED BY
 
 <script src="https://use.fontawesome.com/17d67b11a1.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto:100,300,400" rel="stylesheet">
-
+<!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+<![endif]-->
         <?php wp_head(); ?>
 
     </head>
@@ -67,6 +69,11 @@ DEVELOPED BY
                     <li class="fb"><a href="https://www.facebook.com/timeandstyle.nl/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
 
                     <li class="instagram"><a href="https://www.instagram.com/timeandstyle_amsterdam/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+
+                    <li>
+
+
+                    </li>
 
                 </ul>
             </div><!-- .site-branding -->

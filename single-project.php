@@ -13,13 +13,19 @@
         </div>
         <div class="page-body">
 		 	<div class="product_image">
-				<div class="thumbnails <?php echo 'columns-1' ?>">
+				<div class="thumbnails image-list pswp-gallery  <?php echo 'columns-1' ?>"  itemscope itemtype="http://schema.org/ImageGallery">
 <?php
 $images = get_field('gallery');
 
 if( $images ): ?>
-        <?php foreach( $images as $image ): ?>
-             <img src="<?php echo $image['sizes']['medium_large']; ?>" alt="<?php echo $image['alt']; ?>" />
+        <?php foreach( $images as $image ): 
+        ?>
+        	    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+			        <a href="<?php echo $image['sizes']['large']; ?>" itemprop="contentUrl" data-size="<?php echo $image['sizes']['large-width']; ?>x<?php echo $image['sizes']['large-height']; ?>">
+			             <img src="<?php echo $image['sizes']['medium_large']; ?>" alt="<?php echo $image['alt']; ?>" />
+			        </a>
+			        <!-- <figcaption itemprop="caption description">Image caption</figcaption> -->
+			    </figure>
         <?php endforeach; ?>
 <?php endif; ?>
 				</div>
