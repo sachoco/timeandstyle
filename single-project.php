@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="monozukuri-<?php the_ID(); ?>" <?php post_class("column animsition"); ?>>
+<section id="project-<?php the_ID(); ?>" <?php post_class("column animsition"); ?>>
 
 <!-- <section class="column animsition"> -->
     <div class="page-content">
@@ -18,7 +18,8 @@
 $images = get_field('gallery');
 
 if( $images ): ?>
-        <?php foreach( $images as $image ): ?>
+        <?php foreach( $images as $image ): 
+        ?>
         	    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 			        <a href="<?php echo $image['sizes']['large']; ?>" itemprop="contentUrl" data-size="<?php echo $image['sizes']['large-width']; ?>x<?php echo $image['sizes']['large-height']; ?>">
 			             <img src="<?php echo $image['sizes']['medium_large']; ?>" alt="<?php echo $image['alt']; ?>" />

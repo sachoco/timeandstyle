@@ -4,11 +4,17 @@
     <div class="page-content">
     <div class="inner">
         <div class="page-header"><h2>News</h2></div>
-        <div class="page-body">
+        <div class="page-body w700">
     <?php
         $args = array( 'post_type' => 'post', 'posts_per_page' => -1 );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post(); global $post; ?>
+            <?php if (has_post_thumbnail( $loop->post->ID )): ?>
+            <div class="image-wrapper">
+            <?php echo get_the_post_thumbnail($loop->post->ID, 'large'); ?>
+            </div>
+            <?php endif; ?>
+
             <p><?php the_title(); ?></p>
             <?php the_content(); ?>
 

@@ -64,7 +64,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 46px;
   height: 46px;
   cursor: pointer;
-  z-index: 99999999;
+  z-index: 999999;
   outline: none;
 }
 .burger-nav:before {
@@ -402,53 +402,53 @@ body.home .shop-info-toggle {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
-body.single-product section.column .page-header, body.single-monozukuri section.column .page-header {
+body.single-product section.column .page-header, body.single-monozukuri section.column .page-header, body.single-project section.column .page-header {
   max-width: none;
   width: 100%;
 }
-body.single-product section.column .page-header .summary, body.single-monozukuri section.column .page-header .summary {
+body.single-product section.column .page-header .summary, body.single-monozukuri section.column .page-header .summary, body.single-project section.column .page-header .summary {
   max-width: 540px;
 }
-body.single-product section.column .page-header h1, body.single-monozukuri section.column .page-header h1 {
+body.single-product section.column .page-header h1, body.single-monozukuri section.column .page-header h1, body.single-project section.column .page-header h1 {
   font-weight: bold;
   font-size: 1.4em;
   margin-bottom: 1em;
 }
-body.single-product section.column .page-header p, body.single-monozukuri section.column .page-header p {
+body.single-product section.column .page-header p, body.single-monozukuri section.column .page-header p, body.single-project section.column .page-header p {
   margin-bottom: 2em;
 }
-body.single-product section.column .page-body, body.single-monozukuri section.column .page-body {
+body.single-product section.column .page-body, body.single-monozukuri section.column .page-body, body.single-project section.column .page-body {
   padding-left: 0px;
   width: 100%;
   max-width: none;
 }
-body.single-product section.column .page-body img, body.single-monozukuri section.column .page-body img {
+body.single-product section.column .page-body .image-list img, body.single-monozukuri section.column .page-body .image-list img, body.single-project section.column .page-body .image-list img {
   margin-bottom: 7px;
   width: 100%;
 }
-body.single-product ul.product_list_widget, body.single-monozukuri ul.product_list_widget {
+body.single-product ul.product_list_widget, body.single-monozukuri ul.product_list_widget, body.single-project ul.product_list_widget {
   width: 100%;
   float: left;
   margin-top: 20em;
 }
-body.single-product ul.product_list_widget li, body.single-monozukuri ul.product_list_widget li {
+body.single-product ul.product_list_widget li, body.single-monozukuri ul.product_list_widget li, body.single-project ul.product_list_widget li {
   display: inline-block;
   position: relative;
   width: 33%;
   padding: 7px;
   float: left;
 }
-body.single-product ul.product_list_widget li img, body.single-monozukuri ul.product_list_widget li img {
+body.single-product ul.product_list_widget li img, body.single-monozukuri ul.product_list_widget li img, body.single-project ul.product_list_widget li img {
   width: 100%;
 }
-body.single-product ul.product_list_widget li .inner, body.single-monozukuri ul.product_list_widget li .inner {
+body.single-product ul.product_list_widget li .inner, body.single-monozukuri ul.product_list_widget li .inner, body.single-project ul.product_list_widget li .inner {
   position: relative;
   float: left;
   margin: 0;
   padding: 0;
   width: 100%;
 }
-body.single-product ul.product_list_widget li .inner .overlay, body.single-monozukuri ul.product_list_widget li .inner .overlay {
+body.single-product ul.product_list_widget li .inner .overlay, body.single-monozukuri ul.product_list_widget li .inner .overlay, body.single-project ul.product_list_widget li .inner .overlay {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   position: absolute;
@@ -459,11 +459,11 @@ body.single-product ul.product_list_widget li .inner .overlay, body.single-monoz
   text-align: left;
   transition: opacity 0.2s;
 }
-body.single-product ul.product_list_widget li .inner .overlay h4, body.single-monozukuri ul.product_list_widget li .inner .overlay h4 {
+body.single-product ul.product_list_widget li .inner .overlay h4, body.single-monozukuri ul.product_list_widget li .inner .overlay h4, body.single-project ul.product_list_widget li .inner .overlay h4 {
   margin: 1em;
   font-size: 1em;
 }
-body.single-product ul.product_list_widget li .inner:hover .overlay, body.single-monozukuri ul.product_list_widget li .inner:hover .overlay {
+body.single-product ul.product_list_widget li .inner:hover .overlay, body.single-monozukuri ul.product_list_widget li .inner:hover .overlay, body.single-project ul.product_list_widget li .inner:hover .overlay {
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
@@ -639,10 +639,20 @@ section.column ul li.contact-form h2 {
   font-weight: bold;
   margin: 3em 0;
 }
-section.column ul .image-wrapper {
+section.column ul img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+section.column .image-wrapper {
   position: relative;
 }
-section.column ul .image-wrapper .overlay-text {
+section.column .image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+section.column .image-wrapper .overlay-text {
   color: white;
   position: absolute;
   bottom: 5%;
@@ -651,29 +661,25 @@ section.column ul .image-wrapper .overlay-text {
   font-size: 1.2em;
   letter-spacing: 2px;
 }
-section.column ul .image-wrapper .overlay-text .storename img {
+section.column .image-wrapper .overlay-text .storename img {
   width: 80%;
   max-width: 500px;
 }
-section.column ul .image-wrapper .overlay-text .header {
+section.column .image-wrapper .overlay-text .header {
   font-size: 1em;
   margin-bottom: 0.1em;
 }
-section.column ul .image-wrapper .overlay-text .date {
+section.column .image-wrapper .overlay-text .date {
   text-transform: uppercase;
   font-size: 0.8em;
 }
-section.column ul .image-wrapper .overlay-text h2 {
+section.column .image-wrapper .overlay-text h2 {
   font-size: 2em;
-}
-section.column ul img {
-  width: 100%;
-  height: auto;
-  display: inline-block;
 }
 section.column footer {
   padding: 100px 1em 1em;
   background-color: #EFEFEF;
+  font-size: 0.7em;
 }
 section.column .page-content {
   width: 100%;
@@ -701,6 +707,8 @@ section.column .page-body {
   text-align: left;
   float: left;
   width: 100%;
+}
+section.column .page-body.w700 {
   max-width: 700px;
 }
 section.column .page-body p {
@@ -759,6 +767,69 @@ div.wpcf7 p {
   text-align: left;
 }
 
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+  z-index: 99999999;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  border: 1px solid #e6e6e6;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 3px;
+  padding: .461em;
+  font-size: 1em;
+}
+
+.woocommerce form .form-row label {
+  font-size: 0.8em;
+}
+
+.woocommerce form .form-row {
+  padding: 3px !important;
+  margin: 0 0 7px !important;
+}
+
+.cart-contents:before {
+  font-family: WooCommerce;
+  content: "\e01d";
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 400;
+  padding-right: 5px;
+  vertical-align: bottom;
+}
+
+.cart-contents:hover {
+  text-decoration: none;
+}
+
+.cart-contents-count {
+  color: #fff;
+  background-color: #828282;
+  border-radius: 15px;
+  padding: 3px 4px 2px;
+  vertical-align: top;
+  font-size: 10px;
+  position: absolute;
+  top: -4px;
+}
+
+.woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+  float: none;
+  width: auto;
+}
+
+.woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+  float: none;
+  width: auto;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+  width: 100%;
+  display: inline-block;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's
@@ -796,14 +867,14 @@ you can add resource intensive styles.
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   }
-  body.single-product section.column .page-header, body.single-monozukuri section.column .page-header {
+  body.single-product section.column .page-header, body.single-monozukuri section.column .page-header, body.single-project section.column .page-header {
     max-width: none;
     width: 40%;
   }
-  body.single-product section.column .page-header h1, body.single-monozukuri section.column .page-header h1 {
+  body.single-product section.column .page-header h1, body.single-monozukuri section.column .page-header h1, body.single-project section.column .page-header h1 {
     margin-top: 3em;
   }
-  body.single-product section.column .page-body, body.single-monozukuri section.column .page-body {
+  body.single-product section.column .page-body, body.single-monozukuri section.column .page-body, body.single-project section.column .page-body {
     padding-left: 30px;
     width: 60%;
   }
@@ -908,17 +979,17 @@ LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
 *********************/
 @media only screen and (min-width: 1240px) {
-  body.single-product section.column .page-header p, body.single-monozukuri section.column .page-header p {
+  body.single-product section.column .page-header p, body.single-monozukuri section.column .page-header p, body.single-project section.column .page-header p {
     margin-bottom: 2em;
   }
-  body.single-product section.column .page-body, body.single-monozukuri section.column .page-body {
+  body.single-product section.column .page-body, body.single-monozukuri section.column .page-body, body.single-project section.column .page-body {
     padding-left: 60px;
   }
-  body.single-product ul.product_list_widget li, body.single-monozukuri ul.product_list_widget li {
+  body.single-product ul.product_list_widget li, body.single-monozukuri ul.product_list_widget li, body.single-project ul.product_list_widget li {
     width: 25%;
   }
-  body.single-product ul.product_list_widget li .inner .overlay h4, body.single-monozukuri ul.product_list_widget li .inner .overlay h4 {
-    font-size: 2em;
+  body.single-product ul.product_list_widget li .inner .overlay h4, body.single-monozukuri ul.product_list_widget li .inner .overlay h4, body.single-project ul.product_list_widget li .inner .overlay h4 {
+    font-size: 1.4em;
   }
 }
 /*********************

@@ -4,6 +4,13 @@
 	}
 	add_action( 'init', 'register_my_menu' );
 
+// add_action( 'after_setup_theme', 'tas_setup' );
+ 
+function tas_setup() {
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
 	// if ( function_exists( 'add_image_size' ) ) { 
 	// 	add_image_size( 'thumbnail-crop', 152, 152, true );
 	// }
@@ -57,6 +64,17 @@
 		wp_enqueue_style( 'main-css' );
 		// wp_register_style( 'magnific-popup', get_stylesheet_directory_uri() . '/bower_components/magnific-popup/dist/magnific-popup.css', array(), '', 'all' );
 		// wp_enqueue_style( 'magnific-popup' );
+
+		// if ( !is_product()) {
+			wp_register_script( 'photoswipe', get_stylesheet_directory_uri() . '/js/photoswipe.min.js', array('jquery'), '', true );
+			wp_register_script( 'photoswipe-ui', get_stylesheet_directory_uri() . '/js/photoswipe-ui-default.min.js', array('jquery'), '', true );
+			wp_register_style( 'photoswipe', get_stylesheet_directory_uri() . '/css/photoswipe.css', array(), '', 'all' );
+			wp_register_style( 'photoswipe-style', get_stylesheet_directory_uri() . '/css/default-skin/default-skin.css', array(), '', 'all' );
+			wp_enqueue_script( 'photoswipe' );
+			wp_enqueue_script( 'photoswipe-ui' );
+			wp_enqueue_style( 'photoswipe' );
+			wp_enqueue_style( 'photoswipe-style' );
+		// }	
 
 /*
 		wp_register_style( 'calendar', get_stylesheet_directory_uri() . '/bower_components/fullcalendar/dist/fullcalendar.css', array(), '', 'all' );
@@ -164,27 +182,71 @@
 		)
 	);
 
-	// register_taxonomy( 'mention_category',
-	// 	array('mention'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
-	// 	array('hierarchical' => true,     /* if this is true, it acts like categories */
-	// 		'labels' => array(
-	// 			'name' => __( 'Mention Categories', 'tas' ), /* name of the custom taxonomy */
-	// 			'singular_name' => __( 'Mention Category', 'tas' ), /* single taxonomy name */
-	// 			'search_items' =>  __( 'Search Mention Categories', 'tas' ), /* search title for taxomony */
-	// 			'all_items' => __( 'All Mention Categories', 'tas' ), /* all title for taxonomies */
-	// 			'parent_item' => __( 'Parent Mention Category', 'tas' ), /* parent title for taxonomy */
-	// 			'parent_item_colon' => __( 'Parent Mention Category:', 'tas' ), /* parent taxonomy title */
-	// 			'edit_item' => __( 'Edit Mention Category', 'tas' ), /* edit custom taxonomy title */
-	// 			'update_item' => __( 'Update Mention Category', 'tas' ), /* update title for taxonomy */
-	// 			'add_new_item' => __( 'Add New Mention Category', 'tas' ), /* add new title for taxonomy */
-	// 			'new_item_name' => __( 'New Mention Category Name', 'tas' ) /* name title for taxonomy */
-	// 		),
-	// 		'show_admin_column' => true,
-	// 		'show_ui' => true,
-	// 		'query_var' => true,
-	// 		'rewrite' => array( 'slug' => 'mention-category' ),
-	// 	)
-	// );
+	// let's create the function for the custom type
+	function custom_post_project() {
+		// creating (registering) the custom type
+		register_post_type( 'project', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+			// let's now add all the options for this post type
+			array( 'labels' => array(
+				'name' => __( 'Project', 'tas' ), /* This is the Title of the Group */
+				'singular_name' => __( 'Project', 'tas' ), /* This is the individual type */
+				'all_items' => __( 'All Project', 'tas' ), /* the all items menu item */
+				'add_new' => __( 'Add New', 'tas' ), /* The add new menu item */
+				'add_new_item' => __( 'Add New Project', 'tas' ), /* Add New Display Title */
+				'edit' => __( 'Edit', 'tas' ), /* Edit Dialog */
+				'edit_item' => __( 'Edit Project', 'tas' ), /* Edit Display Title */
+				'new_item' => __( 'New Project', 'tas' ), /* New Display Title */
+				'view_item' => __( 'View Project', 'tas' ), /* View Display Title */
+				'search_items' => __( 'Search Project', 'tas' ), /* Search Custom Type Title */
+				'not_found' =>  __( 'Nothing found in the Database.', 'tas' ), /* This displays if there are no entries yet */
+				'not_found_in_trash' => __( 'Nothing found in Trash', 'tas' ), /* This displays if there is nothing in the trash */
+				'parent_item_colon' => ''
+				), /* end of arrays */
+				'description' => __( 'Project', 'tas' ), /* Custom Type Description */
+				'public' => true,
+				'publicly_queryable' => true,
+				'exclude_from_search' => false,
+				'show_ui' => true,
+				'query_var' => true,
+				'menu_position' => 7, /* this is what order you want it to appear in on the left hand side menu */
+				'menu_icon' => 'dashicons-admin-generic', /* the icon for the custom post type menu */
+				// 'rewrite'	=> array( 'slug' => 'project', 'with_front' => false ), /* you can specify its url slug */
+				'has_archive' => 'project', /* you can rename the slug here */
+				'capability_type' => 'post',
+				'hierarchical' => false,
+				/* the next one is important, it tells what's enabled in the post editor */
+				'supports' => array( 'title', 'editor', 'author', 'excerpt', 'custom-fields', 'thumbnail', 'revisions', 'sticky')
+			) /* end of options */
+		); /* end of register post type */
+
+	}
+
+	// // adding the function to the Wordpress init
+	add_action( 'init', 'custom_post_project');
+
+
+
+	register_taxonomy( 'project_category',
+		array('project'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+		array('hierarchical' => true,     /* if this is true, it acts like categories */
+			'labels' => array(
+				'name' => __( 'Project Categories', 'tas' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Project Category', 'tas' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Project Categories', 'tas' ), /* search title for taxomony */
+				'all_items' => __( 'All Project Categories', 'tas' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Project Category', 'tas' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Project Category:', 'tas' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Project Category', 'tas' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Project Category', 'tas' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Project Category', 'tas' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Project Category Name', 'tas' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true,
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'project-category' ),
+		)
+	);
 
 
 
@@ -236,6 +298,34 @@
 // add_filter('woocommerce_related_products_args','wc_remove_related_products', 10); 
 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_single_add_to_cart', 15 );
+
+/**
+ * Ensure cart contents update when products are added to the cart via AJAX
+ */
+function my_header_add_to_cart_fragment( $fragments ) {
+ 
+    ob_start();
+    $count = WC()->cart->cart_contents_count;
+    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
+    if ( $count > 0 ) {
+        ?>
+        <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
+        <?php            
+    }
+        ?></a><?php
+ 
+    $fragments['a.cart-contents'] = ob_get_clean();
+     
+    return $fragments;
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
 
