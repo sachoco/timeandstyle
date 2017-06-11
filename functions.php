@@ -60,7 +60,7 @@ function tas_setup() {
 		wp_enqueue_style( 'custom-scrollbar' );
 		wp_register_style( 'webfont', get_stylesheet_directory_uri() . '/css/MyFontsWebfontsKit.css', array(), '', 'all' );
 		wp_enqueue_style( 'webfont' );
-		wp_register_style( 'main-css', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
+		wp_register_style( 'main-css', get_stylesheet_directory_uri() . '/css/style.css', array(), '1.1', 'all' );
 		wp_enqueue_style( 'main-css' );
 		// wp_register_style( 'magnific-popup', get_stylesheet_directory_uri() . '/bower_components/magnific-popup/dist/magnific-popup.css', array(), '', 'all' );
 		// wp_enqueue_style( 'magnific-popup' );

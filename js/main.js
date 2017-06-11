@@ -8,15 +8,6 @@
     resize = function() {
       var height;
       $('.column').height($(window).height());
-      $(".column").mCustomScrollbar({
-        axis: "y",
-        theme: "minimal",
-        callbacks: {
-          onScroll: function() {
-            return myCustomFn(this);
-          }
-        }
-      });
       if ($(".shop-info").length) {
         height = Math.min($(".shop-info .inner").outerHeight(), $(window).height());
         return $(".shop-info").css({
@@ -117,16 +108,9 @@
     $("#back-to-top-slick").on("click", function() {
       var currentSlide, currentSlideIndex;
       currentSlideIndex = $("#slick").slick('slickCurrentSlide');
-      currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex];
-      return $(currentSlide).mCustomScrollbar("scrollTo", "top", {
-        scrollInertia: 1000
-      });
+      return currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex];
     });
-    $("#back-to-top-page").on("click", function() {
-      return $(".column").mCustomScrollbar("scrollTo", "top", {
-        scrollInertia: 1000
-      });
-    });
+    $("#back-to-top-page").on("click", function() {});
     if ($("#back-to-top-page").length) {
       $(".column").on("scroll", function() {
         if ($(".column")[0].scrollTop > 0) {
