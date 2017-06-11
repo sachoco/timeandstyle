@@ -3,9 +3,9 @@ img_path = images_path.url
 jQuery ($) ->
 	resize = ()->
 		$('.column').height $(window).height()
-		$(".column").mCustomScrollbar { axis:"y", theme:"minimal", callbacks:{ onScroll: ()->
-			myCustomFn(this)
-			}}
+		# $(".column").mCustomScrollbar { axis:"y", theme:"minimal", callbacks:{ onScroll: ()->
+		# 	myCustomFn(this)
+		# 	}}
 		# roundCssTransformMatrix("shop-info")
 		if $(".shop-info").length
 			height = Math.min $(".shop-info .inner").outerHeight(), $(window).height()
@@ -72,21 +72,21 @@ jQuery ($) ->
 		afterSlideChangeEvent = ()->
 			currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
 			if typeof currentSlide != 'undefined'
-				if typeof currentSlide.mcs != 'undefined'
-					if currentSlide.mcs.top < 0 
+				# if typeof currentSlide.mcs != 'undefined'
+				# 	if currentSlide.mcs.top < 0 
+				# 		$("#back-to-top-slick").addClass "active"
+				# 	else
+				# 		$("#back-to-top-slick").removeClass "active"
+
+				if currentSlide.scrollTop > 0 
+					$("#back-to-top-slick").addClass "active"
+				else
+					$("#back-to-top-slick").removeClass "active"		
+				$(currentSlide).on "scroll", ()->
+					if currentSlide.scrollTop > 0 
 						$("#back-to-top-slick").addClass "active"
 					else
 						$("#back-to-top-slick").removeClass "active"
-
-			# if currentSlide.scrollTop > 0 
-			# 	$("#back-to-top-slick").addClass "active"
-			# else
-			# 	$("#back-to-top-slick").removeClass "active"		
-			# $(currentSlide).on "scroll", ()->
-			# 	if currentSlide.scrollTop > 0 
-			# 		$("#back-to-top-slick").addClass "active"
-			# 	else
-			# 		$("#back-to-top-slick").removeClass "active"
 
 		beforeSlideChangeEvent = ()->
 			$(".shop-info").removeClass 'is_open'
@@ -97,8 +97,8 @@ jQuery ($) ->
 			else if $(currentSlide).hasClass "shop-tokyo"
 				$(".site-branding .our-shop").removeClass "active"
 				$(".site-branding .our-shop.shop-amsterdam").addClass "active"
-			# # $("#back-to-top-slick").removeClass "active"
-			# $(currentSlide).off "scroll"
+			$("#back-to-top-slick").removeClass "active"
+			$(currentSlide).off "scroll"
 
 		afterSlideChangeEvent()
 
@@ -125,12 +125,12 @@ jQuery ($) ->
 	$("#back-to-top-slick").on "click", ()->
 		currentSlideIndex = $("#slick").slick('slickCurrentSlide')
 		currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex]
-		# $(currentSlide).animate { scrollTop: 0 }, 1000
-		$(currentSlide).mCustomScrollbar "scrollTo","top",{scrollInertia:1000}
+		$(currentSlide).animate { scrollTop: 0 }, 1000
+		# $(currentSlide).mCustomScrollbar "scrollTo","top",{scrollInertia:1000}
 
 	$("#back-to-top-page").on "click", ()->
-		# $(".column").animate { scrollTop: 0 }, 1000
-		$(".column").mCustomScrollbar "scrollTo","top",{scrollInertia:1000}
+		$(".column").animate { scrollTop: 0 }, 1000
+		# $(".column").mCustomScrollbar "scrollTo","top",{scrollInertia:1000}
 
 	if $("#back-to-top-page").length
 		$(".column").on "scroll", ()->
