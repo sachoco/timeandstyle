@@ -52,13 +52,18 @@
         var currentSlide;
         currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')];
         if (typeof currentSlide !== 'undefined') {
-          if (typeof currentSlide.mcs !== 'undefined') {
-            if (currentSlide.mcs.top < 0) {
+          if (currentSlide.scrollTop > 0) {
+            $("#back-to-top-slick").addClass("active");
+          } else {
+            $("#back-to-top-slick").removeClass("active");
+          }
+          return $(currentSlide).on("scroll", function() {
+            if (currentSlide.scrollTop > 0) {
               return $("#back-to-top-slick").addClass("active");
             } else {
               return $("#back-to-top-slick").removeClass("active");
             }
-          }
+          });
         }
       };
       beforeSlideChangeEvent = function() {
@@ -67,11 +72,13 @@
         currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')];
         if ($(currentSlide).hasClass("shop-amsterdam")) {
           $(".site-branding .our-shop").removeClass("active");
-          return $(".site-branding .our-shop.shop-tokyo").addClass("active");
+          $(".site-branding .our-shop.shop-tokyo").addClass("active");
         } else if ($(currentSlide).hasClass("shop-tokyo")) {
           $(".site-branding .our-shop").removeClass("active");
-          return $(".site-branding .our-shop.shop-amsterdam").addClass("active");
+          $(".site-branding .our-shop.shop-amsterdam").addClass("active");
         }
+        $("#back-to-top-slick").removeClass("active");
+        return $(currentSlide).off("scroll");
       };
       afterSlideChangeEvent();
     }
@@ -108,9 +115,16 @@
     $("#back-to-top-slick").on("click", function() {
       var currentSlide, currentSlideIndex;
       currentSlideIndex = $("#slick").slick('slickCurrentSlide');
-      return currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex];
+      currentSlide = $("#slick").slick('getSlick').$slides[currentSlideIndex];
+      return $(currentSlide).animate({
+        scrollTop: 0
+      }, 1000);
     });
-    $("#back-to-top-page").on("click", function() {});
+    $("#back-to-top-page").on("click", function() {
+      return $(".column").animate({
+        scrollTop: 0
+      }, 1000);
+    });
     if ($("#back-to-top-page").length) {
       $(".column").on("scroll", function() {
         if ($(".column")[0].scrollTop > 0) {
