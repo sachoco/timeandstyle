@@ -12,6 +12,9 @@ body {
 		#slick {
 			opacity: 0;
 		}
+		.shop-info-toggle {
+			display: block !important;
+		}
 	}
 	&.single-product, &.single-monozukuri, &.single-project {
 		section.column {

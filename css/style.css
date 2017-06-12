@@ -401,6 +401,7 @@ body.home #slick {
 body.home .shop-info-toggle {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  display: none !important;
 }
 body.single-product section.column .page-header, body.single-monozukuri section.column .page-header, body.single-project section.column .page-header {
   max-width: none;
@@ -870,6 +871,9 @@ you can add resource intensive styles.
   body.home #slick {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  body.home .shop-info-toggle {
+    display: block !important;
   }
   body.single-product section.column .page-header, body.single-monozukuri section.column .page-header, body.single-project section.column .page-header {
     max-width: none;

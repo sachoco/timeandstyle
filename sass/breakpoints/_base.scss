@@ -188,6 +188,7 @@ body {
 		}
 		.shop-info-toggle {
 			opacity: 0;
+			display: none !important;
 		}
 	}
 	&.single-product, &.single-monozukuri, &.single-project {
