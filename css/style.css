@@ -515,6 +515,10 @@ body.single-product ul.product_list_widget li .inner:hover .overlay, body.single
   margin: 0 0 1em;
 }
 
+.shop-info-content p {
+  margin: 0 0 1em;
+}
+
 section#intro {
   display: none;
   cursor: pointer;

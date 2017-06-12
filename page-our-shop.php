@@ -48,7 +48,7 @@ $i=0;
     <li class="mobile-only align-left shop-info-content">
 
         <h3><?php echo $title; ?></h3>
-        <?php echo $content; ?>
+        <?php echo wpautop( $content ); ?>
        <!--  <div class="left">
             <p>
         Marnixstraat 148, 1016 TE AMSTERDAM<br>
