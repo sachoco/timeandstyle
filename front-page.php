@@ -33,7 +33,7 @@ $i=0;
     <li class="mobile-only align-left shop-info-content">
 
         <h3><?php echo $title; ?></h3>
-        <?php echo $content; ?>
+        <?php echo wpautop( $content ); ?>
 
     </li>
     <li class="contact-form">

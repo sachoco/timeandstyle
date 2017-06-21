@@ -311,7 +311,7 @@ p {
   top: 0;
   margin: auto;
   width: 100%;
-  z-index: 999999;
+  z-index: 999997;
   background-color: white;
 }
 .site-branding h1 {
@@ -363,7 +363,7 @@ p {
   left: 0;
   height: 100%;
   background-color: white;
-  z-index: 999;
+  z-index: 999998;
   overflow: hidden;
   width: 0px;
   transition: width 0.6s ease;
@@ -390,6 +390,16 @@ p {
 #site-navigation > div ul.menu li {
   margin: 3em 1.5em;
 }
+@media screen and (max-height: 480px) {
+  #site-navigation > div ul.menu li {
+    margin: 2em 1.5em;
+  }
+}
+@media screen and (max-height: 320px) {
+  #site-navigation > div ul.menu li {
+    margin: 1.5em 1.5em;
+  }
+}
 
 body.home header {
   display: none;
@@ -401,6 +411,7 @@ body.home #slick {
 body.home .shop-info-toggle {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  display: none !important;
 }
 body.single-product section.column .page-header, body.single-monozukuri section.column .page-header, body.single-project section.column .page-header {
   max-width: none;
@@ -512,6 +523,10 @@ body.single-product ul.product_list_widget li .inner:hover .overlay, body.single
   margin: 1em 0;
 }
 .shop-info .inner p {
+  margin: 0 0 1em;
+}
+
+.shop-info-content p {
   margin: 0 0 1em;
 }
 
@@ -866,6 +881,9 @@ you can add resource intensive styles.
   body.home #slick {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+  body.home .shop-info-toggle {
+    display: block !important;
   }
   body.single-product section.column .page-header, body.single-monozukuri section.column .page-header, body.single-project section.column .page-header {
     max-width: none;
