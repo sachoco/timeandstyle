@@ -41,3 +41,16 @@ header {
 
 
 }	
+section {
+	&.column {
+		ul {
+			li {
+				ul.series {
+					li {
+						width: calc(100%/6);
+					}
+				}
+			}
+		}
+	}
+}

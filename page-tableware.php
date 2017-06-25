@@ -1,18 +1,18 @@
 <?php get_header(); ?>
 <!-- <section id="slick" class=""> -->
 
-<section class="column animsition">
+<!-- <section class="column animsition">
 
 
 <ul class="products">
     <?php
-        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'tableware' );
+
+        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'porcelainpottery' );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 
                 <li class="product">    
 
-                    <!-- <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>"> -->
                         <div class="image-wrapper">
                         <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
 
@@ -21,7 +21,6 @@
                         <h3><?php the_title(); ?></h3>
 
 
-                    <!-- </a> -->
 
 
                 </li>
@@ -33,10 +32,9 @@
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>
-</ul><!--/.products-->  
+</ul>
 </section>
 
-<!-- </section> -->
 
 <div class="collapsed-button-container">
     <div id="back-to-top-page" class="collapsed-button back-to-top fixed" role="button">
@@ -52,9 +50,9 @@
         </div>
                                     
     </div>
-</div>
+</div> -->
 
-<!-- <section id="slick" class="animsition loop">
+<section id="slick" class="animsition loop">
 
 <?php
 
@@ -72,6 +70,51 @@ foreach($product_categories as $cat):
 
 <ul class="products">
     <?php
+        $args = array(
+            'parent'  => 13
+        ); 
+        $subcategories = get_terms( 'product_cat', array('parent'=>$cat->term_id) );
+
+        foreach($subcategories as $cat): ?>
+        <li class="product">
+            <div class="image-wrapper">
+            <?php $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+                $image = wp_get_attachment_url( $thumbnail_id );
+                if ( $image ) {
+                    echo '<img src="' . $image . '" alt="' . $cat->name . '" />';
+                }
+            ?>   
+            </div>
+            <!-- <h3><?php echo $cat->name; ?></h3>         -->
+
+            <ul class="series">
+                <?php 
+                    $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $cat->slug );
+                    $loop = new WP_Query( $args );
+                    while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
+                ?>
+                <li class="series-item">
+                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
+                        <div class="image-wrapper">
+                        <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
+
+                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
+                        </div>
+                        <h3><?php the_title(); ?></h3>
+
+
+                    </a>
+                </li>
+                
+                <?php endwhile; ?>
+                 <?php wp_reset_query(); ?>
+               
+            </ul>
+        </li>
+        <?php
+        endforeach;
+        
+
         $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $cat->slug );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
@@ -93,6 +136,28 @@ foreach($product_categories as $cat):
                 </li>
 
     <?php endwhile; ?>
+<!--     <?php
+        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $cat->slug );
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+
+                <li class="product">    
+
+                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
+                        <div class="image-wrapper">
+                        <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
+
+                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
+                        </div>
+                        <h3><?php the_title(); ?></h3>
+
+
+                    </a>
+
+
+                </li>
+
+    <?php endwhile; ?> -->
     <?php wp_reset_query(); ?>
     <li class="footer">
         <footer class="footer">
@@ -124,6 +189,6 @@ foreach($product_categories as $cat):
         </div>
                                     
     </div>
-</div> -->
+</div>
 
 <?php get_footer(); ?>

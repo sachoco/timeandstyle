@@ -120,6 +120,11 @@ section {
 					}
 
 				}
+				ul.series {
+					li {
+						width: calc(100%/4);
+					}
+				}
 			}
 			.image-wrapper {
 				
