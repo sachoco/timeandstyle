@@ -116,6 +116,34 @@ p {
 	}
 
 }
+.column-title {
+	position: fixed;
+	top: 40px;
+	margin: auto;
+	width: 100%;
+	z-index: 999995;
+	background-color: white;
+	padding-left: 45px;
+	display: none;
+
+	ul {
+		padding: 15px 1em;
+		float: left;
+		li {
+			// display: inline-block;
+			float: left;
+			color: $font-color;
+			font-size: 0.8em;
+			margin: 0 5px;
+			cursor: pointer;
+			&.active {
+				text-decoration: underline;
+
+			}
+		}
+	}
+	
+}
 #site-navigation {
 	position: fixed;
     left: 0;

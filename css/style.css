@@ -358,6 +358,31 @@ p {
   text-decoration: underline;
 }
 
+.column-title {
+  position: fixed;
+  top: 40px;
+  margin: auto;
+  width: 100%;
+  z-index: 999995;
+  background-color: white;
+  padding-left: 45px;
+  display: none;
+}
+.column-title ul {
+  padding: 15px 1em;
+  float: left;
+}
+.column-title ul li {
+  float: left;
+  color: #555;
+  font-size: 0.8em;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.column-title ul li.active {
+  text-decoration: underline;
+}
+
 #site-navigation {
   position: fixed;
   left: 0;
@@ -978,6 +1003,19 @@ you can add resource intensive styles.
     display: inline-block;
   }
   .site-branding ul li {
+    margin: 0 10px;
+  }
+
+  .column-title {
+    width: 80%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    padding-left: 0;
+    display: block;
+  }
+  .column-title ul li {
     margin: 0 10px;
   }
 

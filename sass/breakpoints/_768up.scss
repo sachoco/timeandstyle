@@ -51,6 +51,19 @@ body {
 		}
 	}
 }
+.column-title {
+	width: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding-left: 0;
+	display: block;
+	ul {
+		li {
+			margin: 0 10px;
+
+		}
+	}	
+}
 #site-navigation {
     &.is_open {
     	width: 350px;
