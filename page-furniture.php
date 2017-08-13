@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<section id="slick" class="animsition loop">
 
 <?php
 
@@ -8,6 +7,17 @@ $args = array(
 ); 
 $product_categories = get_terms( 'product_cat', $args );
 
+echo "<div class='column-title'><ul>";
+$i=0;
+foreach($product_categories as $cat):
+    echo "<li data-slideid='".$i."'>".$cat->name."</li>";
+    $i++;
+endforeach;
+echo "</ul></div>";
+?>
+<section id="slick" class="animsition loop">
+
+<?php
 foreach($product_categories as $cat):
 
 ?>

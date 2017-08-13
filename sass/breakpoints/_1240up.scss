@@ -32,3 +32,16 @@ body {
 	}
 
 }
+section {
+	&.column {
+		ul {
+			li {
+				ul.series {
+					li {
+						width: calc(100%/8);
+					}
+				}
+			}
+		}
+	}
+}

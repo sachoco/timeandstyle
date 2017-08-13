@@ -44,7 +44,7 @@ jQuery ($) ->
 
 		$('#slick.loop').slick(
 			infinite: true, 
-			initialSlide: Math.floor(Math.random() * $('#slick.loop .column').length),
+			# initialSlide: Math.floor(Math.random() * $('#slick.loop .column').length),
 			# prevArrow: '<button type="button" class="slick-prev"><img src="'+img_path+'/arrow-left.svg" ></button>', 
 			# nextArrow: '<button type="button" class="slick-next"><img src="'+img_path+'/arrow-right.svg" ></button>'
 			prevArrow: '<button type="button" class="slick-prev"><div class="collapsed-button"><div class="circle"><div class="icon left"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -88,6 +88,10 @@ jQuery ($) ->
 					else
 						$("#back-to-top-slick").removeClass "active"
 
+			if $(".column-title").length
+				$(".column-title li").removeClass "active"
+				$($(".column-title li")[$("#slick").slick('slickCurrentSlide')]).addClass "active"
+
 		beforeSlideChangeEvent = ()->
 			$(".shop-info").removeClass 'is_open'
 			currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
@@ -97,6 +101,8 @@ jQuery ($) ->
 			else if $(currentSlide).hasClass "shop-tokyo"
 				$(".site-branding .our-shop").removeClass "active"
 				$(".site-branding .our-shop.shop-amsterdam").addClass "active"
+
+
 			$("#back-to-top-slick").removeClass "active"
 			$(currentSlide).off "scroll"
 
@@ -142,6 +148,12 @@ jQuery ($) ->
 	$(".site-branding .our-shop").on "click", ()->
 		slideID = $(this).data("slideid")
 		$(".site-branding .our-shop").removeClass "active"
+		$("#slick").slick('slickGoTo', slideID)
+		$(this).addClass "active"
+
+	$(".column-title li").on "click", ()->
+		slideID = $(this).data("slideid")
+		$(".column-title li").removeClass "active"
 		$("#slick").slick('slickGoTo', slideID)
 		$(this).addClass "active"
 
