@@ -35,6 +35,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 	return;
 	 }
 ?>
+<?php
+// $terms = get_the_terms( $post->ID, 'product_cat' );
+// foreach ( $terms as $term ) $categories[] = $term->slug;
+// if ( in_array( 'audio', $categories ) ) {  
+if(!has_term( 'tableware', 'product_cat' )){
+
+$args = array(
+    'exclude_tree'  => array("13")
+); 
+$product_categories = get_terms( 'product_cat', $args );
+
+echo "<div class='column-title'><ul>";
+$i=0;
+foreach($product_categories as $cat):
+    echo "<li data-slideid='".$i."' data-cat='".$cat->slug."'><a href='/furniture/#".$cat->slug."' target='_self'>".$cat->name."</a></li>";
+    $i++;
+endforeach;
+echo "</ul></div>";
+
+}
+?>
 <section class="column animsition">
 <div id="product-<?php the_ID(); ?>" <?php post_class(""); ?>>
 
