@@ -1,7 +1,13 @@
 (function() {
-  var img_path;
+  var hashtag, img_path, target_slideitem;
 
   img_path = images_path.url;
+
+  hashtag = window.location.hash.substr(1);
+
+  target_slideitem = hashtag.split("_")[1];
+
+  hashtag = hashtag.split("_")[0];
 
   jQuery(function($) {
     var afterSlideChangeEvent, beforeSlideChangeEvent, myCustomFn, resize;
@@ -29,7 +35,14 @@
     };
     if ($('#slick').length) {
       $('#slick').on("init", function() {
-        return $('#slick').find('.slick-list').focus();
+        var p;
+        $('#slick').find('.slick-list').focus();
+        if (target_slideitem) {
+          p = $("li.product a[data-id=" + target_slideitem + "]").offset().top;
+          return $('section.slick-active').animate({
+            scrollTop: p - 100
+          }, 1000);
+        }
       });
       $('#slick').on("beforeChange", function() {
         return beforeSlideChangeEvent();
@@ -39,6 +52,7 @@
       });
       $('#slick.loop').slick({
         infinite: true,
+        initialSlide: hashtag && $(".column-title").length ? $(".column-title li[data-cat='" + hashtag + "']").data('slideid') : 0,
         prevArrow: '<button type="button" class="slick-prev"><div class="collapsed-button"><div class="circle"><div class="icon left"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve"> <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="15.565,0.324 0.699,15.19 15.565,30.057 "/> </svg></div><div class="bg circular-anim"></div></div></div></button>',
         nextArrow: '<button type="button" class="slick-next "><div class="collapsed-button"><div class="circle"><div class="icon right"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve"> <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="0.543,30.034 15.409,15.168 0.543,0.301 "/> </svg></div><div class="bg circular-anim"></div></div></div></button>'
       });
@@ -48,7 +62,7 @@
         nextArrow: '<button type="button" class="slick-next "><div class="collapsed-button"><div class="circle"><div class="icon right"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve"> <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="0.543,30.034 15.409,15.168 0.543,0.301 "/> </svg></div><div class="bg circular-anim"></div></div></div></button>'
       });
       afterSlideChangeEvent = function() {
-        var currentSlide;
+        var $currentCol, cat, currentSlide;
         currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')];
         if (typeof currentSlide !== 'undefined') {
           if (currentSlide.scrollTop > 0) {
@@ -66,7 +80,10 @@
         }
         if ($(".column-title").length) {
           $(".column-title li").removeClass("active");
-          return $($(".column-title li")[$("#slick").slick('slickCurrentSlide')]).addClass("active");
+          $currentCol = $($(".column-title li")[$("#slick").slick('slickCurrentSlide')]);
+          $currentCol.addClass("active");
+          cat = $currentCol.data('cat');
+          return window.location.hash = hashtag = cat;
         }
       };
       beforeSlideChangeEvent = function() {
@@ -156,6 +173,11 @@
       lessLink: '<a class="square-btn" href="#">less caption</a>',
       embedCSS: true,
       blockCSS: 'margin-bottom: 2em;'
+    });
+    $("ul.products li.product a").on("click", function(e) {
+      var id;
+      id = $(this).data("id");
+      return window.location.hash = hashtag + "_" + id;
     });
     return this;
   });

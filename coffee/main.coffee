@@ -1,4 +1,7 @@
 img_path = images_path.url
+hashtag = window.location.hash.substr(1)
+target_slideitem = hashtag.split("_")[1]
+hashtag = hashtag.split("_")[0]
 
 jQuery ($) ->
 	resize = ()->
@@ -31,6 +34,10 @@ jQuery ($) ->
 	if $('#slick').length
 		$('#slick').on "init", ()->
 			$('#slick').find('.slick-list').focus()
+			if target_slideitem
+				p = $("li.product a[data-id="+target_slideitem+"]").offset().top
+				$('section.slick-active').animate { scrollTop: p-100 }, 1000
+					# alert(target_slideitem)
 
 		$('#slick').on "beforeChange", ()->
 			beforeSlideChangeEvent()
@@ -38,12 +45,9 @@ jQuery ($) ->
 		$('#slick').on "afterChange", ()->
 			afterSlideChangeEvent()
 			
-
-		
-
-
 		$('#slick.loop').slick(
 			infinite: true, 
+			initialSlide: if hashtag && $(".column-title").length then $(".column-title li[data-cat='"+hashtag+"']").data('slideid') else 0,
 			# initialSlide: Math.floor(Math.random() * $('#slick.loop .column').length),
 			# prevArrow: '<button type="button" class="slick-prev"><img src="'+img_path+'/arrow-left.svg" ></button>', 
 			# nextArrow: '<button type="button" class="slick-next"><img src="'+img_path+'/arrow-right.svg" ></button>'
@@ -90,7 +94,11 @@ jQuery ($) ->
 
 			if $(".column-title").length
 				$(".column-title li").removeClass "active"
-				$($(".column-title li")[$("#slick").slick('slickCurrentSlide')]).addClass "active"
+				$currentCol = $($(".column-title li")[$("#slick").slick('slickCurrentSlide')])
+				$currentCol.addClass "active"
+				cat = $currentCol.data('cat')
+				window.location.hash=hashtag=cat
+
 
 		beforeSlideChangeEvent = ()->
 			$(".shop-info").removeClass 'is_open'
@@ -162,6 +170,11 @@ jQuery ($) ->
 		lessLink: '<a class="square-btn" href="#">less caption</a>',
 		embedCSS: true,
 		blockCSS: 'margin-bottom: 2em;'
+
+	$("ul.products li.product a").on "click", (e)->
+		id = $(this).data("id")
+		window.location.hash=hashtag+"_"+id
+		# e.preventDefault()
 
 	# $("#shop-info").one "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", ()->
 		# roundCssTransformMatrix("shop-info")

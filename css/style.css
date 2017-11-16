@@ -697,14 +697,11 @@ section.column ul li ul.series {
   margin-top: 16px;
   margin-top: 16px;
   margin-top: 16px;
-  margin-top: 16px;
   margin-top: 1rem;
   margin-left: -8px;
   margin-left: -8px;
   margin-left: -8px;
-  margin-left: -8px;
   margin-left: -0.5rem;
-  margin-right: -8px;
   margin-right: -8px;
   margin-right: -8px;
   margin-right: -8px;
@@ -715,9 +712,7 @@ section.column ul li ul.series li {
   padding-top: 8px;
   padding-top: 8px;
   padding-top: 8px;
-  padding-top: 8px;
   padding-top: 0.5rem;
-  padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 8px;
@@ -727,9 +722,7 @@ section.column ul li ul.series li {
   padding-left: 8px;
   padding-left: 8px;
   padding-left: 8px;
-  padding-left: 8px;
   padding-left: 0.5rem;
-  padding-right: 8px;
   padding-right: 8px;
   padding-right: 8px;
   padding-right: 8px;
@@ -743,6 +736,13 @@ section.column ul li ul.series li img {
 }
 section.column ul li ul.series li h3 {
   font-size: 0.6em;
+}
+section.column ul li.product .image-wrapper {
+  padding-bottom: 65%;
+}
+section.column ul li.product .image-wrapper img {
+  position: absolute;
+  left: 0;
 }
 section.column ul img {
   width: 100%;

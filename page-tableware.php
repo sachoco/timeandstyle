@@ -1,48 +1,18 @@
 <?php get_header(); ?>
+<!-- <section id="slick" class=""> -->
 
-<section id="slick" class="animsition loop">
-
-<?php
-
-$args = array(
-    'parent'  => 13
-); 
-$product_categories = get_terms( 'product_cat', $args );
-
-foreach($product_categories as $cat):
-
-?>
-
-<section class="column">
+<section class="column animsition">
 
 
 <ul class="products">
     <?php
-        $args = array(
-            'parent'  => 13
-        ); 
-        $subcategories = get_terms( 'product_cat', array('parent'=>$cat->term_id) );
+        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => 'tableware' );
+        $loop = new WP_Query( $args );
+        while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
 
-        foreach($subcategories as $cat): ?>
-        <li class="product">
-            <div class="image-wrapper">
-            <?php $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
-                $image = wp_get_attachment_url( $thumbnail_id );
-                if ( $image ) {
-                    echo '<img src="' . $image . '" alt="' . $cat->name . '" />';
-                }
-            ?>   
-            </div>
-            <!-- <h3><?php echo $cat->name; ?></h3>         -->
+                <li class="product">    
 
-            <ul class="series">
-                <?php 
-                    $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $cat->slug );
-                    $loop = new WP_Query( $args );
-                    while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
-                ?>
-                <li class="series-item">
-                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
+                    <!-- <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>"> -->
                         <div class="image-wrapper">
                         <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
 
@@ -51,35 +21,25 @@ foreach($product_categories as $cat):
                         <h3><?php the_title(); ?></h3>
 
 
-                    </a>
+                    <!-- </a> -->
+
+
                 </li>
-                
-                <?php endwhile; ?>
-                 <?php wp_reset_query(); ?>
-               
-            </ul>
-        </li>
-        <?php endforeach; ?>
-        
+
+    <?php endwhile; ?>
     <?php wp_reset_query(); ?>
     <li class="footer">
         <footer class="footer">
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>
-</ul>
-
+</ul><!--/.products-->  
 </section>
 
-<?php endforeach; ?>
-
-
-
-
-</section>
+<!-- </section> -->
 
 <div class="collapsed-button-container">
-    <div id="back-to-top-slick" class="collapsed-button back-to-top fixed" role="button">
+    <div id="back-to-top-page" class="collapsed-button back-to-top fixed" role="button">
         <div class="circle">
             <div class="icon">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -93,5 +53,7 @@ foreach($product_categories as $cat):
                                     
     </div>
 </div>
+
+
 
 <?php get_footer(); ?>
