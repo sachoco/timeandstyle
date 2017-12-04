@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $bg              = get_option( 'woocommerce_email_background_color' );
 $body            = get_option( 'woocommerce_email_body_background_color' );
 $base            = get_option( 'woocommerce_email_base_color' );
-$base_text       = wc_light_or_dark( $base, '#202020', '#ffffff' );
+$base_text       = wc_light_or_dark( $base, '#000000', '#ffffff' );
 $text            = get_option( 'woocommerce_email_text_color' );
 
 $bg_darker_10    = wc_hex_darker( $bg, 10 );
@@ -74,7 +74,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 #template_header_image img {
 	width: 200px;
-	
+
 }
 #template_header h1,
 #template_header h1 a {
@@ -166,7 +166,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 
 h1 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: #000000;
 	font-family: 'UniversLTPro-65Bold', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 30px;
 	font-weight: 300;
@@ -178,29 +178,29 @@ h1 {
 }
 
 h2 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: #000000;
 	display: block;
 	font-family: 'UniversLTPro-65Bold', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: 300;
 	line-height: 130%;
 	margin: 0 0 18px;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
 h3 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: #000000;
 	display: block;
 	font-family: 'UniversLTPro-65Bold', "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: 300;
 	line-height: 130%;
 	margin: 16px 0 8px;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
 
 a {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: #000000;
 	font-weight: normal;
 	text-decoration: underline;
 }
