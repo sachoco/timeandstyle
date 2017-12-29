@@ -329,3 +329,30 @@ function my_header_add_to_cart_fragment( $fragments ) {
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
 
+
+function my_wc_cart_totals_order_total_html() {
+    $value = '<strong>' . WC()->cart->get_total() . '</strong> ';
+
+    // If prices are tax inclusive, show taxes here
+    if ( wc_tax_enabled() && WC()->cart->tax_display_cart == 'incl' ) {
+        $tax_string_array = array();
+
+        if ( get_option( 'woocommerce_tax_total_display' ) == 'itemized' ) {
+            foreach ( WC()->cart->get_tax_totals() as $code => $tax )
+                $tax_string_array[] = sprintf( '%s %s', $tax->formatted_amount, $tax->label );
+        } else {
+            $tax_string_array[] = sprintf( '%s %s', wc_price( WC()->cart->get_taxes_total( true, true ) ), WC()->countries->tax_or_vat() );
+        }
+
+        if ( ! empty( $tax_string_array ) ) {
+            $taxable_address = WC()->customer->get_taxable_address();
+            $estimated_text  = WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping()
+                ? sprintf( ' ' . __( 'estimated for %s', 'woocommerce' ), WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] )
+                : '';
+            $value .= '<small class="includes_tax">' . sprintf( __( '(incl. %s)', 'woocommerce' ), implode( ', ', $tax_string_array ) . $estimated_text ) . '</small>';
+        }
+    }
+
+    echo apply_filters( 'woocommerce_cart_totals_order_total_html', $value );
+}
+

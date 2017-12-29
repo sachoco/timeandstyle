@@ -46,6 +46,7 @@ foreach($product_categories as $cat):
                     echo '<img src="' . $image . '" alt="' . $cat->name . '" />';
                 }
             ?>   
+                <h3 class="series-title"><?php echo $cat->name; ?></h3>
             </div>
             <!-- <h3><?php echo $cat->name; ?></h3>         -->
 
@@ -55,8 +56,8 @@ foreach($product_categories as $cat):
                     $loop = new WP_Query( $args );
                     while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
                 ?>
-                <li class="series-item">
-                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
+                <li class="series-item" id="<?php echo esc_attr($loop->post->post_name ? $loop->post->post_name : $loop->post->ID); ?>">
+                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>" data-id="<?php echo $loop->post->ID; ?>">
                         <div class="image-wrapper">
                         <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
 

@@ -113,6 +113,7 @@ echo "</ul></div>";
 					<a class="square-btn" href="<?php echo $file[url]; ?>" target="_blank">price / variations</a>
 				</p>
 				<?php endif; ?>
+
 		</div><!-- .summary -->
 
 	<?php
@@ -128,6 +129,14 @@ echo "</ul></div>";
 
 
 		<meta itemprop="url" content="<?php the_permalink(); ?>" />
+				<?php 
+					if(get_field("extra_information")):
+				?>
+				<p>
+					<br><br><br>
+					<?php the_field("extra_information"); ?>
+				</p>
+				<?php endif; ?>
     </div>
     <div class="page-body">
 	 	<div class="product_image">
