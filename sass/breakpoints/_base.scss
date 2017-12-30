@@ -745,7 +745,7 @@ div.wpcf7 {
 .woocommerce form .form-row label {
     font-size: 0.8em;
 }
-.woocommerce form .form-row {
+.woocommerce form .col-1 .form-row {
     padding: 3px !important;
     margin: 0 0 7px !important;
 }
@@ -821,4 +821,21 @@ div.wpcf7 {
 .woocommerce-error, .woocommerce-info, .woocommerce-message {
 	width: 100% !important;
 	margin: 0 0 2em !important;
+}
+.woocommerce #order_review table.shop_table .shipping td small, .woocommerce #order_review table.shop_table .order-total td small {
+	display: block;
+}
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+	background: none;
+	border: 1px solid #ebe9eb;
+}
+.woocommerce .quantity .qty {
+    height: 36px;
+    font-size: 1em;
+}
+.woocommerce form .form-row.woocommerce-validated .select2-container, .woocommerce form .form-row.woocommerce-validated input.input-text, .woocommerce form .form-row.woocommerce-validated select {
+	border-color: rgb(230, 230, 230);
+}
+#add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods {
+	width: 100%;
 }

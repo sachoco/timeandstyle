@@ -696,13 +696,10 @@ section.column ul li ul.series {
   padding: 0em;
   margin-top: 16px;
   margin-top: 16px;
-  margin-top: 16px;
   margin-top: 1rem;
   margin-left: -8px;
   margin-left: -8px;
-  margin-left: -8px;
   margin-left: -0.5rem;
-  margin-right: -8px;
   margin-right: -8px;
   margin-right: -8px;
   margin-right: -0.5rem;
@@ -711,9 +708,7 @@ section.column ul li ul.series li {
   width: calc(100%/3);
   padding-top: 8px;
   padding-top: 8px;
-  padding-top: 8px;
   padding-top: 0.5rem;
-  padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 0.5rem;
@@ -721,9 +716,7 @@ section.column ul li ul.series li {
   display: inline-block;
   padding-left: 8px;
   padding-left: 8px;
-  padding-left: 8px;
   padding-left: 0.5rem;
-  padding-right: 8px;
   padding-right: 8px;
   padding-right: 8px;
   padding-right: 0.5rem;
@@ -897,7 +890,7 @@ div.wpcf7 p {
   font-size: 0.8em;
 }
 
-.woocommerce form .form-row {
+.woocommerce form .col-1 .form-row {
   padding: 3px !important;
   margin: 0 0 7px !important;
 }
@@ -983,6 +976,28 @@ div.wpcf7 p {
 .woocommerce-error, .woocommerce-info, .woocommerce-message {
   width: 100% !important;
   margin: 0 0 2em !important;
+}
+
+.woocommerce #order_review table.shop_table .shipping td small, .woocommerce #order_review table.shop_table .order-total td small {
+  display: block;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+  background: none;
+  border: 1px solid #ebe9eb;
+}
+
+.woocommerce .quantity .qty {
+  height: 36px;
+  font-size: 1em;
+}
+
+.woocommerce form .form-row.woocommerce-validated .select2-container, .woocommerce form .form-row.woocommerce-validated input.input-text, .woocommerce form .form-row.woocommerce-validated select {
+  border-color: #e6e6e6;
+}
+
+#add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods {
+  width: 100%;
 }
 
 /*********************
