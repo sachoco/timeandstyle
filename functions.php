@@ -365,3 +365,31 @@ function wc_empty_cart_redirect_url() {
 	return 'http://timeandstyle.nl/tableware/';
 }
 add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+
+add_filter( 'woocommerce_shipping_package_name' , 'woocommerce_replace_text_shipping_to_delivery', 10, 3);
+
+/**
+ * 
+ * Function to replace shipping text to delivery text
+ * 
+ * @param $package_name
+ * @param $i
+ * @param $package
+ *
+ * @return string
+ */
+function woocommerce_replace_text_shipping_to_delivery($package_name, $i, $package){
+    return sprintf( _nx( 'Delivery', 'Delivery %d', ( $i + 1 ), 'shipping packages', 'timeandstyle' ), ( $i + 1 ) );
+}
+
+
+/*
+ *  Change the string "Shipping" to "Delivery" on Order Received page.
+ */
+add_filter('gettext', 'translate_reply');
+add_filter('ngettext', 'translate_reply');
+
+function translate_reply($translated) {
+$translated = str_ireplace('Shipping', 'Delivery', $translated);
+return $translated;
+}

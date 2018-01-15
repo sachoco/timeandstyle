@@ -46,7 +46,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php do_action( 'woocommerce_cart_totals_before_shipping' ); ?>
 
 			<?php wc_cart_totals_shipping_html(); ?>
-
+			<tr >
+				<td colspan="2" style="border-top:none;font-size:0.7em;font-weight: normal;padding-top:0;">この配送コストはオーダー数に限らず、一律のコストです</td>
+			</tr>
 			<?php do_action( 'woocommerce_cart_totals_after_shipping' ); ?>
 
 		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
