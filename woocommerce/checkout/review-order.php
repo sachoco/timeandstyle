@@ -77,7 +77,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php endif; ?>
 			<tr >
-				<td colspan="2" style="border-top:none;font-size:0.7em;font-weight: normal;padding-top:0;">この配送コストはオーダー数に限らず、一律のコストです</td>
+				<td colspan="2" style="border-top:none;font-size:0.7em;font-weight: normal;padding-top:0;">We work with a flat rate delivery cost (incl. tracking). This cost remains the same regardless of the amount of items in your order.</td>
 			</tr>
 		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
 			<tr class="fee">
