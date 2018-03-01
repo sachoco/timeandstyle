@@ -13,13 +13,12 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.3
+ * @version 3.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-remove_filter( 'the_content', 'lazy_load_responsive_images', 20 );
 
 wc_print_notices();
 
@@ -155,7 +154,15 @@ do_action( 'woocommerce_before_cart' ); ?>
 </form>
 
 <div class="cart-collaterals">
-	<?php do_action( 'woocommerce_cart_collaterals' ); ?>
+	<?php
+		/**
+		 * woocommerce_cart_collaterals hook.
+		 *
+		 * @hooked woocommerce_cross_sell_display
+		 * @hooked woocommerce_cart_totals - 10
+		 */
+	 	do_action( 'woocommerce_cart_collaterals' );
+	?>
 </div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

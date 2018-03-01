@@ -83,7 +83,11 @@
           $currentCol = $($(".column-title li")[$("#slick").slick('slickCurrentSlide')]);
           $currentCol.addClass("active");
           cat = $currentCol.data('cat');
-          return window.location.hash = hashtag = cat;
+          if (hashtag === "") {
+            return hashtag = cat;
+          } else {
+            return window.location.hash = hashtag = cat;
+          }
         }
       };
       beforeSlideChangeEvent = function() {

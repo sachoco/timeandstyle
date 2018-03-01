@@ -97,7 +97,12 @@ jQuery ($) ->
 				$currentCol = $($(".column-title li")[$("#slick").slick('slickCurrentSlide')])
 				$currentCol.addClass "active"
 				cat = $currentCol.data('cat')
-				window.location.hash=hashtag=cat
+				# if $.browser.webkit == false 
+				if hashtag == ""
+					hashtag=cat
+				else
+					window.location.hash=hashtag=cat
+
 
 
 		beforeSlideChangeEvent = ()->

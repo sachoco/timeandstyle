@@ -54,6 +54,19 @@ foreach($product_categories as $cat):
 endforeach;
 echo "</ul></div>";
 
+}else{
+$args = array(
+    'parent'  => "13"
+); 
+$product_categories = get_terms( 'product_cat', $args );
+
+echo "<div class='column-title'><ul>";
+$i=0;
+foreach($product_categories as $cat):
+    echo "<li data-slideid='".$i."' data-cat='".$cat->slug."'><a href='/tableware/#".$cat->slug."' target='_self'>".$cat->name."</a></li>";
+    $i++;
+endforeach;
+echo "</ul></div>";
 }
 ?>
 <section class="column animsition">
@@ -100,7 +113,8 @@ echo "</ul></div>";
 					<a class="square-btn" href="<?php echo $file[url]; ?>" target="_blank">price / variations</a>
 				</p>
 				<?php endif; ?>
-		</div><!-- .summary -->
+
+			</div><!-- .summary -->
 
 	<?php
 		/**
@@ -114,26 +128,35 @@ echo "</ul></div>";
 	?>
 
 
-		<meta itemprop="url" content="<?php the_permalink(); ?>" />
-    </div>
-    <div class="page-body">
-	 	<div class="product_image">
-	<?php
-		/**
-		 * woocommerce_before_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-	?>
-
+			<meta itemprop="url" content="<?php the_permalink(); ?>" />
+				<?php 
+					if(get_field("extra_information")):
+				?>
+				<p>
+					<br><br><br>
+					<?php the_field("extra_information"); ?>
+				</p>
+				<?php endif; ?>
 		</div>
-    </div>
+	    <div class="page-body">
+		 	<div class="product_image">
+		<?php
+			/**
+			 * woocommerce_before_single_product_summary hook.
+			 *
+			 * @hooked woocommerce_show_product_sale_flash - 10
+			 * @hooked woocommerce_show_product_images - 20
+			 */
+			do_action( 'woocommerce_before_single_product_summary' );
+		?>
+
+			</div>
+	    </div>
 
 	<?php
 	// get categories
 	$terms = wp_get_post_terms( $post->ID, 'product_cat' );
+	$terms = wp_list_filter($terms, array('term_id'=>'13'),'NOT');
 	foreach ( $terms as $term ) $cats_array[] = $term->term_id;
 	$query_args = array( 'post__not_in' => array( $post->ID ), 'posts_per_page' => -1, 'no_found_rows' => 1, 'post_status' => 'publish', 'post_type' => 'product', 'tax_query' => array( 
 	array(
