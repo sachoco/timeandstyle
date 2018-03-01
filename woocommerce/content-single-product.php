@@ -114,7 +114,7 @@ echo "</ul></div>";
 				</p>
 				<?php endif; ?>
 
-		</div><!-- .summary -->
+			</div><!-- .summary -->
 
 	<?php
 		/**
@@ -128,7 +128,7 @@ echo "</ul></div>";
 	?>
 
 
-		<meta itemprop="url" content="<?php the_permalink(); ?>" />
+			<meta itemprop="url" content="<?php the_permalink(); ?>" />
 				<?php 
 					if(get_field("extra_information")):
 				?>
@@ -137,21 +137,21 @@ echo "</ul></div>";
 					<?php the_field("extra_information"); ?>
 				</p>
 				<?php endif; ?>
-    </div>
-    <div class="page-body">
-	 	<div class="product_image">
-	<?php
-		/**
-		 * woocommerce_before_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-	?>
-
 		</div>
-    </div>
+	    <div class="page-body">
+		 	<div class="product_image">
+		<?php
+			/**
+			 * woocommerce_before_single_product_summary hook.
+			 *
+			 * @hooked woocommerce_show_product_sale_flash - 10
+			 * @hooked woocommerce_show_product_images - 20
+			 */
+			do_action( 'woocommerce_before_single_product_summary' );
+		?>
+
+			</div>
+	    </div>
 
 	<?php
 	// get categories

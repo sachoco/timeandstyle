@@ -70,7 +70,7 @@ DEVELOPED BY
 
                     <li class="instagram"><a href="https://www.instagram.com/timeandstyle_amsterdam/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 
-                    <li>
+<!--                     <li>
                     
 <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
  
@@ -85,7 +85,7 @@ DEVELOPED BY
  
 <?php } ?>
 
-                    </li>
+                    </li> -->
 
                 </ul>
             </div><!-- .site-branding -->
