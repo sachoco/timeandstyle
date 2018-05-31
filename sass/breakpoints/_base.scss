@@ -579,7 +579,18 @@ section {
 				}
 
 			}
-			
+			.store3dview {
+				position: relative;
+				height: 0;
+				padding-bottom: 60%;
+				iframe {
+					width: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+					height: 100%;
+				}
+			}
 			// &.products {
 				img {
 					// width: auto;

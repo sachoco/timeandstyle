@@ -16,6 +16,9 @@ endif;
 ?>
 <section class="column shop-amsterdam">
 <ul>
+    <li class="store3dview">
+        <iframe width='853' height='480' src='https://my.matterport.com/show/?m=L5fsRabWPFg&help=2&hl=2&play=1&qs=1dh=0&gt=0&lang=jp' frameborder='0' allowfullscreen allow='vr'></iframe>
+    </li>
 <?php
 $images = get_field('shop_images',$my_posts[0]->ID);
 

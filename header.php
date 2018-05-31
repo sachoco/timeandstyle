@@ -64,8 +64,8 @@ DEVELOPED BY
                     <li class="our-shop shop-amsterdam active" data-slideid="0">Amsterdam</li>
                     <li class="our-shop shop-tokyo" data-slideid="1">Tokyo</li>
 <?php endif; ?>
-                    <li class="clockBtn"><a href="/" id="clockBtn"><img src="<?php echo get_template_directory_uri(); ?>/images/clock.svg" alt=""></a></li>
-
+<!--                     <li class="clockBtn"><a href="/" id="clockBtn"><img src="<?php echo get_template_directory_uri(); ?>/images/clock.svg" alt=""></a></li>
+ -->
                     <li class="fb"><a href="https://www.facebook.com/timeandstyle.nl/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
 
                     <li class="instagram"><a href="https://www.instagram.com/timeandstyle_amsterdam/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
