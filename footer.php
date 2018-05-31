@@ -47,23 +47,25 @@ jQuery(document).ready(function($) {
 		// 	mobileHA: false
 		// });
 	}else{
-		$("#intro").velocity("fadeIn", { 
-			delay: 0,
-	        duration: 1500, 
-	        mobileHA: false
-	    });
+		// $("#intro").velocity("fadeIn", { 
+		// 	delay: 0,
+	 //        duration: 1500, 
+	 //        mobileHA: false
+	 //    });
 	
-	    moment.tz.setDefault("Europe/Amsterdam");
-	    function update() {
-	      $('#clock').html(moment().format('H:mm:ss MMM. D. YYYY')+" AMSTERDAM");
-	    }
+	 //    moment.tz.setDefault("Europe/Amsterdam");
+	 //    function update() {
+	 //      $('#clock').html(moment().format('H:mm:ss MMM. D. YYYY')+" AMSTERDAM");
+	 //    }
 
-	    setInterval(update, 200);
+	 //    setInterval(update, 200);
 
-		$('#intro').on("click", function(){
-		    showTitle();
-		});
+		// $('#intro').on("click", function(){
+		//     showTitle();
+		// });
 
+        showTitle();
+        
 		function showTitle(){
 		    $("#intro").velocity("fadeOut", { 
 		        duration: 1500, 
