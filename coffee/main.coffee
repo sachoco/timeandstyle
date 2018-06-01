@@ -75,6 +75,15 @@ jQuery ($) ->
 		)
 		afterSlideChangeEvent = ()->
 			currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
+			if $(currentSlide).hasClass "shop-amsterdam"
+				$(".site-branding .our-shop").removeClass "active"
+				$(".site-branding .our-shop.shop-amsterdam").addClass "active"
+			else if $(currentSlide).hasClass "shop-tokyo"
+				$(".site-branding .our-shop").removeClass "active"
+				$(".site-branding .our-shop.shop-tokyo").addClass "active"
+			else if $(currentSlide).hasClass "shop-amsterdam-3dview"
+				$(".site-branding .our-shop").removeClass "active"
+				$(".site-branding .our-shop.shop-3d").addClass "active"
 			if typeof currentSlide != 'undefined'
 				# if typeof currentSlide.mcs != 'undefined'
 				# 	if currentSlide.mcs.top < 0 
@@ -108,13 +117,15 @@ jQuery ($) ->
 		beforeSlideChangeEvent = ()->
 			$(".shop-info").removeClass 'is_open'
 			currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')]
-			if $(currentSlide).hasClass "shop-amsterdam"
-				$(".site-branding .our-shop").removeClass "active"
-				$(".site-branding .our-shop.shop-tokyo").addClass "active"
-			else if $(currentSlide).hasClass "shop-tokyo"
-				$(".site-branding .our-shop").removeClass "active"
-				$(".site-branding .our-shop.shop-amsterdam").addClass "active"
-
+			# if $(currentSlide).hasClass "shop-amsterdam"
+			# 	$(".site-branding .our-shop").removeClass "active"
+			# 	$(".site-branding .our-shop.shop-tokyo").addClass "active"
+			# else if $(currentSlide).hasClass "shop-tokyo"
+			# 	$(".site-branding .our-shop").removeClass "active"
+			# 	$(".site-branding .our-shop.shop-amsterdam").addClass "active"
+			# else if $(currentSlide).hasClass "shop-amsterdam-3dview"
+			# 	$(".site-branding .our-shop").removeClass "active"
+			# 	$(".site-branding .our-shop.shop-amsterdam-3dview").addClass "active"
 
 			$("#back-to-top-slick").removeClass "active"
 			$(currentSlide).off "scroll"
@@ -140,6 +151,15 @@ jQuery ($) ->
 	$(".shop-info .close").on "click", ()->
 		$(".shop-info").removeClass 'is_open'
 	$(".animsition").animsition {inClass: 'fade-in',outClass: 'fade-out',inDuration: 1500,outDuration: 800,loading: false}
+
+	# $(".shop-3d").on "click", ()->
+	# 	if !$(".shop-info").hasClass 'is_open'
+	# 		content = $(".shop3dview")
+	# 		$(".shop-info").find(".content").html(content.html())
+	# 	height = Math.min $(".shop-info .inner").outerHeight(), $(window).height()
+	# 	$(".shop-info").css "margin-left" : $(".shop-info").width()/2*-1, "margin-top" : height/2*-1
+	# 	console.log height
+	# 	$(".shop-info").toggleClass 'is_open'
 
 	$("#back-to-top-slick").on "click", ()->
 		currentSlideIndex = $("#slick").slick('slickCurrentSlide')

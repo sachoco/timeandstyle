@@ -102,7 +102,7 @@ p {
 				}
 				
 			}
-			&.our-shop {
+			&.our-shop, &.signup {
 				color: $font-color;
 				font-size: 0.8em;
 				margin-top: 10px;
@@ -112,6 +112,14 @@ p {
 
 				}
 			}
+			&.shop-3d {
+				color: $font-color;
+				font-size: 0.6em;
+				margin-top: 7px;
+				cursor: pointer;
+				// text-align: left;
+			}
+			
 		}
 	}
 
@@ -373,6 +381,19 @@ body {
 		margin: 0 0 1em;
 	}	
 }
+.shop3dview {
+	// display: none;
+	position: relative;
+	height: 0;
+	padding-bottom: 60%;
+	iframe {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+	}
+}
 section {
 	&#intro {
 		display: none;
@@ -582,7 +603,7 @@ section {
 				}
 
 			}
-			.store3dview {
+			.shop3dview {
 				position: relative;
 				height: 0;
 				padding-bottom: 60%;
@@ -697,7 +718,28 @@ section {
 	}
 
 }
+#boxzilla-overlay {
+	z-index: 999999 !important;
+}
+div.signup-form {
+	max-width: 300px;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	input {
+		margin: 1em 0 0;
+		float: left;
+		&.firstname, &.lastname {
+			width: 49%;
+			margin-right: 2%;
+		}
+		&.lastname {
+			margin-right: 0;
+		}
+	}
 
+}
 div.wpcf7 {
 	max-width: 500px;
 	width: 100%;

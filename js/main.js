@@ -64,6 +64,16 @@
       afterSlideChangeEvent = function() {
         var $currentCol, cat, currentSlide;
         currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')];
+        if ($(currentSlide).hasClass("shop-amsterdam")) {
+          $(".site-branding .our-shop").removeClass("active");
+          $(".site-branding .our-shop.shop-amsterdam").addClass("active");
+        } else if ($(currentSlide).hasClass("shop-tokyo")) {
+          $(".site-branding .our-shop").removeClass("active");
+          $(".site-branding .our-shop.shop-tokyo").addClass("active");
+        } else if ($(currentSlide).hasClass("shop-amsterdam-3dview")) {
+          $(".site-branding .our-shop").removeClass("active");
+          $(".site-branding .our-shop.shop-3d").addClass("active");
+        }
         if (typeof currentSlide !== 'undefined') {
           if (currentSlide.scrollTop > 0) {
             $("#back-to-top-slick").addClass("active");
@@ -94,13 +104,6 @@
         var currentSlide;
         $(".shop-info").removeClass('is_open');
         currentSlide = $("#slick").slick('getSlick').$slides[$("#slick").slick('slickCurrentSlide')];
-        if ($(currentSlide).hasClass("shop-amsterdam")) {
-          $(".site-branding .our-shop").removeClass("active");
-          $(".site-branding .our-shop.shop-tokyo").addClass("active");
-        } else if ($(currentSlide).hasClass("shop-tokyo")) {
-          $(".site-branding .our-shop").removeClass("active");
-          $(".site-branding .our-shop.shop-amsterdam").addClass("active");
-        }
         $("#back-to-top-slick").removeClass("active");
         return $(currentSlide).off("scroll");
       };
