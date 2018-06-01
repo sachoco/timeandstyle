@@ -39,7 +39,8 @@ DEVELOPED BY
 
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-<script src="https://use.fontawesome.com/17d67b11a1.js"></script>
+<!-- <script src="https://use.fontawesome.com/17d67b11a1.js"></script> -->
+<script defer src="https://pro.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-d84LGg2pm9KhR4mCAs3N29GQ4OYNy+K+FBHX8WhimHpPm86c839++MDABegrZ3gn" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto:100,300,400" rel="stylesheet">
 <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -67,11 +68,11 @@ DEVELOPED BY
 <?php endif; ?>
 <!--                     <li class="clockBtn"><a href="/" id="clockBtn"><img src="<?php echo get_template_directory_uri(); ?>/images/clock.svg" alt=""></a></li>
  -->
-                    <li class="fb"><a href="https://www.facebook.com/timeandstyle.nl/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                    <li class="fb"><a href="https://www.facebook.com/timeandstyle.nl/" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
 
-                    <li class="instagram"><a href="https://www.instagram.com/timeandstyle_amsterdam/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/timeandstyle_amsterdam/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
 
-                    <li class="signup"><i class="fal fa-envelope" aria-hidden="true"></i>sign up</li>
+                    <li class="signup"><i class="fal fa-envelope" aria-hidden="true"></i><span>sign up</span></li>
 
 <!--                     <li>
                     

@@ -102,7 +102,7 @@ p {
 				}
 				
 			}
-			&.our-shop, &.signup {
+			&.our-shop{
 				color: $font-color;
 				font-size: 0.8em;
 				margin-top: 10px;
@@ -112,6 +112,16 @@ p {
 
 				}
 			}
+			&.signup span {
+				color: $font-color;
+				display: inline-block;
+			    font-size: 0.6em;
+			    margin-top: -4px;
+			    vertical-align: middle;
+			    margin-left: 6px;	
+			    cursor: pointer;			
+			}
+
 			&.shop-3d {
 				color: $font-color;
 				font-size: 0.6em;

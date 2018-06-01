@@ -348,14 +348,23 @@ p {
   margin-top: 2px;
   display: inline-block;
 }
-.site-branding ul li.our-shop, .site-branding ul li.signup {
+.site-branding ul li.our-shop {
   color: #555;
   font-size: 0.8em;
   margin-top: 10px;
   cursor: pointer;
 }
-.site-branding ul li.our-shop.active, .site-branding ul li.signup.active {
+.site-branding ul li.our-shop.active {
   text-decoration: underline;
+}
+.site-branding ul li.signup span {
+  color: #555;
+  display: inline-block;
+  font-size: 0.6em;
+  margin-top: -4px;
+  vertical-align: middle;
+  margin-left: 6px;
+  cursor: pointer;
 }
 .site-branding ul li.shop-3d {
   color: #555;
