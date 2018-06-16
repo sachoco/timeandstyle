@@ -113,6 +113,12 @@ echo "</ul></div>";
 					<a class="square-btn" href="<?php echo $file[url]; ?>" target="_blank">price / variations</a>
 				</p>
 				<?php endif; ?>
+				<?php if(!has_term( 'tableware', 'product_cat' )){ ?>
+
+				<p>
+					<a href="#" class="square-btn splite-showpopup">request 3D model</a>
+				</p>
+				<?php } ?>
 
 			</div><!-- .summary -->
 
