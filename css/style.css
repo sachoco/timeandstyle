@@ -293,7 +293,6 @@ a.square-btn {
   display: inline-block;
   width: 200px;
   text-align: center;
-  margin-bottom: 1em;
   transition: all 0.2s;
   line-height: 150%;
 }
@@ -357,6 +356,9 @@ p {
 .site-branding ul li.our-shop.active {
   text-decoration: underline;
 }
+.site-branding ul li.signup {
+  cursor: pointer;
+}
 .site-branding ul li.signup span {
   color: #555;
   display: inline-block;
@@ -364,7 +366,6 @@ p {
   margin-top: -4px;
   vertical-align: middle;
   margin-left: 6px;
-  cursor: pointer;
 }
 .site-branding ul li.shop-3d {
   color: #555;
@@ -729,10 +730,13 @@ section.column ul li ul.series {
   padding: 0em;
   margin-top: 16px;
   margin-top: 16px;
+  margin-top: 16px;
   margin-top: 1rem;
   margin-left: -8px;
   margin-left: -8px;
+  margin-left: -8px;
   margin-left: -0.5rem;
+  margin-right: -8px;
   margin-right: -8px;
   margin-right: -8px;
   margin-right: -0.5rem;
@@ -741,7 +745,9 @@ section.column ul li ul.series li {
   width: calc(100%/3);
   padding-top: 8px;
   padding-top: 8px;
+  padding-top: 8px;
   padding-top: 0.5rem;
+  padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 0.5rem;
@@ -749,7 +755,9 @@ section.column ul li ul.series li {
   display: inline-block;
   padding-left: 8px;
   padding-left: 8px;
+  padding-left: 8px;
   padding-left: 0.5rem;
+  padding-right: 8px;
   padding-right: 8px;
   padding-right: 8px;
   padding-right: 0.5rem;
@@ -863,6 +871,18 @@ section.column .page-body.w700 {
 }
 section.column .page-body p {
   margin-bottom: 2em;
+}
+
+#splite_popupBoxClose {
+  background: url(images/close.svg) no-repeat center center;
+  width: 51px;
+  height: 51px;
+  text-indent: -200px;
+  overflow: hidden;
+  margin: 1em;
+}
+#splite_popupBoxClose:hover {
+  background: url(images/close.svg) no-repeat center center;
 }
 
 #boxzilla-overlay {

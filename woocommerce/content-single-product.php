@@ -97,9 +97,12 @@ echo "</ul></div>";
 				<article class="product-description">
 						<?php the_content(); ?>
 				</article>
+				
+				<?php if(get_field("technical_information")): ?>
 				<p>
 					<?php the_field("technical_information"); ?>
-				</p>	
+				</p>
+				<?php endif; ?>	
 <!-- 				<p>
 					<a class="square-btn" href="#fabric" target="_blank">fabric</a><br>
 					<a class="square-btn" href="#leather" target="_blank">leather</a><br>
