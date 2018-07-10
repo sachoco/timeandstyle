@@ -97,9 +97,12 @@ echo "</ul></div>";
 				<article class="product-description">
 						<?php the_content(); ?>
 				</article>
+				
+				<?php if(get_field("technical_information")): ?>
 				<p>
 					<?php the_field("technical_information"); ?>
-				</p>	
+				</p>
+				<?php endif; ?>	
 <!-- 				<p>
 					<a class="square-btn" href="#fabric" target="_blank">fabric</a><br>
 					<a class="square-btn" href="#leather" target="_blank">leather</a><br>
@@ -113,6 +116,12 @@ echo "</ul></div>";
 					<a class="square-btn" href="<?php echo $file[url]; ?>" target="_blank">price / variations</a>
 				</p>
 				<?php endif; ?>
+				<?php if(!has_term( 'tableware', 'product_cat' )){ ?>
+
+				<p>
+					<a href="#" class="square-btn splite-showpopup">request 3D model</a>
+				</p>
+				<?php } ?>
 
 			</div><!-- .summary -->
 

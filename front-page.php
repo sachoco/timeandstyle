@@ -51,6 +51,23 @@ $i=0;
 </ul>
 </section>
 
+<section class="column shop-amsterdam-3dview">
+<ul>
+    <li class="shop3dview">
+        <iframe width='853' height='480' src='https://my.matterport.com/show/?m=L5fsRabWPFg&help=2&hl=2&play=1&qs=1dh=0&gt=0&lang=en' frameborder='0' allowfullscreen allow='vr'></iframe>
+    </li>
+    <li class="contact-form">
+        <div class="inner">
+            <h2>Contact</h2>
+            <?php echo do_shortcode( '[contact-form-7 id="111" title="Contact"]' );  ?>
+        </div>    
+    </li>   
+    <li class="footer">
+        <footer class="footer">
+             &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
+        </footer>
+    </li>
+</section>
 
 <?php
 $the_slug = 'shop-tokyo';
@@ -101,6 +118,8 @@ $i=0;
 </ul>
 </section>
 
+
+
 </section>
 
 <div class="shop-info-toggle mobile-hide">Shop Information</div>
@@ -128,61 +147,6 @@ $i=0;
                                     
     </div>
 </div>
-
-
-<!-- <section id="slick" class="loop">
-
-<?php
-
-$args = array(
-    'exclude_tree'  => array("13")
-); 
-$product_categories = get_terms( 'product_cat', $args );
-
-foreach($product_categories as $cat):
-
-?>
-
-<section class="column">
-
-
-<ul class="products">
-    <?php
-        $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $cat->slug );
-        $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
-
-                <li class="product">    
-
-                    <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
-						<div class="image-wrapper">
-                        <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
-
-                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
-						</div>
-                        <h3><?php the_title(); ?></h3>
-
-
-                    </a>
-
-
-                </li>
-
-    <?php endwhile; ?>
-    <?php wp_reset_query(); ?>
-	<li class="footer">
-    	<footer class="footer">
-			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
-        </footer>
-	</li>
-</ul>
-
-</section>
-
-<?php endforeach; ?>
-
-
-</section> -->
 
 
 <?php get_footer(); ?>

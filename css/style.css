@@ -293,7 +293,6 @@ a.square-btn {
   display: inline-block;
   width: 200px;
   text-align: center;
-  margin-bottom: 1em;
   transition: all 0.2s;
   line-height: 150%;
 }
@@ -357,6 +356,23 @@ p {
 .site-branding ul li.our-shop.active {
   text-decoration: underline;
 }
+.site-branding ul li.signup {
+  cursor: pointer;
+}
+.site-branding ul li.signup span {
+  color: #555;
+  display: inline-block;
+  font-size: 0.6em;
+  margin-top: -4px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+.site-branding ul li.shop-3d {
+  color: #555;
+  font-size: 0.6em;
+  margin-top: 7px;
+  cursor: pointer;
+}
 
 .column-title {
   position: fixed;
@@ -414,6 +430,11 @@ p {
 }
 #site-navigation > div ul.menu li {
   margin: 3em 1.5em;
+}
+@media screen and (max-height: 670px) {
+  #site-navigation > div ul.menu li {
+    margin: 2.5em 1.5em;
+  }
 }
 @media screen and (max-height: 480px) {
   #site-navigation > div ul.menu li {
@@ -553,6 +574,19 @@ body.single-product ul.product_list_widget li .inner:hover .overlay, body.single
 
 .shop-info-content p {
   margin: 0 0 1em;
+}
+
+.shop3dview {
+  position: relative;
+  height: 0;
+  padding-bottom: 60%;
+}
+.shop3dview iframe {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
 }
 
 section#intro {
@@ -697,17 +731,11 @@ section.column ul li ul.series {
   margin-top: 16px;
   margin-top: 16px;
   margin-top: 16px;
-  margin-top: 16px;
-  margin-top: 16px;
   margin-top: 1rem;
   margin-left: -8px;
   margin-left: -8px;
   margin-left: -8px;
-  margin-left: -8px;
-  margin-left: -8px;
   margin-left: -0.5rem;
-  margin-right: -8px;
-  margin-right: -8px;
   margin-right: -8px;
   margin-right: -8px;
   margin-right: -8px;
@@ -718,11 +746,7 @@ section.column ul li ul.series li {
   padding-top: 8px;
   padding-top: 8px;
   padding-top: 8px;
-  padding-top: 8px;
-  padding-top: 8px;
   padding-top: 0.5rem;
-  padding-bottom: 8px;
-  padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 8px;
@@ -732,11 +756,7 @@ section.column ul li ul.series li {
   padding-left: 8px;
   padding-left: 8px;
   padding-left: 8px;
-  padding-left: 8px;
-  padding-left: 8px;
   padding-left: 0.5rem;
-  padding-right: 8px;
-  padding-right: 8px;
   padding-right: 8px;
   padding-right: 8px;
   padding-right: 8px;
@@ -764,6 +784,18 @@ section.column ul li.product .image-wrapper .series-title {
   left: 0;
   z-index: 9;
   font-size: 2em;
+}
+section.column ul .shop3dview {
+  position: relative;
+  height: 0;
+  padding-bottom: 60%;
+}
+section.column ul .shop3dview iframe {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
 }
 section.column ul img {
   width: 100%;
@@ -839,6 +871,41 @@ section.column .page-body.w700 {
 }
 section.column .page-body p {
   margin-bottom: 2em;
+}
+
+#splite_popupBoxClose {
+  background: url(images/close.svg) no-repeat center center;
+  width: 51px;
+  height: 51px;
+  text-indent: -200px;
+  overflow: hidden;
+  margin: 1em;
+}
+#splite_popupBoxClose:hover {
+  background: url(images/close.svg) no-repeat center center;
+}
+
+#boxzilla-overlay {
+  z-index: 999999 !important;
+}
+
+div.signup-form {
+  max-width: 300px;
+}
+div.signup-form img {
+  width: 100%;
+  height: auto;
+}
+div.signup-form input {
+  margin: 1em 0 0;
+  float: left;
+}
+div.signup-form input.firstname, div.signup-form input.lastname {
+  width: 49%;
+  margin-right: 2%;
+}
+div.signup-form input.lastname {
+  margin-right: 0;
 }
 
 div.wpcf7 {
