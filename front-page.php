@@ -36,15 +36,16 @@ $i=0;
         <?php echo wpautop( $content ); ?>
 
     </li>
-    <li class="contact-form">
+<!--     <li class="contact-form">
         <div class="inner">
             <h2>Contact</h2>
             <?php echo do_shortcode( '[contact-form-7 id="111" title="Contact"]' );  ?>
         </div>
         
-    </li>   
+    </li>  -->  
 	<li class="footer">
     	<footer class="footer">
+            <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
 			 &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
 	</li>
@@ -56,14 +57,15 @@ $i=0;
     <li class="shop3dview">
         <iframe width='853' height='480' src='https://my.matterport.com/show/?m=L5fsRabWPFg&help=2&hl=2&play=1&qs=1dh=0&gt=0&lang=en' frameborder='0' allowfullscreen allow='vr'></iframe>
     </li>
-    <li class="contact-form">
+<!--     <li class="contact-form">
         <div class="inner">
             <h2>Contact</h2>
             <?php echo do_shortcode( '[contact-form-7 id="111" title="Contact"]' );  ?>
         </div>    
-    </li>   
+    </li>   --> 
     <li class="footer">
         <footer class="footer">
+            <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>
@@ -103,15 +105,16 @@ $i=0;
         <h3><?php echo $title; ?></h3>
         <?php echo $content; ?>
     </li>
-    <li class="contact-form">
+<!--     <li class="contact-form">
         <div class="inner">
             <h2>Contact</h2>
             <?php echo do_shortcode( '[contact-form-7 id="111" title="Contact"]' );  ?>
         </div>
         
-    </li>   
+    </li>   --> 
     <li class="footer">
         <footer class="footer">
+            <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>

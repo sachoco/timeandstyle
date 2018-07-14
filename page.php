@@ -5,7 +5,7 @@
     <div class="page-content">
     <div class="inner">
         <div class="page-header"><h2><?php the_title(); ?></h2></div>
-        <div class="page-body">
+        <div class="page-body w700">
             <?php the_content(); ?>
         </div>
     </div>
@@ -15,6 +15,7 @@
 <ul>
     <li class="footer">
         <footer class="footer">
+            <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>    

@@ -72,7 +72,7 @@ DEVELOPED BY
 
                     <li class="instagram"><a href="https://www.instagram.com/timeandstyle_amsterdam/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
 
-                    <!-- <li class="signup"><i class="fal fa-envelope" aria-hidden="true"></i><span>sign up</span></li> -->
+                    <li class="signup"><i class="fal fa-envelope" aria-hidden="true"></i><span>sign up</span></li>
 
 <!--                     <li>
                     

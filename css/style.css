@@ -730,13 +730,10 @@ section.column ul li ul.series {
   padding: 0em;
   margin-top: 16px;
   margin-top: 16px;
-  margin-top: 16px;
   margin-top: 1rem;
   margin-left: -8px;
   margin-left: -8px;
-  margin-left: -8px;
   margin-left: -0.5rem;
-  margin-right: -8px;
   margin-right: -8px;
   margin-right: -8px;
   margin-right: -0.5rem;
@@ -745,9 +742,7 @@ section.column ul li ul.series li {
   width: calc(100%/3);
   padding-top: 8px;
   padding-top: 8px;
-  padding-top: 8px;
   padding-top: 0.5rem;
-  padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 8px;
   padding-bottom: 0.5rem;
@@ -755,9 +750,7 @@ section.column ul li ul.series li {
   display: inline-block;
   padding-left: 8px;
   padding-left: 8px;
-  padding-left: 8px;
   padding-left: 0.5rem;
-  padding-right: 8px;
   padding-right: 8px;
   padding-right: 8px;
   padding-right: 0.5rem;
@@ -835,9 +828,17 @@ section.column .image-wrapper .overlay-text h2 {
   font-size: 2em;
 }
 section.column footer {
-  padding: 100px 1em 1em;
+  padding: 50px 1em 1em;
   background-color: #EFEFEF;
   font-size: 0.7em;
+}
+section.column footer ul.menu {
+  margin: 0 auto 3em;
+  text-align: center;
+}
+section.column footer ul.menu li {
+  margin: 1em;
+  display: inline-block;
 }
 section.column .page-content {
   width: 100%;
