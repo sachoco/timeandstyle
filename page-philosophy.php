@@ -29,6 +29,7 @@ endif;
 <ul>
     <li class="footer">
         <footer class="footer">
+            <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>    

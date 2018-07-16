@@ -525,6 +525,7 @@ section {
 				}
 				&.footer {
 					margin-bottom: 0;
+
 				}
 				&.contact-form {
 					text-align: left;
@@ -688,9 +689,18 @@ section {
 
 		}
 		footer {
-			padding: 100px 1em 1em;
+			padding: 50px 1em 1em;
+			// padding: 100px 1em 1em;
 			background-color: #EFEFEF;
 			font-size: 0.7em;
+			ul.menu {
+				margin: 0 auto 3em;
+				text-align: center;
+				li {
+					margin: 1em;
+					display: inline-block;
+				}	
+			}
 		}
 		
 		.page-content {
