@@ -283,6 +283,14 @@ html, body {
   letter-spacing: 1px;
 }
 
+input, textarea, select, button {
+  letter-spacing: 1px;
+}
+
+.btn {
+  line-height: 2em;
+}
+
 a {
   text-decoration: none;
   color: #555;
@@ -296,9 +304,13 @@ a.square-btn {
   transition: all 0.2s;
   line-height: 150%;
 }
-a.square-btn:hover {
+a.square-btn:hover, a.square-btn.active {
   background-color: #555;
   color: white;
+}
+a:hover {
+  text-decoration: none;
+  color: #555;
 }
 
 p {
@@ -728,31 +740,17 @@ section.column ul li ul.series {
   -ms-flex-align: stretch;
   align-items: stretch;
   padding: 0em;
-  margin-top: 16px;
-  margin-top: 16px;
   margin-top: 1rem;
-  margin-left: -8px;
-  margin-left: -8px;
   margin-left: -0.5rem;
-  margin-right: -8px;
-  margin-right: -8px;
   margin-right: -0.5rem;
 }
 section.column ul li ul.series li {
   width: calc(100%/3);
-  padding-top: 8px;
-  padding-top: 8px;
   padding-top: 0.5rem;
-  padding-bottom: 8px;
-  padding-bottom: 8px;
   padding-bottom: 0.5rem;
   position: relative;
   display: inline-block;
-  padding-left: 8px;
-  padding-left: 8px;
   padding-left: 0.5rem;
-  padding-right: 8px;
-  padding-right: 8px;
   padding-right: 0.5rem;
   vertical-align: top;
   margin: 0;
@@ -1042,6 +1040,10 @@ div.wpcf7 p {
   background-color: #555;
 }
 
+.woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
+  background-color: #555;
+}
+
 .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
   background-color: #484848;
 }
@@ -1077,8 +1079,13 @@ div.wpcf7 p {
 }
 
 .woocommerce .quantity .qty {
-  height: 36px;
+  height: 50px;
   font-size: 1em;
+  padding-top: 5px;
+}
+
+.woocommerce div.product form.cart .button {
+  height: 50px;
 }
 
 .woocommerce form .form-row.woocommerce-validated .select2-container, .woocommerce form .form-row.woocommerce-validated input.input-text, .woocommerce form .form-row.woocommerce-validated select {
@@ -1087,6 +1094,306 @@ div.wpcf7 p {
 
 #add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods {
   width: 100%;
+}
+
+.fancybox-container {
+  z-index: 999999;
+}
+
+.fancybox-slide--html {
+  padding: 0;
+}
+.fancybox-slide--html .fancybox-content {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.fancybox-slide--html .fancybox-content .content-wrapper {
+  width: 80%;
+  margin: auto;
+}
+.fancybox-slide--html .fancybox-content .content-wrapper .page-title {
+  padding: 70px 0 60px;
+  padding: 70px 0 60px;
+  padding: 4.375rem 0 3.75rem;
+}
+.fancybox-slide--html .fancybox-content .content-wrapper .page-title h2 {
+  font-size: 1.4em;
+  text-align: center;
+}
+.fancybox-slide--html .fancybox-content .content-wrapper .variation-filters {
+  text-align: center;
+}
+.fancybox-slide--html .fancybox-content .content-wrapper .variation-section {
+  margin-top: 50px;
+  margin-top: 50px;
+  margin-top: 3.125rem;
+}
+.fancybox-slide--html .fancybox-content .content-wrapper .variation-section .headline {
+  font-size: 22px;
+  font-size: 22px;
+  font-size: 1.375rem;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.fancybox-slide:before {
+  margin: 0;
+}
+
+.fancybox-close-small {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' fill='%23222222'%3E %3Cpath id='exit-xl' d='M1390,50.563L1389.43,50,1372,67.434,1354.56,50l-0.56.565L1371.43,68,1354,85.436,1354.56,86,1372,68.564,1389.43,86l0.57-.565L1372.56,68Z' transform='translate(-1354 -50)'/%3E %3C/svg%3E");
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 60%;
+  position: fixed;
+  top: 20px;
+  top: 20px;
+  top: 1.25rem;
+  right: 15.008px;
+  right: 15.008px;
+  right: .938rem;
+  width: 36px;
+  width: 36px;
+  width: 2.25rem;
+  height: 36px;
+  height: 36px;
+  height: 2.25rem;
+  cursor: pointer;
+  z-index: 8040;
+  text-indent: -200px;
+  overflow: hidden;
+  background-size: 100%;
+  top: 35.008px;
+  top: 35.008px;
+  top: 2.188rem;
+  right: 35.008px;
+  right: 35.008px;
+  right: 2.188rem;
+}
+
+.tas-select {
+  position: relative;
+  padding: 1em 50px 1em 1em;
+  background-color: #eee;
+  width: 100%;
+  display: block;
+}
+.tas-select:hover {
+  background-color: #f2f2f2;
+}
+.tas-select:hover:after {
+  right: 16px;
+}
+.tas-select:after {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1em;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 200;
+  content: "\f061";
+  transition: all .2s;
+}
+.tas-select .label {
+  color: #999;
+}
+
+.variation-overlay-content .close-overlay {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36' fill='%23222222'%3E %3Cpath id='exit-xl' d='M1390,50.563L1389.43,50,1372,67.434,1354.56,50l-0.56.565L1371.43,68,1354,85.436,1354.56,86,1372,68.564,1389.43,86l0.57-.565L1372.56,68Z' transform='translate(-1354 -50)'/%3E %3C/svg%3E");
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 60%;
+  position: fixed;
+  top: 1.25rem;
+  right: .938rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer;
+  z-index: 8040;
+}
+
+.variation-filter {
+  text-align: center;
+  margin-top: 1em;
+}
+.variation-filter li {
+  display: inline-block;
+  margin: 2px;
+}
+
+.variation-groups {
+  padding-bottom: 3em;
+}
+.variation-groups .variation-group {
+  margin-top: 3em;
+}
+.variation-groups .variation-group.hide {
+  display: none;
+}
+.variation-groups .variation-group .headline {
+  font-size: 1.375em;
+  margin-bottom: 1.25em;
+}
+.variation-groups .variation-group li {
+  cursor: pointer;
+}
+.variation-groups .variation-group li .check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #555;
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 2em;
+  color: white;
+}
+.variation-groups .variation-group li.selected:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 50%;
+  font-size: 2em;
+  color: white;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 200;
+  content: "\f00c";
+}
+
+.flex-grid {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-left: -.187rem;
+  margin-right: -.187rem;
+}
+.flex-grid .align-left {
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.flex-grid > .flex-item {
+  -webkit-flex: 0 1 22.5%;
+      -ms-flex: 0 1 22.5%;
+          flex: 0 1 22.5%;
+  -ms-flex-preferred-size: calc(20% - 6px);
+      -webkit-flex-basis: calc(20% - 6px);
+          flex-basis: calc(20% - 6px);
+  position: relative;
+  margin-top: .375rem;
+  overflow: hidden;
+  margin-left: .188rem;
+  margin-right: .188rem;
+}
+
+.tas-variation {
+  padding-right: 0 !important;
+}
+.tas-variation label {
+  display: none;
+}
+.tas-variation select.hidden {
+  display: none !important;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+  width: 100%;
+}
+.bootstrap-select > select {
+  min-width: 0 !important;
+}
+.bootstrap-select .dropdown-menu {
+  border-radius: 0;
+}
+.bootstrap-select .dropdown-menu .inner {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.bootstrap-select .dropdown-menu li {
+  margin: 0;
+}
+.bootstrap-select .dropdown-toggle {
+  position: relative;
+  padding: 1em 50px 1em 1em;
+  background-color: #eee;
+  width: 100%;
+  display: block;
+  vertical-align: middle;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 1em;
+}
+.bootstrap-select .dropdown-toggle:hover {
+  background-color: #f2f2f2;
+}
+.bootstrap-select .dropdown-toggle:hover:after {
+  right: 16px;
+}
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+.bootstrap-select .dropdown-toggle:after {
+  position: absolute;
+  right: 20px;
+  width: auto;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 200;
+  content: "\f061";
+  border: none;
+  transition: all .2s;
+}
+.bootstrap-select .dropdown-toggle .filter-option {
+  outline: none;
+}
+.bootstrap-select .dropdown-toggle .filter-option span {
+  color: #999;
+}
+.bootstrap-select .dropdown-toggle .filter-option-inner {
+  padding-right: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: #898989;
+}
+
+.btn.focus, .btn:focus {
+  box-shadow: none;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+  color: #555;
 }
 
 /*********************

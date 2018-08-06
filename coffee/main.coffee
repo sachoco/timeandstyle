@@ -201,6 +201,35 @@ jQuery ($) ->
 		window.location.hash=hashtag+"_"+id
 		# e.preventDefault()
 
+	$(".variation-groups li").on "click", (e)->
+		$(this).parents(".variation-groups").find("li").removeClass "selected"
+		$(this).addClass "selected"
+		upholster = $(this).data("upholster")
+		upholster_category = $(this).data("upholster-category")
+		upholster_title = $(this).data("upholster-title")
+		$("#pa_upholster").val(upholster)
+		$("#pa_upholster-category").val(upholster_category).trigger('change')
+		$("#upholster .title").text(upholster_title)
+
+	$('.reset_variations').on 'click', (e)->
+		if $('#uphoster')
+			$("#upholster .title").text('Choose an option')
+			$(".variation-groups").find("li").removeClass "selected"
+
+	$(".variation-filter a").on "click", (e)->
+		$(this).parents(".variation-filter").find("a").removeClass "active"
+		$(this).addClass "active"
+		val = $(this).data("filter-values")
+		$(".variation-group").hide()
+		for g in $(".variation-group")
+			if $(g).data("filter-values") is val then $(g).show()
+
+	$('.selectpicker').on 'loaded.bs.select', (e)->
+		label = $(this).parents(".tas-variation").find("label").text()
+		$(this).parent().find(".filter-option").prepend("<span>"+label+": </span>")
+
+
+
 	# $("#shop-info").one "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", ()->
 		# roundCssTransformMatrix("shop-info")
 

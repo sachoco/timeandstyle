@@ -184,7 +184,7 @@ echo "</ul></div>";
 		<?php if (has_post_thumbnail()) the_post_thumbnail('medium'); else echo '<img src="'. woocommerce_placeholder_img_src() .'" alt="Placeholder" />'; ?>
 				<div class="overlay"><h4><?php if ( get_the_title() ) the_title(); else the_ID(); ?></h4></div>
 			</div>
-	    </a> <?php //echo $product->get_price_html(); ?></li>
+	    </a> <?php echo $product->get_price_html(); ?></li>
 	  <?php endwhile; ?>
 	</ul>
 	<?php
@@ -200,6 +200,7 @@ echo "</ul></div>";
 	<ul>
 	    <li class="footer">
 	        <footer class="footer">
+	            <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
 	             &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
 	        </footer>
 	    </li>    

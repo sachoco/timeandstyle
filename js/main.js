@@ -186,6 +186,46 @@
       id = $(this).data("id");
       return window.location.hash = hashtag + "_" + id;
     });
+    $(".variation-groups li").on("click", function(e) {
+      var upholster, upholster_category, upholster_title;
+      $(this).parents(".variation-groups").find("li").removeClass("selected");
+      $(this).addClass("selected");
+      upholster = $(this).data("upholster");
+      upholster_category = $(this).data("upholster-category");
+      upholster_title = $(this).data("upholster-title");
+      $("#pa_upholster").val(upholster);
+      $("#pa_upholster-category").val(upholster_category).trigger('change');
+      return $("#upholster .title").text(upholster_title);
+    });
+    $('.reset_variations').on('click', function(e) {
+      if ($('#uphoster')) {
+        $("#upholster .title").text('Choose an option');
+        return $(".variation-groups").find("li").removeClass("selected");
+      }
+    });
+    $(".variation-filter a").on("click", function(e) {
+      var g, i, len, ref, results, val;
+      $(this).parents(".variation-filter").find("a").removeClass("active");
+      $(this).addClass("active");
+      val = $(this).data("filter-values");
+      $(".variation-group").hide();
+      ref = $(".variation-group");
+      results = [];
+      for (i = 0, len = ref.length; i < len; i++) {
+        g = ref[i];
+        if ($(g).data("filter-values") === val) {
+          results.push($(g).show());
+        } else {
+          results.push(void 0);
+        }
+      }
+      return results;
+    });
+    $('.selectpicker').on('loaded.bs.select', function(e) {
+      var label;
+      label = $(this).parents(".tas-variation").find("label").text();
+      return $(this).parent().find(".filter-option").prepend("<span>" + label + ": </span>");
+    });
     return this;
   });
 
