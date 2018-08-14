@@ -28,7 +28,8 @@
 						"image" => "wood/Oak_TE.jpg"
 					);
 		}
-	}else if(in_array("wildcherry", $wood_options)){
+	}
+	if(in_array("wildcherry", $wood_options)){
 		$wood["Wood"]["WILDCHERRY"] = array(
 					"Wildcherry - Beeswax" => array(
 						"id" => "wildcherry-beeswax",
@@ -36,7 +37,8 @@
 						"image" => "wood/Wildcherry_Beeswax.jpg"
 					)
 				);
-	}else if(in_array("walnut", $wood_options)){
+	}
+	if(in_array("walnut", $wood_options)){
 		$wood["Wood"]["WALNUT"] = array(
 					"Walnut - Beeswax" => array(
 						"id" => "walnut-beeswax",
@@ -49,7 +51,8 @@
 						"image" => "wood/Walnut_GD.jpg"
 					)
 				);
-	}else if(in_array("beech", $wood_options)){
+	}
+	if(in_array("beech", $wood_options)){
 		$wood["Wood"]["BEECH"] = array(
 					"Beech - Soap" => array(
 						"id" => "beech-soap",
@@ -87,7 +90,8 @@
 						"image" => "wood/Beech_DW.jpg"
 					)
 				);
-	}else if(in_array("ash", $wood_options)){
+	}
+	if(in_array("ash", $wood_options)){
 		$wood["Wood"]["ASH"] = array(
 					"Ash - Clear" => array(
 						"id" => "ash-clear",
@@ -122,7 +126,8 @@
 						"image" => "wood/Ash_SV.jpg"
 					);
 		}
-	}else if(in_array("mdf", $wood_options)){
+	}
+	if(in_array("mdf", $wood_options)){
 		$wood["Wood"]["MDF"] = array(
 					"MDF - Glossy warm white" => array(
 						"id" => "mdf-glossy-warm-white",
