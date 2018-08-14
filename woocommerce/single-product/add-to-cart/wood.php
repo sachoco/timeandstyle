@@ -7,23 +7,27 @@
 		"Wood" => array()
 	);
 	if(in_array("oak", $wood_options)){
-		$wood["Wood"]["OAK"] = array(
-					"Oak - Soap" => array(
+		if(in_array("oak-soap", $wood_finishing_options)){
+			$wood["Wood"]["OAK"]["Oak - Soap"] = array(
 						"id" => "oak-soap",
 						"category" => "oak",
 						"image" => "wood/Oak_SO.jpg"
-					),
-					"Oak - Beeswax" => array(
+					);
+		}
+		if(in_array("oak-beeswax", $wood_finishing_options)){
+			$wood["Wood"]["OAK"]["Oak - Beeswax"] = array(
 						"id" => "oak-beeswax",
 						"category" => "oak",
 						"image" => "wood/Oak_BW.jpg"
-					),
-					"Oak - Tannin black" => array(
+					);
+		}
+		if(in_array("oak-tannin-black", $wood_options)){
+			$wood["Wood"]["OAK"]["Oak - Tannin black"] = array(
 						"id" => "oak-tannin-black",
-						"category" => "oak-tannin",
+						"category" => "oak-tannin-black",
 						"image" => "wood/Oak_TE.jpg"
-					)
-				);
+					);
+		}
 	}else if(in_array("wildcherry", $wood_options)){
 		$wood["Wood"]["WILDCHERRY"] = array(
 					"Wildcherry - Beeswax" => array(
