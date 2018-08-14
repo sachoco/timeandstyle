@@ -201,19 +201,36 @@ jQuery ($) ->
 		window.location.hash=hashtag+"_"+id
 		# e.preventDefault()
 
-	$(".variation-groups li").on "click", (e)->
+	$("#variable-upholster .variation-groups li").on "click", (e)->
 		$(this).parents(".variation-groups").find("li").removeClass "selected"
 		$(this).addClass "selected"
 		upholster = $(this).data("upholster")
 		upholster_category = $(this).data("upholster-category")
 		upholster_title = $(this).data("upholster-title")
 		$("#pa_upholster").val(upholster)
-		$("#pa_upholster-category").val(upholster_category).trigger('change')
+		$("#pa_upholster-category").val(upholster_category)
 		$("#upholster .title").text(upholster_title)
+
+	$("#variable-wood .variation-groups li").on "click", (e)->
+		$(this).parents(".variation-groups").find("li").removeClass "selected"
+		$(this).addClass "selected"
+		wood = $(this).data("wood")
+		wood_category = $(this).data("wood-category")
+		wood_title = $(this).data("wood-title")
+		$("#pa_wood").val(wood_category)
+		$("#pa_wood-finishing").val(wood)
+		$("#wood .title").text(wood_title)
+
+	$(".tas-select[data-fancybox]").fancybox({
+		afterClose: ( instance, slide )->
+			$("#pa_upholster-category").trigger('change')
+			$("#pa_wood").trigger('change')
+	});
 
 	$('.reset_variations').on 'click', (e)->
 		if $('#uphoster')
 			$("#upholster .title").text('Choose an option')
+			$("#wood.tas-select .title").text('Choose an option')
 			$(".variation-groups").find("li").removeClass "selected"
 
 	$(".variation-filter a").on "click", (e)->
@@ -228,6 +245,34 @@ jQuery ($) ->
 		label = $(this).parents(".tas-variation").find("label").text()
 		$(this).parent().find(".filter-option").prepend("<span>"+label+": </span>")
 
+	$( ".variations_form" ).on "woocommerce_update_variation_values", ()->
+		$('.selectpicker').each (index)->
+			if $(this).find('option').length == 2
+				$(this).prop("disabled", true)
+				if $(this).prop('selectedIndex') != 1
+					$(this).prop('selectedIndex', 1).trigger("change").prop("disabled", true)
+			$(this).selectpicker('refresh')
+
+	varSelects = 'form.variations_form select'
+	$(document).on 'change', varSelects, ->
+		$selectField = $(this)
+		# $variationsForm = $selectField.closest('form')
+		# selectedAtt = sanitise_str($selectField.attr('name'))
+		# selectedVal = sanitise_str($selectField.val())
+		$(varSelects).each (index) ->
+			$(this).prop( "disabled", false )
+			if $(this).find('option').length == 2
+				if $(this).prop('selectedIndex') != 1
+					$(this).prop('selectedIndex', 1).trigger("change")
+					if($(this).hasClass("selectpicker"))
+						$(this).prop("disabled", true).selectpicker('refresh')
+
+	$("#pa_wood").on "change", (e)->
+		if($(this).val()=="n-a")
+			$("#wood.tas-select .title").text("N/A")
+			$("#wood.tas-select").addClass("disabled")
+		else
+			$("#wood.tas-select").removeClass("disabled")
 
 
 	# $("#shop-info").one "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", ()->

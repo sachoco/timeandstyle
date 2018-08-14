@@ -1099,6 +1099,11 @@ div.wpcf7 p {
 .fancybox-container {
   z-index: 999999;
 }
+.fancybox-container .fancybox-bg {
+  background: white;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
 
 .fancybox-slide--html {
   padding: 0;
@@ -1181,12 +1186,27 @@ div.wpcf7 p {
   background-color: #eee;
   width: 100%;
   display: block;
+  margin-bottom: 1em;
 }
 .tas-select:hover {
   background-color: #f2f2f2;
 }
 .tas-select:hover:after {
   right: 16px;
+}
+.tas-select.disabled {
+  opacity: .65;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+  cursor: not-allowed;
+}
+.tas-select.disabled:after, .tas-select.disabled .title {
+  color: #212529;
+}
+.tas-select.disabled:hover {
+  background-color: #eee;
+}
+.tas-select.disabled:hover:after {
+  right: 20px;
 }
 .tas-select:after {
   position: absolute;
@@ -1263,7 +1283,18 @@ div.wpcf7 p {
   font-size: 2em;
   color: white;
 }
-.variation-groups .variation-group li.selected:before {
+.variation-groups .variation-group li .title {
+  font-size: 0.6em;
+  margin: 5px;
+}
+.variation-groups .variation-group li .desc {
+  font-size: 0.4em;
+  margin: 5px;
+}
+.variation-groups .variation-group li.selected .image {
+  position: relative;
+}
+.variation-groups .variation-group li.selected .image:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1356,6 +1387,12 @@ div.wpcf7 p {
 }
 .bootstrap-select .dropdown-toggle:hover:after {
   right: 16px;
+}
+.bootstrap-select .dropdown-toggle.disabled:hover {
+  background-color: #eee;
+}
+.bootstrap-select .dropdown-toggle.disabled:hover:after {
+  right: 20px;
 }
 .bootstrap-select .dropdown-toggle:focus {
   outline: none !important;

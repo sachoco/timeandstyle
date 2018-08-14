@@ -10,7 +10,7 @@
   hashtag = hashtag.split("_")[0];
 
   jQuery(function($) {
-    var afterSlideChangeEvent, beforeSlideChangeEvent, myCustomFn, resize;
+    var afterSlideChangeEvent, beforeSlideChangeEvent, myCustomFn, resize, varSelects;
     resize = function() {
       var height;
       $('.column').height($(window).height());
@@ -186,7 +186,7 @@
       id = $(this).data("id");
       return window.location.hash = hashtag + "_" + id;
     });
-    $(".variation-groups li").on("click", function(e) {
+    $("#variable-upholster .variation-groups li").on("click", function(e) {
       var upholster, upholster_category, upholster_title;
       $(this).parents(".variation-groups").find("li").removeClass("selected");
       $(this).addClass("selected");
@@ -194,12 +194,30 @@
       upholster_category = $(this).data("upholster-category");
       upholster_title = $(this).data("upholster-title");
       $("#pa_upholster").val(upholster);
-      $("#pa_upholster-category").val(upholster_category).trigger('change');
+      $("#pa_upholster-category").val(upholster_category);
       return $("#upholster .title").text(upholster_title);
+    });
+    $("#variable-wood .variation-groups li").on("click", function(e) {
+      var wood, wood_category, wood_title;
+      $(this).parents(".variation-groups").find("li").removeClass("selected");
+      $(this).addClass("selected");
+      wood = $(this).data("wood");
+      wood_category = $(this).data("wood-category");
+      wood_title = $(this).data("wood-title");
+      $("#pa_wood").val(wood_category);
+      $("#pa_wood-finishing").val(wood);
+      return $("#wood .title").text(wood_title);
+    });
+    $(".tas-select[data-fancybox]").fancybox({
+      afterClose: function(instance, slide) {
+        $("#pa_upholster-category").trigger('change');
+        return $("#pa_wood").trigger('change');
+      }
     });
     $('.reset_variations').on('click', function(e) {
       if ($('#uphoster')) {
         $("#upholster .title").text('Choose an option');
+        $("#wood.tas-select .title").text('Choose an option');
         return $(".variation-groups").find("li").removeClass("selected");
       }
     });
@@ -225,6 +243,41 @@
       var label;
       label = $(this).parents(".tas-variation").find("label").text();
       return $(this).parent().find(".filter-option").prepend("<span>" + label + ": </span>");
+    });
+    $(".variations_form").on("woocommerce_update_variation_values", function() {
+      return $('.selectpicker').each(function(index) {
+        if ($(this).find('option').length === 2) {
+          $(this).prop("disabled", true);
+          if ($(this).prop('selectedIndex') !== 1) {
+            $(this).prop('selectedIndex', 1).trigger("change").prop("disabled", true);
+          }
+        }
+        return $(this).selectpicker('refresh');
+      });
+    });
+    varSelects = 'form.variations_form select';
+    $(document).on('change', varSelects, function() {
+      var $selectField;
+      $selectField = $(this);
+      return $(varSelects).each(function(index) {
+        $(this).prop("disabled", false);
+        if ($(this).find('option').length === 2) {
+          if ($(this).prop('selectedIndex') !== 1) {
+            $(this).prop('selectedIndex', 1).trigger("change");
+            if ($(this).hasClass("selectpicker")) {
+              return $(this).prop("disabled", true).selectpicker('refresh');
+            }
+          }
+        }
+      });
+    });
+    $("#pa_wood").on("change", function(e) {
+      if ($(this).val() === "n-a") {
+        $("#wood.tas-select .title").text("N/A");
+        return $("#wood.tas-select").addClass("disabled");
+      } else {
+        return $("#wood.tas-select").removeClass("disabled");
+      }
     });
     return this;
   });

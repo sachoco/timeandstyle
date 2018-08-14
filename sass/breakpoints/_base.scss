@@ -949,6 +949,10 @@ div.wpcf7 {
 }
 .fancybox-container {
 	z-index: 999999;
+	.fancybox-bg {
+		background: white;
+		opacity: 1;
+	}
 }
 .fancybox-slide--html {
 	padding: 0;
@@ -1012,11 +1016,25 @@ div.wpcf7 {
     background-color: #eee;
     width: 100%;
     display: block;
+    margin-bottom: 1em;
     &:hover {
     	background-color: #f2f2f2;
     	&:after {
     		right: 16px;
     	}
+    }
+    &.disabled {
+    	opacity: .65;
+    	cursor: not-allowed;
+    	&:after, .title {
+    		color: #212529;
+    	}
+	    &:hover {
+	    	background-color: #eee;
+	    	&:after {
+	    		right: 20px;
+	    	}
+	    }
     }
     &:after {
 		position: absolute;
@@ -1090,25 +1108,37 @@ div.wpcf7 {
 			    color: white;
 
 			}
-			&.selected::before {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%,-50%);
-				background-color: rgba(0,0,0,0.5);
-				padding: 20px;
-				border-radius: 50%;
-				font-size: 2em;
-			    color: white;
-				display: inline-block;
-				font-style: normal;
-				font-variant: normal;
-				text-rendering: auto;
-				-webkit-font-smoothing: antialiased;
-				font-family: "Font Awesome 5 Pro";
-				font-weight: 200;
-				content: "\f00c";
-			}			
+			.title {
+				font-size: 0.6em;
+				margin: 5px;
+			}
+			.desc {
+				font-size: 0.4em;
+				margin: 5px;
+			}
+			&.selected .image {
+				position: relative;
+				&:before {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+					background-color: rgba(0,0,0,0.5);
+					padding: 20px;
+					border-radius: 50%;
+					font-size: 2em;
+				    color: white;
+					display: inline-block;
+					font-style: normal;
+					font-variant: normal;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					font-family: "Font Awesome 5 Pro";
+					font-weight: 200;
+					content: "\f00c";
+				}		
+			}
+				
 		}
 	}
 }
@@ -1173,6 +1203,14 @@ div.wpcf7 {
 	    		right: 16px;
 	    	}
 	    }
+		&.disabled {
+			&:hover {
+				background-color: #eee;
+				&:after {
+					right: 20px;
+				}				
+			}
+		}
 	    &:focus {
 	    	outline: none !important;
 	    }
@@ -1190,6 +1228,7 @@ div.wpcf7 {
 			border: none;
 			transition: all .2s;
 		}
+
 		.filter-option {
 			outline: none;
 			span {

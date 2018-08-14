@@ -5,565 +5,711 @@
 <?php
 	$upholster = array(
 		"Fabric" => array(
-			"Bergen" => array(
-				"Bergen 02/77" => array(
-					"id" => "bergen-02-77",
-					"category" => "fabric-1",
-					"image" => "M01_BERGEN02_77.jpg"
-				),
-				"Bergen 03/07" => array(
-					"id" => "bergen-03-07",
-					"category" => "fabric-1",
-					"image" => "M01_BERGEN03_07.jpg"
-				),
-				"Bergen 05/09" => array(
+			"BERGEN" => array(
+				"F1 - BERGEN 05/09" => array(
 					"id" => "bergen-05-09",
 					"category" => "fabric-1",
-					"image" => "M01_BERGEN05_09.jpg"
+					"image" => "fabric/fabric-1/BERGEN05_09.jpg",
+					"desc" => "Fleece wool 75%, Nylon 25%"
 				),
-				"Bergen 09/86" => array(
-					"id" => "bergen-09-86",
+				"F1 - BERGEN 03/07" => array(
+					"id" => "bergen-03-07",
 					"category" => "fabric-1",
-					"image" => "M01_BERGEN09_86.jpg"
+					"image" => "fabric/fabric-1/BERGEN03_07.jpg",
+					"desc" => "Fleece wool 75%, Nylon 25%"
 				),
-				"Bergen 10/84" => array(
+				"F1 - BERGEN 10/84" => array(
 					"id" => "bergen-10-84",
 					"category" => "fabric-1",
-					"image" => "M01_BERGEN10_84.jpg"
+					"image" => "fabric/fabric-1/BERGEN10_84.jpg",
+					"desc" => "Fleece wool 75%, Nylon 25%"
+				),
+				"F1 - BERGEN 09/86" => array(
+					"id" => "bergen-09-86",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/BERGEN09_86.jpg",
+					"desc" => "Fleece wool 75%, Nylon 25%"
+				),							
+				"F1 - BERGEN 02/77" => array(
+					"id" => "bergen-02-77",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/BERGEN02_77.jpg",
+					"desc" => "Fleece wool 75%, Nylon 25%"
 				)
 			),
-			"Duin" => array(
-				"Duin 01" => array(
+			"DUIN" => array(
+				"F1 - DUIN 01" => array(
 					"id" => "duin-01",
 					"category" => "fabric-1",
-					"image" => "M02_DUIN01.jpg"
+					"image" => "fabric/fabric-1/DUIN01.jpg",
+					"desc" => "Polyester 33%, Polyamide 30%, Viscose 22%, Feece wool 15%"
 				),
-				"Duin 40" => array(
+				"F1 - DUIN 40" => array(
 					"id" => "duin-40",
 					"category" => "fabric-1",
-					"image" => "M02_DUIN40.jpg"
+					"image" => "fabric/fabric-1/DUIN40.jpg",
+					"desc" => "Polyester 33%, Polyamide 30%, Viscose 22%, Feece wool 15%"
 				),
-				"Duin 88" => array(
+				"F1 - DUIN 88" => array(
 					"id" => "duin-88",
 					"category" => "fabric-1",
-					"image" => "M02_DUIN88.jpg"
+					"image" => "fabric/fabric-1/DUIN88.jpg",
+					"desc" => "Polyester 33%, Polyamide 30%, Viscose 22%, Feece wool 15%"
 				),
 			),
-			"Riff" => array(
-				"Riff 05/99" => array(
-					"id" => "riff-05-99",
-					"category" => "fabric-1",
-					"image" => "M03_RIFF05_99.jpg"
-				),
-				"Riff 06/77" => array(
-					"id" => "riff-06-77",
-					"category" => "fabric-1",
-					"image" => "M03_RIFF06_77.jpg"
-				),
-				"Riff 07/78" => array(
-					"id" => "riff-07-78",
-					"category" => "fabric-1",
-					"image" => "M03_RIFF07_78.jpg"
-				),
-				"Riff 12/80" => array(
-					"id" => "riff-12-80",
-					"category" => "fabric-1",
-					"image" => "M03_RIFF12_80.jpg"
-				),
-				"Riff 13/08" => array(
+			"RIFF" => array(
+				"F1 - RIFF 13/08" => array(
 					"id" => "riff-13-08",
 					"category" => "fabric-1",
-					"image" => "M03_RIFF13_08.jpg"
+					"image" => "fabric/fabric-1/RIFF13_08.jpg",
+					"desc" => "Fleece wool 92%, Polyamide 8%"
 				),
-			),
-			"Sand" => array(
-				"Sand 01/90" => array(
-					"id" => "sand-01-90",
+				"F1 - RIFF 12/80" => array(
+					"id" => "riff-12-80",
 					"category" => "fabric-1",
-					"image" => "M04_SAND01_90.jpg"
+					"image" => "fabric/fabric-1/RIFF12_80.jpg",
+					"desc" => "Fleece wool 92%, Polyamide 8%"
 				),
-				"Sand 02/00" => array(
+				"F1 - RIFF 07/78" => array(
+					"id" => "riff-07-78",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/RIFF07_78.jpg",
+					"desc" => "Fleece wool 92%, Polyamide 8%"
+				),												
+				"F1 - RIFF 05/99" => array(
+					"id" => "riff-05-99",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/RIFF05_99.jpg",
+					"desc" => "Fleece wool 92%, Polyamide 8%"
+				),
+				"F1 - RIFF 06/77" => array(
+					"id" => "riff-06-77",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/RIFF06_77.jpg",
+					"desc" => "Fleece wool 92%, Polyamide 8%"
+				)
+			),
+			"SAND" => array(
+				"F1 - SAND 02/00" => array(
 					"id" => "sand-02-00",
 					"category" => "fabric-1",
-					"image" => "M04_SAND02_00.jpg"
+					"image" => "fabric/fabric-1/SAND02_00.jpg",
+					"desc" => "Polyester (Trevira CS) 100%"
 				),
-				"Sand 03/09" => array(
+				"F1 - SAND 03/09" => array(
 					"id" => "sand-03-09",
 					"category" => "fabric-1",
-					"image" => "M04_SAND03_09.jpg"
+					"image" => "fabric/fabric-1/SAND03_09.jpg",
+					"desc" => "Polyester (Trevira CS) 100%"
 				),
-				"Sand 08/83" => array(
-					"id" => "sand-08-83",
+				"F1 - SAND 01/90" => array(
+					"id" => "sand-01-90",
 					"category" => "fabric-1",
-					"image" => "M04_SAND08_83.jpg"
+					"image" => "fabric/fabric-1/SAND01_90.jpg",
+					"desc" => "Polyester (Trevira CS) 100%"
 				),
-				"Sand 09/89" => array(
+				"F1 - SAND 09/89" => array(
 					"id" => "sand-09-89",
 					"category" => "fabric-1",
-					"image" => "M04_SAND09_89.jpg"
+					"image" => "fabric/fabric-1/SAND09_89.jpg",
+					"desc" => "Polyester (Trevira CS) 100%"
+				),
+				"F1 - SAND 08/83" => array(
+					"id" => "sand-08-83",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/SAND08_83.jpg",
+					"desc" => "Polyester (Trevira CS) 100%"
 				)
 			),
-			"Strand" => array(
-				"Strand 00" => array(
+			"STRAND" => array(
+				"F1 - STRAND 00" => array(
 					"id" => "strand-00",
 					"category" => "fabric-1",
-					"image" => "M05_STRAND00.jpg"
+					"image" => "fabric/fabric-1/STRAND00.jpg",
+					"desc" => "Polyacrylonitrile 67%, Linen 17%, Polyester 16%"
 				),
-				"Strand 75" => array(
+				"F1 - STRAND 75" => array(
 					"id" => "strand-75",
 					"category" => "fabric-1",
-					"image" => "M05_STRAND75.jpg"
+					"image" => "fabric/fabric-1/STRAND75.jpg",
+					"desc" => "Polyacrylonitrile 67%, Linen 17%, Polyester 16%"
 				),
-				"Strand 77" => array(
+				"F1 - STRAND 77" => array(
 					"id" => "strand-77",
 					"category" => "fabric-1",
-					"image" => "M05_STRAND77.jpg"
+					"image" => "fabric/fabric-1/STRAND77.jpg",
+					"desc" => "Polyacrylonitrile 67%, Linen 17%, Polyester 16%"
 				)
 			),
-			"Vilano" => array(
-				"Vilano 01/10" => array(
+			"VILANO" => array(
+				"F1 - VILANO 01/10" => array(
 					"id" => "vilano-01-00",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO01_00.jpg"
+					"image" => "fabric/fabric-1/VILANO01_00.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				),
-				"Vilano 02/08" => array(
+				"F1 - VILANO 02/08" => array(
 					"id" => "vilano-02-08",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO02_08.jpg"
+					"image" => "fabric/fabric-1/VILANO02_08.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				),
-				"Vilano 04/18" => array(
+				"F1 - VILANO 04/18" => array(
 					"id" => "vilano-04-18",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO04_18.jpg"
+					"image" => "fabric/fabric-1/VILANO04_18.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				),
-				"Vilano 11/90" => array(
+				"F1 - VILANO 11/90" => array(
 					"id" => "vilano-11-90",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO11_90.jpg"
+					"image" => "fabric/fabric-1/VILANO11_90.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				),
-				"Vilano 14/66" => array(
-					"id" => "vilano-14-66",
-					"category" => "fabric-1",
-					"image" => "M06_VILANO14_66.jpg"
-				),
-				"Vilano 15/65" => array(
-					"id" => "vilano-15-65",
-					"category" => "fabric-1",
-					"image" => "M06_VILANO15_65.jpg"
-				),
-				"Vilano 16/85" => array(
-					"id" => "vilano-16-85",
-					"category" => "fabric-1",
-					"image" => "M06_VILANO16_85.jpg"
-				),
-				"Vilano 23/01" => array(
-					"id" => "vilano-23-01",
-					"category" => "fabric-1",
-					"image" => "M06_VILANO23_01.jpg"
-				),
-				"Vilano 27/38" => array(
-					"id" => "vilano-27-38",
-					"category" => "fabric-1",
-					"image" => "M06_VILANO27_38.jpg"
-				),
-				"Vilano 32/48" => array(
+				"F1 - VILANO 32/48" => array(
 					"id" => "vilano-32-48",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO32_48.jpg"
+					"image" => "fabric/fabric-1/VILANO32_48.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				),
-				"Vilano 37/89" => array(
+				"F1 - VILANO 37/89" => array(
 					"id" => "vilano-37-89",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO37_89.jpg"
-				),
-				"Vilano 38/52" => array(
-					"id" => "vilano-38-52",
+					"image" => "fabric/fabric-1/VILANO37_89.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
+				),				
+				"F1 - VILANO 14/66" => array(
+					"id" => "vilano-14-66",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO38_52.jpg"
+					"image" => "fabric/fabric-1/VILANO14_66.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				),
-				"Vilano 39/56" => array(
+				"F1 - VILANO 15/65" => array(
+					"id" => "vilano-15-65",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/VILANO15_65.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
+				),
+				"F1 - VILANO 39/56" => array(
 					"id" => "vilano-39-56",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO39_56.jpg"
+					"image" => "fabric/fabric-1/VILANO39_56.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				),
-				"Vilano 50/41" => array(
+				"F1 - VILANO 38/52" => array(
+					"id" => "vilano-38-52",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/VILANO38_52.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
+				),				
+				"F1 - VILANO 16/85" => array(
+					"id" => "vilano-16-85",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/VILANO16_85.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
+				),
+				"F1 - VILANO 50/41" => array(
 					"id" => "vilano-50-41",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO50_41.jpg"
+					"image" => "fabric/fabric-1/VILANO50_41.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				),
-				"Vilano 51/33" => array(
+				"F1 - VILANO 23/01" => array(
+					"id" => "vilano-23-01",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/VILANO23_01.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
+				),
+				"F1 - VILANO 51/33" => array(
 					"id" => "vilano-51-33",
 					"category" => "fabric-1",
-					"image" => "M06_VILANO51_33.jpg"
+					"image" => "fabric/fabric-1/VILANO51_33.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
+				),
+				"F1 - VILANO 27/38" => array(
+					"id" => "vilano-27-38",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/VILANO27_38.jpg",
+					"desc" => "Fleece wool 83%, Polyamide 17%"
 				)
 			),
-			"Alla Moda" => array(
-				"Alla Moda 105 grey" => array(
-					"id" => "alla-moda-105-grey",
+			"ALLA MODA" => array(
+				"F1 - ALLA MODA 105" => array(
+					"id" => "alla-moda-105",
 					"category" => "fabric-1",
-					"image" => "M09_ALLA-MODA-64001-105.jpg"
+					"image" => "fabric/fabric-1/ALLA-MODA-64001-105.jpg",
+					"desc" => "Polyester 100%"
 				),
-				"Alla Moda 147 brown" => array(
-					"id" => "alla-moda-147-brown",
+				"F1 - ALLA MODA 147" => array(
+					"id" => "alla-moda-147",
 					"category" => "fabric-1",
-					"image" => "M09_ALLA-MODA-64001-147.jpg"
+					"image" => "fabric/fabric-1/ALLA-MODA-64001-147.jpg",
+					"desc" => "Polyester 100%"
 				),
-				"Alla Moda 167 dark grey" => array(
-					"id" => "alla-moda-167-dark-grey",
+				"F1 - ALLA MODA 167" => array(
+					"id" => "alla-moda-167",
 					"category" => "fabric-1",
-					"image" => "M09_ALLA-MODA-64001-167.jpg"
+					"image" => "fabric/fabric-1/ALLA-MODA-64001-167.jpg",
+					"desc" => "Polyester 100%"
 				)
 			),
-			"Eskimo" => array(
-				"Eskimo 8027 light grey" => array(
-					"id" => "eskimo-8027-light-grey",
+			"ESKIMO" => array(
+				"F1 - ESKIMO 8093" => array(
+					"id" => "eskimo-8093",
 					"category" => "fabric-1",
-					"image" => "M10_ESKIMO8027.jpg"
+					"image" => "fabric/fabric-1/ESKIMO8093.jpg",
+					"desc" => "Cotton 100%"
 				),
-				"Eskimo 8093 white" => array(
-					"id" => "eskimo-8093-white",
+				"F1 - ESKIMO 8027" => array(
+					"id" => "eskimo-8027",
 					"category" => "fabric-1",
-					"image" => "M10_ESKIMO8093.jpg"
+					"image" => "fabric/fabric-1/ESKIMO8027.jpg",
+					"desc" => "Cotton 100%"
 				),
-				"Eskimo 8116 grey" => array(
-					"id" => "eskimo-8116-grey",
+				"F1 - ESKIMO 8116" => array(
+					"id" => "eskimo-8116",
 					"category" => "fabric-1",
-					"image" => "M10_ESKIMO8116.jpg"
+					"image" => "fabric/fabric-1/ESKIMO8116.jpg",
+					"desc" => "Cotton 100%"
 				)
 			),
-			"Plutone" => array(
-				"Plutone 101 beige" => array(
-					"id" => "plutone-101-beige",
+			"PLUTONE" => array(
+				"F1 - PLUTONE 101" => array(
+					"id" => "plutone-101",
 					"category" => "fabric-1",
-					"image" => "M11_PLUTONE-7056-MC-101.jpg"
+					"image" => "fabric/fabric-1/PLUTONE-7056-MC-101.jpg",
+					"desc" => "Linen 42%, Acrylic 29%, Cotton 29%"
 				),
-				"Plutone 103 brown" => array(
-					"id" => "plutone-103-brown",
+				"F1 - PLUTONE 103" => array(
+					"id" => "plutone-103",
 					"category" => "fabric-1",
-					"image" => "M11_PLUTONE-7056-MC-103.jpg"
+					"image" => "fabric/fabric-1/PLUTONE-7056-MC-103.jpg",
+					"desc" => "Linen 42%, Acrylic 29%, Cotton 29%"
 				),
-				"Plutone 467 dark brown" => array(
-					"id" => "plutone-467-dark-brown",
+				"F1 - PLUTONE 467" => array(
+					"id" => "plutone-467",
 					"category" => "fabric-1",
-					"image" => "M11_PLUTONE-7056-MC-467.jpg"
+					"image" => "fabric/fabric-1/PLUTONE-7056-MC-467.jpg",
+					"desc" => "Linen 42%, Acrylic 29%, Cotton 29%"
 				)
 			),
-			"Portobello" => array(
-				"Portobello 172 white" => array(
-					"id" => "portobello-172-white",
+			"PORTOBELLO" => array(
+				"F1 - PORTOBELLO 172" => array(
+					"id" => "portobello-172",
 					"category" => "fabric-1",
-					"image" => "M12_PORTOBELLO-6877-1-MS172.jpg"
+					"image" => "fabric/fabric-1/PORTOBELLO-6877-1-MS-172.jpg",
+					"desc" => "Viscose 41%, Polypropylene 21%, Linen 20%, Cotton 14%, Polycarbonate 4%"
 				),
-				"Portobello 833 dark brown" => array(
-					"id" => "portobello-833-dark-brown",
+				"F1 - PORTOBELLO G84" => array(
+					"id" => "portobello-g84",
 					"category" => "fabric-1",
-					"image" => "M12_PORTOBELLO-6877-1-MS-833.jpg"
+					"image" => "fabric/fabric-1/PORTOBELLO-6877-1-MS-G84.jpg",
+					"desc" => "Viscose 41%, Polypropylene 21%, Linen 20%, Cotton 14%, Polycarbonate 4%"
 				),
-				"Portobello G84 grey" => array(
-					"id" => "portobello-g84-grey",
+				"F1 - PORTOBELLO H86" => array(
+					"id" => "portobello-h86",
 					"category" => "fabric-1",
-					"image" => "M12_PORTOBELLO-6877-1-MS-G84.jpg"
+					"image" => "fabric/fabric-1/PORTOBELLO-6877-1-MS-H86.jpg",
+					"desc" => "Viscose 41%, Polypropylene 21%, Linen 20%, Cotton 14%, Polycarbonate 4%"
 				),
-				"Portobello H86 beige" => array(
-					"id" => "portobello-h86-beige",
+				"F1 - PORTOBELLO 833" => array(
+					"id" => "portobello-833",
 					"category" => "fabric-1",
-					"image" => "M12_PORTOBELLO-6877-1-MS-H86.jpg"
+					"image" => "fabric/fabric-1/PORTOBELLO-6877-1-MS-833.jpg",
+					"desc" => "Viscose 41%, Polypropylene 21%, Linen 20%, Cotton 14%, Polycarbonate 4%"
 				)
 			),
-			"Austria" => array(
-				"Austria 2 beige" => array(
-					"id" => "austria-2-beige",
-					"category" => "fabric-1",
-					"image" => "M13_AUSTRIA2-BEIGE.jpg"
-				),
-				"Austria 7 grey" => array(
-					"id" => "austria-7-grey",
-					"category" => "fabric-1",
-					"image" => "M13_AUSTRIA-7-GRAY.jpg"
-				),
-				"Austria 9 dark grey" => array(
-					"id" => "austria-9-dark-grey",
-					"category" => "fabric-1",
-					"image" => "M13_AUSTRIA9-DARK-GRAY.jpg"
-				)
-			),
-			"Humphrey" => array(
-				"Humphrey 117" => array(
-					"id" => "humphrey-117",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-117.jpg"
-				),
-				"Humphrey 125" => array(
-					"id" => "humphrey-125",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-125.jpg"
-				),
-				"Humphrey 133" => array(
-					"id" => "humphrey-133",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-133.jpg"
-				),
-				"Humphrey 141" => array(
-					"id" => "humphrey-141",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-141.jpg"
-				),
-				"Humphrey 158" => array(
-					"id" => "humphrey-158",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-158.jpg"
-				),
-				"Humphrey 166" => array(
-					"id" => "humphrey-166",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-166.jpg"
-				),
-				"Humphrey 174" => array(
+			// "Austria" => array(
+			// 	"Austria 2 beige" => array(
+			// 		"id" => "austria-2-beige",
+			// 		"category" => "fabric-1",
+			// 		"image" => "M13_AUSTRIA2-BEIGE.jpg"
+			// 	),
+			// 	"Austria 7 grey" => array(
+			// 		"id" => "austria-7-grey",
+			// 		"category" => "fabric-1",
+			// 		"image" => "M13_AUSTRIA-7-GRAY.jpg"
+			// 	),
+			// 	"Austria 9 dark grey" => array(
+			// 		"id" => "austria-9-dark-grey",
+			// 		"category" => "fabric-1",
+			// 		"image" => "M13_AUSTRIA9-DARK-GRAY.jpg"
+			// 	)
+			// ),
+			"HUMPHREY" => array(
+				"F1 - HUMPHREY 174" => array(
 					"id" => "humphrey-174",
 					"category" => "fabric-1",
-					"image" => "M14_JAB-174.jpg"
+					"image" => "fabric/fabric-1/JAB-174.jpg",
+					"desc" => "Polyester 100%"
 				),
-				"Humphrey 182" => array(
-					"id" => "humphrey-182",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-182.jpg"
-				),
-				"Humphrey 190" => array(
-					"id" => "humphrey-190",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-190.jpg"
-				),
-				"Humphrey 216" => array(
-					"id" => "humphrey-216",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-216.jpg"
-				),
-				"Humphrey 224" => array(
-					"id" => "humphrey-224",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-224.jpg"
-				),
-				"Humphrey 232" => array(
-					"id" => "humphrey-232",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-232.jpg"
-				),
-				"Humphrey 240" => array(
-					"id" => "humphrey-240",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-240.jpg"
-				),
-				"Humphrey 257" => array(
-					"id" => "humphrey-257",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-257.jpg"
-				),
-				"Humphrey 265" => array(
-					"id" => "humphrey-265",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-265.jpg"
-				),
-				"Humphrey 273" => array(
+				"F1 - HUMPHREY 273" => array(
 					"id" => "humphrey-273",
 					"category" => "fabric-1",
-					"image" => "M14_JAB-273.jpg"
+					"image" => "fabric/fabric-1/JAB-273.jpg",
+					"desc" => "Polyester 100%"
 				),
-				"Humphrey 281" => array(
-					"id" => "humphrey-281",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-281.jpg"
-				),
-				"Humphrey 299" => array(
-					"id" => "humphrey-299",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-299.jpg"
-				),
-				"Humphrey 315" => array(
-					"id" => "humphrey-315",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-315.jpg"
-				),
-				"Humphrey 331" => array(
-					"id" => "humphrey-331",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-331.jpg"
-				),
-				"Humphrey 356" => array(
-					"id" => "humphrey-356",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-356.jpg"
-				),
-				"Humphrey 364" => array(
-					"id" => "humphrey-364",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-364.jpg"
-				),
-				"Humphrey 372" => array(
+				"F1 - HUMPHREY 372" => array(
 					"id" => "humphrey-372",
 					"category" => "fabric-1",
-					"image" => "M14_JAB-372.jpg"
+					"image" => "fabric/fabric-1/JAB-372.jpg",
+					"desc" => "Polyester 100%"
 				),
-				"Humphrey 398" => array(
-					"id" => "humphrey-398",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-398.jpg"
-				),
-				"Humphrey 414" => array(
-					"id" => "humphrey-414",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-414.jpg"
-				),
-				"Humphrey 422" => array(
-					"id" => "humphrey-422",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-422.jpg"
-				),
-				"Humphrey 471" => array(
-					"id" => "humphrey-471",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-471.jpg"
-				),
-				"Humphrey 521" => array(
-					"id" => "humphrey-521",
-					"category" => "fabric-1",
-					"image" => "M14_JAB-521.jpg"
-				),
-				"Humphrey 570" => array(
+				"F1 - HUMPHREY 570" => array(
 					"id" => "humphrey-570",
 					"category" => "fabric-1",
-					"image" => "M14_JAB-570.jpg"
+					"image" => "fabric/fabric-1/JAB-570.jpg",
+					"desc" => "Polyester 100%"
 				),
-				"Humphrey 620" => array(
+				"F1 - HUMPHREY 471" => array(
+					"id" => "humphrey-471",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-471.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 398" => array(
+					"id" => "humphrey-398",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-398.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 299" => array(
+					"id" => "humphrey-299",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-299.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 190" => array(
+					"id" => "humphrey-190",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-190.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 141" => array(
+					"id" => "humphrey-141",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-141.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 240" => array(
+					"id" => "humphrey-240",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-240.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 125" => array(
+					"id" => "humphrey-125",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-125.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 422" => array(
+					"id" => "humphrey-422",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-422.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 224" => array(
+					"id" => "humphrey-224",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-224.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 620" => array(
 					"id" => "humphrey-620",
 					"category" => "fabric-1",
-					"image" => "M14_JAB-620.jpg"
+					"image" => "fabric/fabric-1/JAB-620.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 521" => array(
+					"id" => "humphrey-521",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-521.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 133" => array(
+					"id" => "humphrey-133",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-133.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 232" => array(
+					"id" => "humphrey-232",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-232.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 331" => array(
+					"id" => "humphrey-331",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-331.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 356" => array(
+					"id" => "humphrey-356",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-356.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 158" => array(
+					"id" => "humphrey-158",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-158.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 257" => array(
+					"id" => "humphrey-257",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-257.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 166" => array(
+					"id" => "humphrey-166",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-166.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 265" => array(
+					"id" => "humphrey-265",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-265.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 216" => array(
+					"id" => "humphrey-216",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-216.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 117" => array(
+					"id" => "humphrey-117",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-117.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 315" => array(
+					"id" => "humphrey-315",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-315.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 364" => array(
+					"id" => "humphrey-364",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-364.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 281" => array(
+					"id" => "humphrey-281",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-281.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 414" => array(
+					"id" => "humphrey-414",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-414.jpg",
+					"desc" => "Polyester 100%"
+				),
+				"F1 - HUMPHREY 182" => array(
+					"id" => "humphrey-182",
+					"category" => "fabric-1",
+					"image" => "fabric/fabric-1/JAB-182.jpg",
+					"desc" => "Polyester 100%"
 				)
 			),
-			"Everest" => array(
-				"Everest 00" => array(
+			"EVEREST" => array(
+				"F2 - EVEREST 00" => array(
 					"id" => "everest-00",
-					"category" => "fabric-1",
-					"image" => "M07_EVEREST00.jpg"
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/EVEREST00.jpg",
+					"desc" => "Wool 34%, Linen 34%, Cotton 29%, Polyamide 3%"
 				),
-				"Everest 08" => array(
+				"F2 - EVEREST 08" => array(
 					"id" => "everest-08",
-					"category" => "fabric-1",
-					"image" => "M07_EVEREST08.jpg"
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/EVEREST08.jpg",
+					"desc" => "Wool 34%, Linen 34%, Cotton 29%, Polyamide 3%"
 				),
-				"Everest 80" => array(
-					"id" => "everest-80",
-					"category" => "fabric-1",
-					"image" => "M07_EVEREST80.jpg"
-				),
-				"Everest 87" => array(
-					"id" => "everest-87",
-					"category" => "fabric-1",
-					"image" => "M07_EVEREST87.jpg"
-				),
-				"Everest 90" => array(
+				"F2 - EVEREST 90" => array(
 					"id" => "everest-90",
-					"category" => "fabric-1",
-					"image" => "M07_EVEREST90.jpg"
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/EVEREST90.jpg",
+					"desc" => "Wool 34%, Linen 34%, Cotton 29%, Polyamide 3%"
+				),
+				"F2 - EVEREST 80" => array(
+					"id" => "everest-80",
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/EVEREST80.jpg",
+					"desc" => "Wool 34%, Linen 34%, Cotton 29%, Polyamide 3%"
+				),
+				"F2 - EVEREST 87" => array(
+					"id" => "everest-87",
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/EVEREST87.jpg",
+					"desc" => "Wool 34%, Linen 34%, Cotton 29%, Polyamide 3%"
 				)
 			),
-			"Andes" => array(
-				"Andes 00" => array(
+			"ANDES" => array(
+				"F2 - ANDES 00" => array(
 					"id" => "andes-00",
-					"category" => "fabric-1",
-					"image" => "M08_ANDES00.jpg"
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/ANDES00.jpg",
+					"desc" => "Fleece wool 100%"
 				),
-				"Andes 09" => array(
+				"F2 - ANDES 09" => array(
 					"id" => "andes-09",
-					"category" => "fabric-1",
-					"image" => "M08_ANDES09.jpg"
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/ANDES09.jpg",
+					"desc" => "Fleece wool 100%"
 				),
-				"Andes 48" => array(
-					"id" => "andes-48",
-					"category" => "fabric-1",
-					"image" => "M08_ANDES48.jpg"
-				),
-				"Andes 70" => array(
-					"id" => "andes-70",
-					"category" => "fabric-1",
-					"image" => "M08_ANDES70.jpg"
-				),
-				"Andes 79" => array(
-					"id" => "andes-79",
-					"category" => "fabric-1",
-					"image" => "M08_ANDES79.jpg"
-				),
-				"Andes 88" => array(
-					"id" => "andes-88",
-					"category" => "fabric-1",
-					"image" => "M08_ANDES88.jpg"
-				),
-				"Andes 98" => array(
+				"F2 - ANDES 98" => array(
 					"id" => "andes-98",
-					"category" => "fabric-1",
-					"image" => "M08_ANDES98.jpg"
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/ANDES98.jpg",
+					"desc" => "Fleece wool 100%"
+				),
+				"F2 - ANDES 70" => array(
+					"id" => "andes-70",
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/ANDES70.jpg",
+					"desc" => "Fleece wool 100%"
+				),				
+				"F2 - ANDES 48" => array(
+					"id" => "andes-48",
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/ANDES48.jpg",
+					"desc" => "Fleece wool 100%"
+				),
+				"F2 - ANDES 79" => array(
+					"id" => "andes-79",
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/ANDES79.jpg",
+					"desc" => "Fleece wool 100%"
+				),
+				"F2 - ANDES 88" => array(
+					"id" => "andes-88",
+					"category" => "fabric-2",
+					"image" => "fabric/fabric-2/ANDES88.jpg",
+					"desc" => "Fleece wool 100%"
 				)
 			)
 		),
 		"Leather" => array(
-			"Leather" => array(
-				"20100 Black" => array(
-					"id" => "20100-black",
-					"category" => "leather-1",
-					"image" => "01_BK.jpg"
-				),
-				"20101 Deep Mocha" => array(
+			"EMBOSSED LEATHER" => array(
+				"L1 - 20101 Deep Mocha" => array(
 					"id" => "20101-deep-mocha",
 					"category" => "leather-1",
-					"image" => "02_DM.jpg"
+					"image" => "leather/leather-1/LE_20101.jpg"
 				),
-				"20205 Chestnut" => array(
+				"L1 - 20205 Chestnut" => array(
 					"id" => "20205-chestnut",
 					"category" => "leather-1",
-					"image" => "03_CN.jpg"
+					"image" => "leather/leather-1/LE_20105.jpg"
 				),
-				"20102 Chocolat" => array(
+				"L1 - 20102 Chocolat" => array(
 					"id" => "20102-chocolat",
 					"category" => "leather-1",
-					"image" => "04_CL.jpg"
+					"image" => "leather/leather-1/LE_20102.jpg"
 				),
-				"20207 Almond" => array(
+				"L1 - 20207 Almond" => array(
 					"id" => "20207-almond",
 					"category" => "leather-1",
-					"image" => "05_AM.jpg"
+					"image" => "leather/leather-1/LE_20207.jpg"
 				),
-				"20202 Charamel Brown" => array(
-					"id" => "20202-charamel-brown",
-					"category" => "leather-1",
-					"image" => "06_CA.jpg"
-				),
-				"20200 Cinnamon Beige" => array(
+				"L1 - 20200 Cinnamon Beige" => array(
 					"id" => "20200-cinnamon-beige",
 					"category" => "leather-1",
-					"image" => "07_CB.jpg"
-				),
-				"20203 Bordeaux" => array(
-					"id" => "20203-bordeaux",
+					"image" => "leather/leather-1/LE_20200.jpg"
+				),				
+				"L1 - 20105 Vanilla white" => array(
+					"id" => "20105-vanilla-white",
 					"category" => "leather-1",
-					"image" => "08_BX.jpg"
+					"image" => "leather/leather-1/LE_20105.jpg"
 				),
-				"20204 Smoky Grey" => array(
+				"L1 - 20204 Smoky Grey" => array(
 					"id" => "20204-smoky-grey",
 					"category" => "leather-1",
-					"image" => "09_SG.jpg"
+					"image" => "leather/leather-1/LE_20204.jpg"
 				),
-				"20201 Cream 88" => array(
-					"id" => "20201-cream",
+				"L1 - 20100 Black" => array(
+					"id" => "20100-black",
 					"category" => "leather-1",
-					"image" => "10_CR.jpg"
-				),
-				"20206 Snow" => array(
-					"id" => "20206-snow",
-					"category" => "leather-1",
-					"image" => "12_SN.jpg"
+					"image" => "leather/leather-1/LE_20100.jpg"
 				)
+			),
+			"SEMI ANILINE LEATHER" => array(
+				"L2 - 20303 Camel" => array(
+					"id" => "20303-camel",
+					"category" => "leather-2",
+					"image" => "leather/leather-2/LS_20303.jpg"
+				),
+				"L2 - 20304 Beige" => array(
+					"id" => "20304-beige",
+					"category" => "leather-2",
+					"image" => "leather/leather-2/LS_20304.jpg"
+				),
+				"L2 - 20302 Brown" => array(
+					"id" => "20302-brown",
+					"category" => "leather-2",
+					"image" => "leather/leather-2/LS_20302.jpg"
+				),
+				"L2 - 20301 Dark brown" => array(
+					"id" => "20301-dark-brown",
+					"category" => "leather-2",
+					"image" => "leather/leather-2/LS_20301.jpg"
+				),
+				"L2 - 20300 Black" => array(
+					"id" => "20300-black",
+					"category" => "leather-2",
+					"image" => "leather/leather-2/LS_20300.jpg"
+				)
+			),
+			"OILED LEATHER" => array(
+				"L2 - 20400 Dark brown" => array(
+					"id" => "20400-dark-brown",
+					"category" => "leather-2",
+					"image" => "leather/leather-2/LO_20400.jpg"
+				),
+				"L2 - 20401 Brown" => array(
+					"id" => "20401-brown",
+					"category" => "leather-2",
+					"image" => "leather/leather-2/LO_20401.jpg"
+				)
+			),
+			"TANNED LEATHER" => array(
+				"L3 - 20500 Camel" => array(
+					"id" => "20500-camel",
+					"category" => "leather-3",
+					"image" => "leather/leather-3/LT_20500.jpg"
+				),
+				// "20201 Cream 88" => array(
+				// 	"id" => "20201-cream",
+				// 	"category" => "leather-1",
+				// 	"image" => "10_CR.jpg"
+				// ),
+				// "20202 Charamel Brown" => array(
+				// 	"id" => "20202-charamel-brown",
+				// 	"category" => "leather-1",
+				// 	"image" => "06_CA.jpg"
+				// ),
+				// "20203 Bordeaux" => array(
+				// 	"id" => "20203-bordeaux",
+				// 	"category" => "leather-1",
+				// 	"image" => "08_BX.jpg"
+				// ),
+				// "20206 Snow" => array(
+				// 	"id" => "20206-snow",
+				// 	"category" => "leather-1",
+				// 	"image" => "12_SN.jpg"
+				// ),
 			)
 		)
 	);
+
+	if(!in_array("leather-3", $upholster_category_options)){
+		unset($upholster['Leather']['TANNED LEATHER']);
+	}
 ?>
 <div style="display: none;" id="variable-upholster">
 <div class="content-wrapper">
@@ -588,8 +734,10 @@
 					<ul class="flex-grid align-left">';
 					foreach ($value as $key => $value) {
 						echo '<li class="flex-item" data-upholster="'.$value["id"].'" data-upholster-category="'.$value["category"].'" data-upholster-title="'.$key.'">
-					<img src="'.get_template_directory_uri().'/images/upholster/'.$value["image"].'" alt="'.$key.'">
-				</li>';
+					<div class="image"><img src="'.get_template_directory_uri().'/images/materials/'.$value["image"].'" alt="'.$key.'"></div>';
+						echo '<div class="title">'.$key.'</div>';
+						if($value["desc"]) echo '<div class="desc">'.$value["desc"].'</div>';
+						echo '</li>';
 					}
 					echo '</ul></div>';
 				}
