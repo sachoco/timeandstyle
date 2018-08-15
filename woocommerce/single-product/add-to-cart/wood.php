@@ -121,6 +121,9 @@
 						"image" => "wood/Ash_DW.jpg"
 					)
 				);
+		if(!in_array("ash-clear", $wood_finishing_options)){
+			unset($wood['Wood']['ASH']['Ash - Clear']);
+		}
 		if(in_array("ash-silver-leaf", $wood_finishing_options)){
 			$wood["Wood"]["ASH"]["Ash - Silver leaf"] = array(
 						"id" => "ash-silver-leaf",
