@@ -44,13 +44,15 @@
 						"id" => "walnut-beeswax",
 						"category" => "walnut",
 						"image" => "wood/Walnut_Beeswax.jpg"
-					),
-					"Walnut - Gold leaf" => array(
+					)
+				);
+		if(in_array("walnut-gold-leaf", $wood_finishing_options)){
+			$wood["Wood"]["WALNUT"]["Walnut - Gold leaf"] = array(
 						"id" => "walnut-gold-leaf",
 						"category" => "walnut",
 						"image" => "wood/Walnut_GD.jpg"
-					)
-				);
+					);
+		}
 	}
 	if(in_array("beech", $wood_options)){
 		$wood["Wood"]["BEECH"] = array(
