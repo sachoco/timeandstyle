@@ -46,6 +46,9 @@
 						"image" => "wood/Walnut_Beeswax.jpg"
 					)
 				);
+		if(!in_array("walnut-beeswax", $wood_finishing_options)){
+			unset($wood['Wood']['WALNUT']['Walnut - Beeswax']);
+		}
 		if(in_array("walnut-gold-leaf", $wood_finishing_options)){
 			$wood["Wood"]["WALNUT"]["Walnut - Gold leaf"] = array(
 						"id" => "walnut-gold-leaf",
@@ -123,6 +126,18 @@
 				);
 		if(!in_array("ash-clear", $wood_finishing_options)){
 			unset($wood['Wood']['ASH']['Ash - Clear']);
+		}
+		if(!in_array("ash-black", $wood_finishing_options)){
+			unset($wood['Wood']['ASH']['Ash - Black']);
+		}
+		if(!in_array("ash-charcoal-grey", $wood_finishing_options)){
+			unset($wood['Wood']['ASH']['Ash - Charcoal grey']);
+		}
+		if(!in_array("ash-snow-white", $wood_finishing_options)){
+			unset($wood['Wood']['ASH']['Ash - Snow white']);
+		}
+		if(!in_array("ash-dark-wenge", $wood_finishing_options)){
+			unset($wood['Wood']['ASH']['Ash - Dark wenge']);
 		}
 		if(in_array("ash-silver-leaf", $wood_finishing_options)){
 			$wood["Wood"]["ASH"]["Ash - Silver leaf"] = array(
