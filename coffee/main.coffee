@@ -266,6 +266,15 @@ jQuery ($) ->
 					$(this).prop('selectedIndex', 1).trigger("change")
 					if($(this).hasClass("selectpicker"))
 						$(this).prop("disabled", true).selectpicker('refresh')
+		arr = []
+		$('#pa_wood option').each (index)->
+			arr.push($(this).val())
+		console.log arr
+		$('#variable-wood .variation-group').each (index)->
+			if $.inArray($(this).data('category-filter-values'),arr) == -1
+				$(this).hide()
+			else
+				$(this).show()
 
 	$("#pa_wood").on "change", (e)->
 		if($(this).val()=="n-a")

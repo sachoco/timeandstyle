@@ -257,9 +257,9 @@
     });
     varSelects = 'form.variations_form select';
     $(document).on('change', varSelects, function() {
-      var $selectField;
+      var $selectField, arr;
       $selectField = $(this);
-      return $(varSelects).each(function(index) {
+      $(varSelects).each(function(index) {
         $(this).prop("disabled", false);
         if ($(this).find('option').length === 2) {
           if ($(this).prop('selectedIndex') !== 1) {
@@ -268,6 +268,18 @@
               return $(this).prop("disabled", true).selectpicker('refresh');
             }
           }
+        }
+      });
+      arr = [];
+      $('#pa_wood option').each(function(index) {
+        return arr.push($(this).val());
+      });
+      console.log(arr);
+      return $('#variable-wood .variation-group').each(function(index) {
+        if ($.inArray($(this).data('category-filter-values'), arr) === -1) {
+          return $(this).hide();
+        } else {
+          return $(this).show();
         }
       });
     });

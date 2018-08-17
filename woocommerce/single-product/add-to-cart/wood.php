@@ -185,7 +185,7 @@
 			foreach ($wood as $key => $value) {
 				$filter_value = $key;
 				foreach ($value as $key => $value) {
-					echo '<div class="variation-group" data-filter-values="'.$filter_value.'">
+					echo '<div class="variation-group" data-filter-values="'.$filter_value.'" data-category-filter-values="'.str_replace(' ', '-', strtolower($key)).'">
 					<h2 class="headline">'.$key.'</h2>
 					<ul class="flex-grid align-left">';
 					foreach ($value as $key => $value) {
