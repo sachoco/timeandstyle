@@ -95,6 +95,27 @@
 						"image" => "wood/Beech_DW.jpg"
 					)
 				);
+		if(!in_array("beech-soap", $wood_finishing_options)){
+			unset($wood['Wood']['BEECH']['Beech - Soap']);
+		}
+		if(!in_array("beech-beeswax", $wood_finishing_options)){
+			unset($wood['Wood']['BEECH']['Beech - Beeswax']);
+		}
+		if(!in_array("beech-clear", $wood_finishing_options)){
+			unset($wood['Wood']['BEECH']['Beech - Clear']);
+		}
+		if(!in_array("beech-black", $wood_finishing_options)){
+			unset($wood['Wood']['BEECH']['Beech - Black']);
+		}
+		if(!in_array("beech-charcoal-grey", $wood_finishing_options)){
+			unset($wood['Wood']['BEECH']['Beech - Charcoal grey']);
+		}
+		if(!in_array("beech-snow-white", $wood_finishing_options)){
+			unset($wood['Wood']['BEECH']['Beech - Snow white']);
+		}
+		if(!in_array("beech-dark-wenge", $wood_finishing_options)){
+			unset($wood['Wood']['BEECH']['Beech - Dark wenge']);
+		}
 	}
 	if(in_array("ash", $wood_options)){
 		$wood["Wood"]["ASH"] = array(
