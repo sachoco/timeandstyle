@@ -274,7 +274,6 @@
       $('#pa_wood option').each(function(index) {
         return arr.push($(this).val());
       });
-      console.log(arr);
       return $('#variable-wood .variation-group').each(function(index) {
         if ($.inArray($(this).data('category-filter-values'), arr) === -1) {
           return $(this).hide();

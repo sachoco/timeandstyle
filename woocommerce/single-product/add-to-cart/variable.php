@@ -56,7 +56,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							if ($attribute_name=="pa_upholster"){
 								$upholster_options = $options;
 								include("upholster.php"); 
-							}else if ($attribute_name=="pa_upholadter-category"){
+							}else if ($attribute_name=="pa_upholster-category"){
 								$upholster_category_options = $options;
 							}else if ($attribute_name=="pa_wood"){
 								$wood_options = $options;

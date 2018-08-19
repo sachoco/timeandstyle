@@ -269,7 +269,6 @@ jQuery ($) ->
 		arr = []
 		$('#pa_wood option').each (index)->
 			arr.push($(this).val())
-		console.log arr
 		$('#variable-wood .variation-group').each (index)->
 			if $.inArray($(this).data('category-filter-values'),arr) == -1
 				$(this).hide()

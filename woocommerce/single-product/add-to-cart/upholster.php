@@ -706,7 +706,6 @@
 			)
 		)
 	);
-
 	if(!in_array("leather-3", $upholster_category_options)){
 		unset($upholster['Leather']['TANNED LEATHER']);
 	}
