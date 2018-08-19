@@ -228,7 +228,7 @@ jQuery ($) ->
 	});
 
 	$('.reset_variations').on 'click', (e)->
-		if $('#uphoster')
+		if $('#uphoster') or $('#wood')
 			$("#upholster .title").text('Choose an option')
 			$("#wood.tas-select .title").text('Choose an option')
 			$(".variation-groups").find("li").removeClass "selected"
@@ -266,6 +266,12 @@ jQuery ($) ->
 					$(this).prop('selectedIndex', 1).trigger("change")
 					if($(this).hasClass("selectpicker"))
 						$(this).prop("disabled", true).selectpicker('refresh')
+					if($(this).data('attribute_name')=='attribute_pa_wood')
+						$wf_options = $("#variable-wood .variation-group[data-category-filter-values='"+$(this).val()+"'] li")
+						if $wf_options.length==1
+							$($wf_options[0]).trigger('click')
+					# if($(this).data('attribute_name')=='attribute_pa_wood-finishing')
+					# 	$("#variable-wood .variation-groups li[data-wood='"+$(this).val()+"']").trigger('click')
 		arr = []
 		$('#pa_wood option').each (index)->
 			arr.push($(this).val())
