@@ -288,6 +288,12 @@ jQuery ($) ->
 		else
 			$("#wood.tas-select").removeClass("disabled")
 
+	$("#pa_upholster-category").on "change", (e)->
+		if($(this).val()=="n-a")
+			$("#upholster.tas-select .title").text("N/A")
+			$("#upholster.tas-select").addClass("disabled")
+		else
+			$("#upholster.tas-select").removeClass("disabled")
 
 	# $("#shop-info").one "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", ()->
 		# roundCssTransformMatrix("shop-info")

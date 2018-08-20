@@ -297,6 +297,14 @@
         return $("#wood.tas-select").removeClass("disabled");
       }
     });
+    $("#pa_upholster-category").on("change", function(e) {
+      if ($(this).val() === "n-a") {
+        $("#upholster.tas-select .title").text("N/A");
+        return $("#upholster.tas-select").addClass("disabled");
+      } else {
+        return $("#upholster.tas-select").removeClass("disabled");
+      }
+    });
     return this;
   });
 
