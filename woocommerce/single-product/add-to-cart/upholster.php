@@ -706,31 +706,26 @@
 			)
 		)
 	);
-	if(!in_array("fabric-1", $upholster_category_options)){
-		unset($upholster['Fabric']['BERGEN']);
-		unset($upholster['Fabric']['DUIN']);
-		unset($upholster['Fabric']['RIFF']);
-		unset($upholster['Fabric']['SAND']);
-		unset($upholster['Fabric']['STRAND']);
-		unset($upholster['Fabric']['VILANO']);
-		unset($upholster['Fabric']['ALLA MODA']);
-		unset($upholster['Fabric']['ESKIMO']);
-		unset($upholster['Fabric']['PLUTONE']);
-		unset($upholster['Fabric']['PORTOBELLO']);
-		unset($upholster['Fabric']['HUMPHREY']);
-	}
-	if(!in_array("fabric-2", $upholster_category_options)){
-		unset($upholster['Fabric']['EVEREST']);
-		unset($upholster['Fabric']['ANDES']);
-	}
-	if(!in_array("leather-1", $upholster_category_options)){
-		unset($upholster['Leather']['EMBOSSED LEATHER']);
-	}
-	if(!in_array("leather-2", $upholster_category_options)){
-		unset($upholster['Leather']['SEMI ANILINE LEATHER']);
-		unset($upholster['Leather']['OILED LEATHER']);
-	}
-	if(!in_array("leather-3", $upholster_category_options)){
+	// if(!in_array("fabric-1", $upholster_category_options)){
+	// 	unset($upholster['Fabric']['BERGEN']);
+	// 	unset($upholster['Fabric']['DUIN']);
+	// 	unset($upholster['Fabric']['RIFF']);
+	// 	unset($upholster['Fabric']['SAND']);
+	// 	unset($upholster['Fabric']['STRAND']);
+	// 	unset($upholster['Fabric']['VILANO']);
+	// 	unset($upholster['Fabric']['ALLA MODA']);
+	// 	unset($upholster['Fabric']['ESKIMO']);
+	// 	unset($upholster['Fabric']['PLUTONE']);
+	// 	unset($upholster['Fabric']['PORTOBELLO']);
+	// 	unset($upholster['Fabric']['HUMPHREY']);
+	// }
+	// if(!in_array("fabric-2", $upholster_category_options)){
+	// 	unset($upholster['Fabric']['EVEREST']);
+	// 	unset($upholster['Fabric']['ANDES']);
+	// }
+	if(!in_array(array("leather-1","leather-2","leather-3"), $upholster_category_options)){
+		unset($upholster['Leather']);
+	}else if(!in_array("leather-3", $upholster_category_options)){
 		unset($upholster['Leather']['TANNED LEATHER']);
 	}
 ?>
