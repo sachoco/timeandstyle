@@ -1,4 +1,4 @@
-<a id="wood" class="tas-select" data-fancybox data-src="#variable-wood" data-options='{ "touch": false}' href="javascript:;">
+<a id="wood" class="tas-select" data-src="#variable-wood" data-options='{ "touch": false}' href="javascript:;">
 	<span class="label">Wood:</span>
 	<span class="title">Choose an option</span>
 </a>

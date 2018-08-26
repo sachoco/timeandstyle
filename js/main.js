@@ -208,7 +208,12 @@
       $("#pa_wood-finishing").val(wood);
       return $("#wood .title").text(wood_title);
     });
-    $(".tas-select[data-fancybox]").fancybox({
+    $().fancybox({
+      selector: '.tas-select:not(.disabled)',
+      src: $(this).data("src"),
+      opts: {
+        "touch": false
+      },
       afterClose: function(instance, slide) {
         $("#pa_upholster-category").trigger('change');
         return $("#pa_wood").trigger('change');

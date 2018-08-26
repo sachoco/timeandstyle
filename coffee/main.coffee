@@ -221,11 +221,21 @@ jQuery ($) ->
 		$("#pa_wood-finishing").val(wood)
 		$("#wood .title").text(wood_title)
 
-	$(".tas-select[data-fancybox]").fancybox({
+
+	$().fancybox({
+		selector : '.tas-select:not(.disabled)'
+		src : $(this).data("src")
+		opts : {"touch": false}
 		afterClose: ( instance, slide )->
 			$("#pa_upholster-category").trigger('change')
 			$("#pa_wood").trigger('change')
-	});
+	})
+
+	# $(".tas-select[data-fancybox]").fancybox({
+	# 	afterClose: ( instance, slide )->
+	# 		$("#pa_upholster-category").trigger('change')
+	# 		$("#pa_wood").trigger('change')				
+	# });
 
 	$('.reset_variations').on 'click', (e)->
 		if $('#uphoster') or $('#wood')
@@ -302,6 +312,7 @@ jQuery ($) ->
 			$("#upholster.tas-select").addClass("disabled")
 		else
 			$("#upholster.tas-select").removeClass("disabled")
+
 
 	# $("#shop-info").one "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", ()->
 		# roundCssTransformMatrix("shop-info")
