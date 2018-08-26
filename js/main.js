@@ -281,18 +281,7 @@
       $('#pa_wood option').each(function(index) {
         return arr.push($(this).val());
       });
-      $('#variable-wood .variation-group').each(function(index) {
-        if ($.inArray($(this).data('category-filter-values'), arr) === -1) {
-          return $(this).hide();
-        } else {
-          return $(this).show();
-        }
-      });
-      arr = [];
-      $('#pa_upholster-category option').each(function(index) {
-        return arr.push($(this).val());
-      });
-      return $('#variable-upholster .variation-group').each(function(index) {
+      return $('#variable-wood .variation-group').each(function(index) {
         if ($.inArray($(this).data('category-filter-values'), arr) === -1) {
           return $(this).hide();
         } else {

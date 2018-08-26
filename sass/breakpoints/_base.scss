@@ -1026,6 +1026,11 @@ div.wpcf7 {
     &.disabled {
     	opacity: .65;
     	cursor: not-allowed;
+    	&:before {
+    		width: 100%;
+    		height: 100%;
+    		position: absolute;
+    	}
     	&:after, .title {
     		color: #212529;
     	}

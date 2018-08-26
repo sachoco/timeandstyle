@@ -280,14 +280,14 @@ jQuery ($) ->
 				$(this).hide()
 			else
 				$(this).show()
-		arr = []
-		$('#pa_upholster-category option').each (index)->
-			arr.push($(this).val())
-		$('#variable-upholster .variation-group').each (index)->
-			if $.inArray($(this).data('category-filter-values'),arr) == -1
-				$(this).hide()
-			else
-				$(this).show()
+		# arr = []
+		# $('#pa_upholster-category option').each (index)->
+		# 	arr.push($(this).val())
+		# $('#variable-upholster .variation-group').each (index)->
+		# 	if $.inArray($(this).data('category-filter-values'),arr) == -1
+		# 		$(this).hide()
+		# 	else
+		# 		$(this).show()
 
 	$("#pa_wood").on "change", (e)->
 		if($(this).val()=="n-a")
