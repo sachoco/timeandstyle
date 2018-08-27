@@ -290,6 +290,15 @@ jQuery ($) ->
 				$(this).hide()
 			else
 				$(this).show()
+		arr = []
+		$('#pa_wood-finishing option').each (index)->
+			arr.push($(this).val())
+		console.info arr
+		$('#variable-wood .variation-group li').each (index)->
+			if $.inArray($(this).data('wood'),arr) == -1
+				$(this).hide()
+			else
+				$(this).show()
 		# arr = []
 		# $('#pa_upholster-category option').each (index)->
 		# 	arr.push($(this).val())
@@ -312,7 +321,12 @@ jQuery ($) ->
 			$("#upholster.tas-select").addClass("disabled")
 		else
 			$("#upholster.tas-select").removeClass("disabled")
-
+		# if($(this).val()=="fabric-6700-1")
+		# 	$("#upholster.tas-select .title").text("Fabric - 6700-1")
+		# 	$("#upholster.tas-select").addClass("disabled")
+		# else if($(this).val()=="fabric-5778")
+		# 	$("#upholster.tas-select .title").text("Fabric - 5778")
+		# 	$("#upholster.tas-select").addClass("disabled")
 
 	# $("#shop-info").one "transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", ()->
 		# roundCssTransformMatrix("shop-info")
