@@ -242,6 +242,13 @@ jQuery ($) ->
 			$("#upholster .title").text('Choose an option')
 			$("#wood.tas-select .title").text('Choose an option')
 			$(".variation-groups").find("li").removeClass "selected"
+		$('.selectpicker').each (index)->
+			$(this).prop("disabled", false)
+		# 	if $(this).find('option').length == 2
+		# 		$(this).prop("disabled", true)
+		# 		if $(this).prop('selectedIndex') != 1
+		# 			$(this).prop('selectedIndex', 1).trigger("change").prop("disabled", true)
+			$(this).selectpicker('refresh')
 
 	$(".variation-filter a").on "click", (e)->
 		$(this).parents(".variation-filter").find("a").removeClass "active"
@@ -255,20 +262,17 @@ jQuery ($) ->
 		label = $(this).parents(".tas-variation").find("label").text()
 		$(this).parent().find(".filter-option").prepend("<span>"+label+": </span>")
 
-	$( ".variations_form" ).on "woocommerce_update_variation_values", ()->
-		$('.selectpicker').each (index)->
-			if $(this).find('option').length == 2
-				$(this).prop("disabled", true)
-				if $(this).prop('selectedIndex') != 1
-					$(this).prop('selectedIndex', 1).trigger("change").prop("disabled", true)
-			$(this).selectpicker('refresh')
+	# $( ".variations_form" ).on "woocommerce_update_variation_values", ()->
+	# 	$('.selectpicker').each (index)->
+	# 		if $(this).find('option').length == 2
+	# 			$(this).prop("disabled", true)
+	# 			if $(this).prop('selectedIndex') != 1
+	# 				$(this).prop('selectedIndex', 1).trigger("change").prop("disabled", true)
+	# 		$(this).selectpicker('refresh')
 
 	varSelects = 'form.variations_form select'
 	$(document).on 'change', varSelects, ->
 		$selectField = $(this)
-		# $variationsForm = $selectField.closest('form')
-		# selectedAtt = sanitise_str($selectField.attr('name'))
-		# selectedVal = sanitise_str($selectField.val())
 		$(varSelects).each (index) ->
 			$(this).prop( "disabled", false )
 			if $(this).find('option').length == 2
@@ -282,6 +286,9 @@ jQuery ($) ->
 							$($wf_options[0]).trigger('click')
 					# if($(this).data('attribute_name')=='attribute_pa_wood-finishing')
 					# 	$("#variable-wood .variation-groups li[data-wood='"+$(this).val()+"']").trigger('click')
+			else if($(this).hasClass("selectpicker"))
+				$(this).selectpicker('refresh')
+				
 		arr = []
 		$('#pa_wood option').each (index)->
 			arr.push($(this).val())
@@ -293,7 +300,7 @@ jQuery ($) ->
 		arr = []
 		$('#pa_wood-finishing option').each (index)->
 			arr.push($(this).val())
-		console.info arr
+		# console.info arr
 		$('#variable-wood .variation-group li').each (index)->
 			if $.inArray($(this).data('wood'),arr) == -1
 				$(this).hide()

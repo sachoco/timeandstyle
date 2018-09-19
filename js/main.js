@@ -223,8 +223,12 @@
       if ($('#uphoster') || $('#wood')) {
         $("#upholster .title").text('Choose an option');
         $("#wood.tas-select .title").text('Choose an option');
-        return $(".variation-groups").find("li").removeClass("selected");
+        $(".variation-groups").find("li").removeClass("selected");
       }
+      return $('.selectpicker').each(function(index) {
+        $(this).prop("disabled", false);
+        return $(this).selectpicker('refresh');
+      });
     });
     $(".variation-filter a").on("click", function(e) {
       var g, i, len, ref, results, val;
@@ -249,17 +253,6 @@
       label = $(this).parents(".tas-variation").find("label").text();
       return $(this).parent().find(".filter-option").prepend("<span>" + label + ": </span>");
     });
-    $(".variations_form").on("woocommerce_update_variation_values", function() {
-      return $('.selectpicker').each(function(index) {
-        if ($(this).find('option').length === 2) {
-          $(this).prop("disabled", true);
-          if ($(this).prop('selectedIndex') !== 1) {
-            $(this).prop('selectedIndex', 1).trigger("change").prop("disabled", true);
-          }
-        }
-        return $(this).selectpicker('refresh');
-      });
-    });
     varSelects = 'form.variations_form select';
     $(document).on('change', varSelects, function() {
       var $selectField, arr;
@@ -280,6 +273,8 @@
               }
             }
           }
+        } else if ($(this).hasClass("selectpicker")) {
+          return $(this).selectpicker('refresh');
         }
       });
       arr = [];
@@ -297,7 +292,6 @@
       $('#pa_wood-finishing option').each(function(index) {
         return arr.push($(this).val());
       });
-      console.info(arr);
       return $('#variable-wood .variation-group li').each(function(index) {
         if ($.inArray($(this).data('wood'), arr) === -1) {
           return $(this).hide();
