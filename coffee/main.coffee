@@ -271,6 +271,23 @@ jQuery ($) ->
 	# 		$(this).selectpicker('refresh')
 
 	varSelects = 'form.variations_form select'
+
+	$(varSelects).each (index) ->
+		$(this).prop( "disabled", false )
+		if $(this).find('option').length == 2
+			if $(this).prop('selectedIndex') != 1
+				$(this).prop('selectedIndex', 1).trigger("change")
+				if($(this).hasClass("selectpicker"))
+					$(this).prop("disabled", true).selectpicker('refresh')
+				if($(this).data('attribute_name')=='attribute_pa_wood')
+					$wf_options = $("#variable-wood .variation-group[data-category-filter-values='"+$(this).val()+"'] li")
+					if $wf_options.length==1
+						$($wf_options[0]).trigger('click')
+				# if($(this).data('attribute_name')=='attribute_pa_wood-finishing')
+				# 	$("#variable-wood .variation-groups li[data-wood='"+$(this).val()+"']").trigger('click')
+		else if($(this).hasClass("selectpicker"))
+			$(this).selectpicker('refresh')
+
 	$(document).on 'change', varSelects, ->
 		$selectField = $(this)
 		$(varSelects).each (index) ->
@@ -288,7 +305,7 @@ jQuery ($) ->
 					# 	$("#variable-wood .variation-groups li[data-wood='"+$(this).val()+"']").trigger('click')
 			else if($(this).hasClass("selectpicker"))
 				$(this).selectpicker('refresh')
-				
+
 		arr = []
 		$('#pa_wood option').each (index)->
 			arr.push($(this).val())

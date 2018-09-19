@@ -254,6 +254,26 @@
       return $(this).parent().find(".filter-option").prepend("<span>" + label + ": </span>");
     });
     varSelects = 'form.variations_form select';
+    $(varSelects).each(function(index) {
+      var $wf_options;
+      $(this).prop("disabled", false);
+      if ($(this).find('option').length === 2) {
+        if ($(this).prop('selectedIndex') !== 1) {
+          $(this).prop('selectedIndex', 1).trigger("change");
+          if ($(this).hasClass("selectpicker")) {
+            $(this).prop("disabled", true).selectpicker('refresh');
+          }
+          if ($(this).data('attribute_name') === 'attribute_pa_wood') {
+            $wf_options = $("#variable-wood .variation-group[data-category-filter-values='" + $(this).val() + "'] li");
+            if ($wf_options.length === 1) {
+              return $($wf_options[0]).trigger('click');
+            }
+          }
+        }
+      } else if ($(this).hasClass("selectpicker")) {
+        return $(this).selectpicker('refresh');
+      }
+    });
     $(document).on('change', varSelects, function() {
       var $selectField, arr;
       $selectField = $(this);
