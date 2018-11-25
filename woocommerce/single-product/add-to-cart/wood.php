@@ -180,7 +180,7 @@
 						"category" => "ash",
 						"image" => "wood/Ash_CL.jpg"
 					),
-					"Ash - Beewax" => array(
+					"Ash - Beeswax" => array(
 						"id" => "ash-beewax",
 						"category" => "ash",
 						"image" => "wood/Ash_CL.jpg"
@@ -209,8 +209,8 @@
 		if(!in_array("ash-clear", $wood_finishing_options)){
 			unset($wood['Wood']['ASH']['Ash - Clear']);
 		}
-		if(!in_array("ash-beewax", $wood_finishing_options)){
-			unset($wood['Wood']['ASH']['Ash - Beewax']);
+		if(!in_array("ash-beeswax", $wood_finishing_options)){
+			unset($wood['Wood']['ASH']['Ash - Beeswax']);
 		}
 		if(!in_array("ash-black", $wood_finishing_options)){
 			unset($wood['Wood']['ASH']['Ash - Black']);
