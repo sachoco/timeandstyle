@@ -11,6 +11,7 @@
 
   jQuery(function($) {
     var afterSlideChangeEvent, beforeSlideChangeEvent, myCustomFn, resize, varSelects;
+    $(".wc-pao-addon-select").addClass("selectpicker");
     resize = function() {
       var height;
       $('.column').height($(window).height());
@@ -251,7 +252,11 @@
     $('.selectpicker').on('loaded.bs.select', function(e) {
       var label;
       label = $(this).parents(".tas-variation").find("label").text();
-      return $(this).parent().find(".filter-option").prepend("<span>" + label + ": </span>");
+      if ($(this).parents(".wc-pao-addon").find("label").text()) {
+        label = $(this).parents(".wc-pao-addon").find("label").text();
+        $(this).parents(".wc-pao-addon").find("label").hide();
+      }
+      return $(this).parent().find(".filter-option").prepend("<span>" + label + ": </span>").wrapInner('<div class="filter-option-wrapper">');
     });
     varSelects = 'form.variations_form select';
     $(varSelects).each(function(index) {

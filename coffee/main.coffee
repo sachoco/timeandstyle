@@ -4,6 +4,7 @@ target_slideitem = hashtag.split("_")[1]
 hashtag = hashtag.split("_")[0]
 
 jQuery ($) ->
+	$(".wc-pao-addon-select").addClass("selectpicker")
 	resize = ()->
 		$('.column').height $(window).height()
 		# $(".column").mCustomScrollbar { axis:"y", theme:"minimal", callbacks:{ onScroll: ()->
@@ -21,13 +22,13 @@ jQuery ($) ->
 
 
 	myCustomFn = (el)->
-		if el.mcs.top < 0 
+		if el.mcs.top < 0
 			$("#back-to-top-slick").addClass "active"
 			$("#back-to-top-page").addClass "active"
 		else
 			$("#back-to-top-slick").removeClass "active"
 			$("#back-to-top-page").removeClass "active"
-		# console.log(el.mcs.top)		
+		# console.log(el.mcs.top)
 
 
 
@@ -44,30 +45,30 @@ jQuery ($) ->
 
 		$('#slick').on "afterChange", ()->
 			afterSlideChangeEvent()
-			
+
 		$('#slick.loop').slick(
-			infinite: true, 
+			infinite: true,
 			initialSlide: if hashtag && $(".column-title").length then $(".column-title li[data-cat='"+hashtag+"']").data('slideid') else 0,
 			# initialSlide: Math.floor(Math.random() * $('#slick.loop .column').length),
-			# prevArrow: '<button type="button" class="slick-prev"><img src="'+img_path+'/arrow-left.svg" ></button>', 
+			# prevArrow: '<button type="button" class="slick-prev"><img src="'+img_path+'/arrow-left.svg" ></button>',
 			# nextArrow: '<button type="button" class="slick-next"><img src="'+img_path+'/arrow-right.svg" ></button>'
 			prevArrow: '<button type="button" class="slick-prev"><div class="collapsed-button"><div class="circle"><div class="icon left"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve">
 <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="15.565,0.324 0.699,15.19 15.565,30.057 "/>
-</svg></div><div class="bg circular-anim"></div></div></div></button>', 
+</svg></div><div class="bg circular-anim"></div></div></div></button>',
 			nextArrow: '<button type="button" class="slick-next "><div class="collapsed-button"><div class="circle"><div class="icon right"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve">
 <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="0.543,30.034 15.409,15.168 0.543,0.301 "/>
 </svg></div><div class="bg circular-anim"></div></div></div></button>'
 		)
 		$('#slick.noloop').slick(
-			infinite: false, 
-			# prevArrow: '<button type="button" class="slick-prev"><img src="'+img_path+'/arrow-left.svg" ></button>', 
+			infinite: false,
+			# prevArrow: '<button type="button" class="slick-prev"><img src="'+img_path+'/arrow-left.svg" ></button>',
 			# nextArrow: '<button type="button" class="slick-next"><img src="'+img_path+'/arrow-right.svg" ></button>'
 			prevArrow: '<button type="button" class="slick-prev"><div class="collapsed-button"><div class="circle"><div class="icon left"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve">
 <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="15.565,0.324 0.699,15.19 15.565,30.057 "/>
-</svg></div><div class="bg circular-anim"></div></div></div></button>', 
+</svg></div><div class="bg circular-anim"></div></div></div></button>',
 			nextArrow: '<button type="button" class="slick-next "><div class="collapsed-button"><div class="circle"><div class="icon right"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="15.952px" height="30.489px" viewBox="0 0 15.952 30.489" enable-background="new 0 0 15.952 30.489" xml:space="preserve">
 <polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="0.543,30.034 15.409,15.168 0.543,0.301 "/>
@@ -86,17 +87,17 @@ jQuery ($) ->
 				$(".site-branding .our-shop.shop-3d").addClass "active"
 			if typeof currentSlide != 'undefined'
 				# if typeof currentSlide.mcs != 'undefined'
-				# 	if currentSlide.mcs.top < 0 
+				# 	if currentSlide.mcs.top < 0
 				# 		$("#back-to-top-slick").addClass "active"
 				# 	else
 				# 		$("#back-to-top-slick").removeClass "active"
 
-				if currentSlide.scrollTop > 0 
+				if currentSlide.scrollTop > 0
 					$("#back-to-top-slick").addClass "active"
 				else
-					$("#back-to-top-slick").removeClass "active"		
+					$("#back-to-top-slick").removeClass "active"
 				$(currentSlide).on "scroll", ()->
-					if currentSlide.scrollTop > 0 
+					if currentSlide.scrollTop > 0
 						$("#back-to-top-slick").addClass "active"
 					else
 						$("#back-to-top-slick").removeClass "active"
@@ -106,7 +107,7 @@ jQuery ($) ->
 				$currentCol = $($(".column-title li")[$("#slick").slick('slickCurrentSlide')])
 				$currentCol.addClass "active"
 				cat = $currentCol.data('cat')
-				# if $.browser.webkit == false 
+				# if $.browser.webkit == false
 				if hashtag == ""
 					hashtag=cat
 				else
@@ -173,7 +174,7 @@ jQuery ($) ->
 
 	if $("#back-to-top-page").length
 		$(".column").on "scroll", ()->
-			if $(".column")[0].scrollTop > 0 
+			if $(".column")[0].scrollTop > 0
 				$("#back-to-top-page").addClass "active"
 			else
 				$("#back-to-top-page").removeClass "active"
@@ -190,7 +191,7 @@ jQuery ($) ->
 		$("#slick").slick('slickGoTo', slideID)
 		$(this).addClass "active"
 
-	$(".product-description").readmore 
+	$(".product-description").readmore
 		moreLink: '<a class="square-btn" href="#">more caption</a>',
 		lessLink: '<a class="square-btn" href="#">less caption</a>',
 		embedCSS: true,
@@ -234,7 +235,7 @@ jQuery ($) ->
 	# $(".tas-select[data-fancybox]").fancybox({
 	# 	afterClose: ( instance, slide )->
 	# 		$("#pa_upholster-category").trigger('change')
-	# 		$("#pa_wood").trigger('change')				
+	# 		$("#pa_wood").trigger('change')
 	# });
 
 	$('.reset_variations').on 'click', (e)->
@@ -260,7 +261,10 @@ jQuery ($) ->
 
 	$('.selectpicker').on 'loaded.bs.select', (e)->
 		label = $(this).parents(".tas-variation").find("label").text()
-		$(this).parent().find(".filter-option").prepend("<span>"+label+": </span>")
+		if $(this).parents(".wc-pao-addon").find("label").text()
+			label = $(this).parents(".wc-pao-addon").find("label").text()
+			$(this).parents(".wc-pao-addon").find("label").hide()
+		$(this).parent().find(".filter-option").prepend("<span>"+label+": </span>").wrapInner('<div class="filter-option-wrapper">')
 
 	# $( ".variations_form" ).on "woocommerce_update_variation_values", ()->
 	# 	$('.selectpicker').each (index)->
