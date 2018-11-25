@@ -123,6 +123,55 @@
 		if(!in_array("beech-dark-wenge", $wood_finishing_options)){
 			unset($wood['Wood']['BEECH']['Beech - Dark wenge']);
 		}
+		if(in_array("beech-white", $wood_finishing_options)){
+			$wood["Wood"]["BEECH"]["Beech - White"] = array(
+						"id" => "beech-white",
+						"category" => "beech",
+						"image" => "wood/Beech-up-WH.png"
+					);
+		}
+		if(in_array("beech-ivory", $wood_finishing_options)){
+			$wood["Wood"]["BEECH"]["Beech - Ivory"] = array(
+						"id" => "beech-ivory",
+						"category" => "beech",
+						"image" => "wood/Beech-up-IV.png"
+					);
+		}
+		if(in_array("beech-yellow", $wood_finishing_options)){
+			$wood["Wood"]["BEECH"]["Beech - Yellow"] = array(
+						"id" => "beech-yellow",
+						"category" => "beech",
+						"image" => "wood/Beech-up-YE.png"
+					);
+		}
+		if(in_array("beech-orange", $wood_finishing_options)){
+			$wood["Wood"]["BEECH"]["Beech - Orange"] = array(
+						"id" => "beech-orange",
+						"category" => "beech",
+						"image" => "wood/Beech-up-OR.png"
+					);
+		}
+		if(in_array("beech-red", $wood_finishing_options)){
+			$wood["Wood"]["BEECH"]["Beech - Red"] = array(
+						"id" => "beech-red",
+						"category" => "beech",
+						"image" => "wood/Beech-up-RE.png"
+					);
+		}
+		if(in_array("beech-green", $wood_finishing_options)){
+			$wood["Wood"]["BEECH"]["Beech - Green"] = array(
+						"id" => "beech-green",
+						"category" => "beech",
+						"image" => "wood/Beech-up-GR.png"
+					);
+		}
+		if(in_array("beech-blue", $wood_finishing_options)){
+			$wood["Wood"]["BEECH"]["Beech - Blue"] = array(
+						"id" => "beech-blue",
+						"category" => "beech",
+						"image" => "wood/Beech-up-BL.png"
+					);
+		}
 	}
 	if(in_array("ash", $wood_options)){
 		$wood["Wood"]["ASH"] = array(
