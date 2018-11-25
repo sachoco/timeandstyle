@@ -49,6 +49,13 @@
 		if(!in_array("walnut-beeswax", $wood_finishing_options)){
 			unset($wood['Wood']['WALNUT']['Walnut - Beeswax']);
 		}
+		if(in_array("walnut-clear", $wood_finishing_options)){
+			$wood["Wood"]["WALNUT"]["Walnut - Clear"] = array(
+						"id" => "walnut-clear",
+						"category" => "walnut",
+						"image" => "wood/Walnut_Beeswax.jpg"
+					);
+		}
 		if(in_array("walnut-gold-leaf", $wood_finishing_options)){
 			$wood["Wood"]["WALNUT"]["Walnut - Gold leaf"] = array(
 						"id" => "walnut-gold-leaf",
@@ -201,7 +208,7 @@
 	</div>
 
 	<div class="variation-groups">
-		<?php 
+		<?php
 			$filter_value;
 			foreach ($wood as $key => $value) {
 				$filter_value = $key;
@@ -220,7 +227,7 @@
 
 
 			}
-		?>	
+		?>
 	</div>
 </div>
 </div>
