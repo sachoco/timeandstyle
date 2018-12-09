@@ -21,6 +21,34 @@
 						"image" => "wood/Oak_BW.jpg"
 					);
 		}
+		if(in_array("oak-black", $wood_finishing_options)){
+			$wood["Wood"]["OAK"]["Oak - Black"] = array(
+						"id" => "oak-black",
+						"category" => "oak",
+						"image" => "wood/Beech_BK.jpg"
+					);
+		}
+		if(in_array("oak-charcoal-grey", $wood_finishing_options)){
+			$wood["Wood"]["OAK"]["Oak - Charcoal grey"] = array(
+						"id" => "oak-charcoal-grey",
+						"category" => "oak",
+						"image" => "wood/Beech_CG.jpg"
+					);
+		}
+		if(in_array("oak-snow-white", $wood_finishing_options)){
+			$wood["Wood"]["OAK"]["Oak - Snow white"] = array(
+						"id" => "oak-snow-white",
+						"category" => "oak",
+						"image" => "wood/Beech_SW.jpg"
+					);
+		}
+		if(in_array("oak-dark-wenge", $wood_finishing_options)){
+			$wood["Wood"]["OAK"]["Oak - Dark wenge"] = array(
+						"id" => "oak-dark-wenge",
+						"category" => "oak",
+						"image" => "wood/Beech_DW.jpg"
+					);
+		}
 		if(in_array("oak-tannin-black", $wood_options)){
 			$wood["Wood"]["OAK"]["Oak - Tannin black"] = array(
 						"id" => "oak-tannin-black",

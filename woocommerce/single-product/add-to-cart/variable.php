@@ -37,7 +37,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 						<label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label><!-- </td>
 						<td class="value"> -->
 							<?php
-								if($attribute_name!="pa_upholster" && $attribute_name!="pa_upholster-category" && $attribute_name!="pa_wood" && $attribute_name!="pa_wood-finishing"){
+								if($attribute_name!="pa_upholster" && $attribute_name!="pa_upholster-category" && $attribute_name!="pa_wood" && $attribute_name!="pa_wood-finishing" && $attribute_name!="Variation"){
 									wc_dropdown_variation_attribute_options( array(
 										'options'   => $options,
 										'attribute' => $attribute_name,
@@ -52,21 +52,24 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 										'class'		=> "hidden"
 									) );
 								}
-								
+
 							if ($attribute_name=="pa_upholster"){
 								$upholster_options = $options;
-								include("upholster.php"); 
+								include("upholster.php");
 							}else if ($attribute_name=="pa_upholster-category"){
 								$upholster_category_options = $options;
 							}else if ($attribute_name=="pa_wood"){
 								$wood_options = $options;
 							}else if ($attribute_name=="pa_wood-finishing"){
 								$wood_finishing_options = $options;
-								include("wood.php"); 
+								include("wood.php");
+							}else if ($attribute_name=="Variation"){
+								$variations_options = $options;
+								include("variations.php");
 							}
 
 								echo end( $attribute_keys ) === $attribute_name ? wp_kses_post( apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) ) : '';
-							?>						
+							?>
 						</td>
 					</tr>
 

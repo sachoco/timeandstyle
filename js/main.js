@@ -209,6 +209,15 @@
       $("#pa_wood-finishing").val(wood);
       return $("#wood .title").text(wood_title);
     });
+    $("#variable-variations .variation-groups li").on("click", function(e) {
+      var variation, variation_title;
+      $(this).parents(".variation-groups").find("li").removeClass("selected");
+      $(this).addClass("selected");
+      variation = $(this).data("variation");
+      variation_title = $(this).data("variation-title");
+      $("#variation").val(variation);
+      return $("#variation .title").text(variation_title);
+    });
     $().fancybox({
       selector: '.tas-select:not(.disabled)',
       src: $(this).data("src"),
@@ -224,6 +233,7 @@
       if ($('#uphoster') || $('#wood')) {
         $("#upholster .title").text('Choose an option');
         $("#wood.tas-select .title").text('Choose an option');
+        $("#variation.tas-select .title").text('Choose an option');
         $(".variation-groups").find("li").removeClass("selected");
       }
       return $('.selectpicker').each(function(index) {

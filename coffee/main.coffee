@@ -222,6 +222,13 @@ jQuery ($) ->
 		$("#pa_wood-finishing").val(wood)
 		$("#wood .title").text(wood_title)
 
+	$("#variable-variations .variation-groups li").on "click", (e)->
+		$(this).parents(".variation-groups").find("li").removeClass "selected"
+		$(this).addClass "selected"
+		variation = $(this).data("variation")
+		variation_title = $(this).data("variation-title")
+		$("#variation").val(variation)
+		$("#variation .title").text(variation_title)
 
 	$().fancybox({
 		selector : '.tas-select:not(.disabled)'
@@ -242,6 +249,7 @@ jQuery ($) ->
 		if $('#uphoster') or $('#wood')
 			$("#upholster .title").text('Choose an option')
 			$("#wood.tas-select .title").text('Choose an option')
+			$("#variation.tas-select .title").text('Choose an option')
 			$(".variation-groups").find("li").removeClass "selected"
 		$('.selectpicker').each (index)->
 			$(this).prop("disabled", false)
