@@ -3,10 +3,10 @@
 
 
 DEVELOPED BY
- ___   _   ___ _  _  ___   ___ ___  
-/ __| /_\ / __| || |/ _ \ / __/ _ \ 
+ ___   _   ___ _  _  ___   ___ ___
+/ __| /_\ / __| || |/ _ \ / __/ _ \
 \__ \/ _ \ (__| __ | (_) | (_| (_) |
-|___/_/ \_\___|_||_|\___/ \___\___/ 
+|___/_/ \_\___|_||_|\___/ \___\___/
 
 
 
@@ -57,13 +57,13 @@ DEVELOPED BY
                 </a></h1>
 <?php if( is_home() || is_front_page() || is_page(array( 'home', 'furniture') )): ?>
 
-<?php endif; ?> 
+<?php endif; ?>
                 <ul>
 
 <?php if( is_page(array( 'our-shop' )) || is_front_page()): ?>
 
                     <li class="our-shop shop-amsterdam active" data-slideid="0">Amsterdam</li>
-                    <li class="our-shop shop-3d" data-slideid="1">Amsterdam<br>shop 3D view</li>
+                    <!-- <li class="our-shop shop-3d" data-slideid="1">Amsterdam<br>shop 3D view</li> -->
                     <li class="our-shop shop-tokyo" data-slideid="2">Tokyo</li>
 <?php endif; ?>
 <!--                     <li class="clockBtn"><a href="/" id="clockBtn"><img src="<?php echo get_template_directory_uri(); ?>/images/clock.svg" alt=""></a></li>
@@ -75,18 +75,18 @@ DEVELOPED BY
                     <li class="signup"><i class="fal fa-envelope" aria-hidden="true"></i><span>sign up</span></li>
 
 <!--                     <li>
-                    
+
 <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
- 
+
     $count = WC()->cart->cart_contents_count;
-    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php 
+    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
     if ( $count > 0 ) {
         ?>
         <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
         <?php
     }
         ?></a>
- 
+
 <?php } ?>
 
                     </li> -->
@@ -100,10 +100,9 @@ DEVELOPED BY
                     <div class="bar middle"></div>
                     <div class="bar bottom"></div>
                 </div>
-            </div>            
+            </div>
             <nav id="site-navigation" class="main-navigation" role="navigation">
 
             <?php wp_nav_menu(); ?>
             </nav>
         </header>
-        
