@@ -19,7 +19,7 @@ endif;
 <?php
 $images = get_field('shop_images',$my_posts[0]->ID);
 
-if( $images ): 
+if( $images ):
 $i=0;
 ?>
         <?php foreach( $images as $image ): ?>
@@ -41,8 +41,8 @@ $i=0;
             <h2>Contact</h2>
             <?php echo do_shortcode( '[contact-form-7 id="111" title="Contact"]' );  ?>
         </div>
-        
-    </li>  -->  
+
+    </li>  -->
 	<li class="footer">
     	<footer class="footer">
             <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
@@ -61,8 +61,8 @@ $i=0;
         <div class="inner">
             <h2>Contact</h2>
             <?php echo do_shortcode( '[contact-form-7 id="111" title="Contact"]' );  ?>
-        </div>    
-    </li>   --> 
+        </div>
+    </li>   -->
     <li class="footer">
         <footer class="footer">
             <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
@@ -90,7 +90,7 @@ endif;
 <?php
 $images = get_field('shop_images',$my_posts[0]->ID);
 
-if( $images ): 
+if( $images ):
 $i=0;
 ?>
         <?php foreach( $images as $image ): ?>
@@ -110,8 +110,8 @@ $i=0;
             <h2>Contact</h2>
             <?php echo do_shortcode( '[contact-form-7 id="111" title="Contact"]' );  ?>
         </div>
-        
-    </li>   --> 
+
+    </li>   -->
     <li class="footer">
         <footer class="footer">
             <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
@@ -130,7 +130,7 @@ $i=0;
     <div class="inner">
         <img class="close" src="<?php echo get_template_directory_uri(); ?>/images/close.svg" alt="close">
         <div class="content">
-            
+
         </div>
     </div>
 </div>
@@ -140,16 +140,15 @@ $i=0;
             <div class="icon">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      width="31.131px" height="17.097px" viewBox="0 0 31.131 17.097" enable-background="new 0 0 31.131 17.097" xml:space="preserve">
-<polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369 
+<polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369
     "/>
 </svg>
 
             </div>
-            <div class="bg circular-anim"></div>  
+            <div class="bg circular-anim"></div>
         </div>
-                                    
+
     </div>
 </div>
-
 
 <?php get_footer(); ?>

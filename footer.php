@@ -1,18 +1,18 @@
 <?php if(is_front_page()): ?>
-	
+
 <div class="collapsed-button-container">
 	<div id="back-to-top-slick" class="collapsed-button back-to-top fixed" role="button">
 		<div class="circle">
 		    <div class="icon">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="31.131px" height="17.097px" viewBox="0 0 31.131 17.097" enable-background="new 0 0 31.131 17.097" xml:space="preserve">
-<polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369 
+<polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369
 	"/>
 </svg>
 		    </div>
-		    <div class="bg circular-anim"></div>  
+		    <div class="bg circular-anim"></div>
 		</div>
-		                            
+
 	</div>
 </div>
 <div id="opening">
@@ -32,8 +32,17 @@ jQuery(document).ready(function($) {
  		$("#slick, header, .shop-info-toggle").velocity("fadeIn", {
  			delay: 500,
 			duration: 1500,
-			mobileHA: false
-		});     
+			mobileHA: false,
+			complete: function(){
+						$.magnificPopup.open({
+							items: {
+								src: '/uploads/Kengo-Kuma-exhibition-web2.jpg'
+							},
+							type: 'image',
+							mainClass: 'mfp-fade'
+						});
+			}
+		});
 	}
 
 	var hash = window.location.hash;
@@ -47,12 +56,12 @@ jQuery(document).ready(function($) {
 		// 	mobileHA: false
 		// });
 	}else{
-		// $("#intro").velocity("fadeIn", { 
+		// $("#intro").velocity("fadeIn", {
 		// 	delay: 0,
-	 //        duration: 1500, 
+	 //        duration: 1500,
 	 //        mobileHA: false
 	 //    });
-	
+
 	 //    moment.tz.setDefault("Europe/Amsterdam");
 	 //    function update() {
 	 //      $('#clock').html(moment().format('H:mm:ss MMM. D. YYYY')+" AMSTERDAM");
@@ -65,32 +74,32 @@ jQuery(document).ready(function($) {
 		// });
 
         showTitle();
-        
+
 		function showTitle(){
-		    $("#intro").velocity("fadeOut", { 
-		        duration: 1500, 
+		    $("#intro").velocity("fadeOut", {
+		        duration: 1500,
 		        mobileHA: false,
-		        complete: function(elements) { 
+		        complete: function(elements) {
 		            $("#title-flash")
-		                .velocity("fadeIn", { 
+		                .velocity("fadeIn", {
 		                    duration: 1500,
 		                    mobileHA: false,
 		                    complete: function(){
 		                        // window.location.href = "/home";
 		                    }
 		                })
-		             .velocity("fadeOut", { 
-		                 delay: 500, 
+		             .velocity("fadeOut", {
+		                 delay: 500,
 		                 mobileHA: false,
-		                 duration: 1500, 
+		                 duration: 1500,
 		                 complete: function(){
 		                     showSite();
-		                 }        
+		                 }
 		             });
 
 		        }
 		    });
-		}		
+		}
 
 	}
 
@@ -106,7 +115,7 @@ jQuery(document).ready(function($) {
 <script>
 var initPhotoSwipeFromDOM = function(gallerySelector) {
 
-    // parse slide data (url, title, size ...) from DOM elements 
+    // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
     var parseThumbnailElements = function(el) {
         var thumbElements = el.childNodes,
@@ -121,7 +130,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             figureEl = thumbElements[i]; // <figure> element
 
-            // include only element nodes 
+            // include only element nodes
             if(figureEl.nodeType !== 1) {
                 continue;
             }
@@ -141,13 +150,13 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             if(figureEl.children.length > 1) {
                 // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
+                item.title = figureEl.children[1].innerHTML;
             }
 
             if(linkEl.children.length > 0) {
                 // <img> thumbnail element, retrieving thumbnail url
                 item.msrc = linkEl.children[0].getAttribute('src');
-            } 
+            }
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
             items.push(item);
@@ -186,8 +195,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             index;
 
         for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) { 
-                continue; 
+            if(childNodes[i].nodeType !== 1) {
+                continue;
             }
 
             if(childNodes[i] === clickedListItem) {
@@ -220,10 +229,10 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             if(!vars[i]) {
                 continue;
             }
-            var pair = vars[i].split('=');  
+            var pair = vars[i].split('=');
             if(pair.length < 2) {
                 continue;
-            }           
+            }
             params[pair[0]] = pair[1];
         }
 
@@ -252,7 +261,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
                 var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
                     pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                    rect = thumbnail.getBoundingClientRect(); 
+                    rect = thumbnail.getBoundingClientRect();
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
             }
@@ -262,7 +271,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         // PhotoSwipe opened from URL
         if(fromURL) {
             if(options.galleryPIDs) {
-                // parse real index when custom PIDs are used 
+                // parse real index when custom PIDs are used
                 // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
                 for(var j = 0; j < items.length; j++) {
                     if(items[j].pid == index) {
@@ -308,13 +317,13 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 };
 
 // execute above function
-initPhotoSwipeFromDOM('.pswp-gallery');	
+initPhotoSwipeFromDOM('.pswp-gallery');
 
 </script>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-    <!-- Background of PhotoSwipe. 
+    <!-- Background of PhotoSwipe.
          It's a separate element, as animating opacity is faster than rgba(). -->
     <div class="pswp__bg"></div>
 
@@ -358,7 +367,7 @@ initPhotoSwipeFromDOM('.pswp-gallery');
             </div>
 
             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
+                <div class="pswp__share-tooltip"></div>
             </div>
 
             <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
@@ -381,4 +390,3 @@ initPhotoSwipeFromDOM('.pswp-gallery');
   </body>
 
 </html>
-
