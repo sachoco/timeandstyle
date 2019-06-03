@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 			complete: function(){
 						$.magnificPopup.open({
 							items: {
-								src: '/uploads/Kengo-Kuma-exhibition-web2.jpg'
+								src: '/uploads/Kengo-Kuma-exhibition-web3.jpg'
 							},
 							type: 'image',
 							mainClass: 'mfp-fade'
