@@ -6,13 +6,13 @@
 	add_action( 'init', 'register_my_menu' );
 
 // add_action( 'after_setup_theme', 'tas_setup' );
- 
+
 function tas_setup() {
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
 }
-	// if ( function_exists( 'add_image_size' ) ) { 
+	// if ( function_exists( 'add_image_size' ) ) {
 	// 	add_image_size( 'thumbnail-crop', 152, 152, true );
 	// }
 
@@ -38,6 +38,8 @@ function tas_setup() {
 		wp_enqueue_script( 'moment-timezone' );
 		wp_register_script( 'readmore', get_stylesheet_directory_uri() . '/js/readmore.min.js', array('jquery'), '', true );
 		wp_enqueue_script( 'readmore' );
+		wp_register_script( 'magnific-popup', get_stylesheet_directory_uri() . '/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js', array('jquery'), '', true );
+wp_enqueue_script( 'magnific-popup' );
 		// register main script
 		wp_register_script( 'main-script', get_stylesheet_directory_uri() . '/js/main.js', array('jquery'), '', true );
 		wp_enqueue_script( 'main-script' );
@@ -63,8 +65,8 @@ function tas_setup() {
 		wp_enqueue_style( 'webfont' );
 		wp_register_style( 'main-css', get_stylesheet_directory_uri() . '/css/style.css', array(), '1.2', 'all' );
 		wp_enqueue_style( 'main-css' );
-		// wp_register_style( 'magnific-popup', get_stylesheet_directory_uri() . '/bower_components/magnific-popup/dist/magnific-popup.css', array(), '', 'all' );
-		// wp_enqueue_style( 'magnific-popup' );
+		wp_register_style( 'magnific-popup', get_stylesheet_directory_uri() . '/bower_components/magnific-popup/dist/magnific-popup.css', array(), '', 'all' );
+		wp_enqueue_style( 'magnific-popup' );
 
 		// if ( !is_product()) {
 			wp_register_script( 'photoswipe', get_stylesheet_directory_uri() . '/js/photoswipe.min.js', array('jquery'), '', true );
@@ -75,7 +77,7 @@ function tas_setup() {
 			wp_enqueue_script( 'photoswipe-ui' );
 			wp_enqueue_style( 'photoswipe' );
 			wp_enqueue_style( 'photoswipe-style' );
-		// }	
+		// }
 
 /*
 		wp_register_style( 'calendar', get_stylesheet_directory_uri() . '/bower_components/fullcalendar/dist/fullcalendar.css', array(), '', 'all' );
@@ -269,11 +271,11 @@ function tas_setup() {
 	//         $classes[] = 'tk-heisei-kaku-gothic-std site-jp';
 	// 		else:
 	//         $classes[] = 'tk-brandon-grotesque';
-	// 		endif;	
+	// 		endif;
 	//         return $classes;
 	// }
-	
-	
+
+
 	function my_loginlogo() {
 	  echo '<style type="text/css">
 	    h1 a {
@@ -289,14 +291,14 @@ function tas_setup() {
 
 /*
  * wc_remove_related_products
- * 
+ *
  * Clear the query arguments for related products so none show.
- * Add this code to your theme functions.php file.  
+ * Add this code to your theme functions.php file.
  */
 // function wc_remove_related_products( $args ) {
 //   return array();
 // }
-// add_filter('woocommerce_related_products_args','wc_remove_related_products', 10); 
+// add_filter('woocommerce_related_products_args','wc_remove_related_products', 10);
 
 function mytheme_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
@@ -318,19 +320,19 @@ add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_si
  * Ensure cart contents update when products are added to the cart via AJAX
  */
 function my_header_add_to_cart_fragment( $fragments ) {
- 
+
     ob_start();
     $count = WC()->cart->cart_contents_count;
     ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
     if ( $count > 0 ) {
         ?>
         <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
-        <?php            
+        <?php
     }
         ?></a><?php
- 
+
     $fragments['a.cart-contents'] = ob_get_clean();
-     
+
     return $fragments;
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
@@ -375,9 +377,9 @@ add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' 
 add_filter( 'woocommerce_shipping_package_name' , 'woocommerce_replace_text_shipping_to_delivery', 10, 3);
 
 /**
- * 
+ *
  * Function to replace shipping text to delivery text
- * 
+ *
  * @param $package_name
  * @param $i
  * @param $package
