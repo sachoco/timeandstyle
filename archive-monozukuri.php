@@ -18,11 +18,11 @@ foreach($categories as $cat):
     <?php
         $args = array( 'post_type' => 'monozukuri', 'posts_per_page' => -1, 'monozukuri_category' => $cat->slug );
         $loop = new WP_Query( $args );
-        while ( $loop->have_posts() ) : $loop->the_post(); global $post; 
+        while ( $loop->have_posts() ) : $loop->the_post(); global $post;
         ?>
 
 
-                <li>    
+                <li>
 
                     <a href="<?php echo get_permalink( $post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>">
                         <div class="image-wrapper">
@@ -44,7 +44,7 @@ foreach($categories as $cat):
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>
-</ul> 
+</ul>
 
 </section>
 
@@ -61,13 +61,13 @@ foreach($categories as $cat):
             <div class="icon">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
      width="31.131px" height="17.097px" viewBox="0 0 31.131 17.097" enable-background="new 0 0 31.131 17.097" xml:space="preserve">
-<polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369 
+<polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369
     "/>
 </svg>
             </div>
-            <div class="bg circular-anim"></div>  
+            <div class="bg circular-anim"></div>
         </div>
-                                    
+
     </div>
 </div>
  -->
@@ -78,6 +78,11 @@ foreach($categories as $cat):
 <ul>
 	<li>
 		<div class="image-wrapper">
+			<?php echo do_shortcode('[videojs_video url="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.mp4" webm="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.webm" ogv="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.ogv"]'); ?>
+		</div>
+	</li>
+	<!-- <li>
+		<div class="image-wrapper">
 			<img src="<?php echo get_template_directory_uri(); ?>/images/monozukuri/1.MZ.jpg" >
 		</div>
 	</li>
@@ -85,22 +90,22 @@ foreach($categories as $cat):
         <div class="image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/images/monozukuri/2.MZ.jpg" >
         </div>
-    </li>   
+    </li>
     <li>
         <div class="image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/images/monozukuri/3.MZ.jpg" >
         </div>
-    </li>  
+    </li>
     <li>
         <div class="image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/images/monozukuri/4.MZ.jpg" >
         </div>
-    </li> 
+    </li>
     <li>
         <div class="image-wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/images/monozukuri/5.MZ.jpg" >
         </div>
-    </li> 
+    </li> -->
    	<li class="footer">
     	<footer class="footer">
             <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
@@ -117,13 +122,13 @@ foreach($categories as $cat):
 		    <div class="icon">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="31.131px" height="17.097px" viewBox="0 0 31.131 17.097" enable-background="new 0 0 31.131 17.097" xml:space="preserve">
-<polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369 
+<polyline id="line-1" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-miterlimit="10" points="30.581,16.369 15.715,1.503 0.848,16.369
 	"/>
 </svg>
 		    </div>
-		    <div class="bg circular-anim"></div>  
+		    <div class="bg circular-anim"></div>
 		</div>
-		                            
+
 	</div>
 </div>
 
