@@ -52,7 +52,7 @@ $i=0;
 </ul>
 </section>
 
-<!-- <section class="column shop-amsterdam-3dview">
+<section class="column shop-amsterdam-3dview">
 <ul>
     <li class="shop3dview">
         <iframe width='853' height='480' src='https://my.matterport.com/show/?m=L5fsRabWPFg&help=2&hl=2&play=1&qs=1dh=0&gt=0&lang=en' frameborder='0' allowfullscreen allow='vr'></iframe>
@@ -63,7 +63,7 @@ $i=0;
              &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
         </footer>
     </li>
-</section> -->
+</section>
 
 <?php
 $the_slug = 'shop-tokyo';
@@ -119,7 +119,7 @@ $i=0;
 
 </section>
 
-<div class="shop-info-toggle mobile-hide">Shop Information</div>
+<div class="shop-info-toggle mobile-hide"><span><?php if(ICL_LANGUAGE_CODE=="nl"): ?>Winkelinformatie<?php else: ?>Shop Information<?php endif; ?></div>
 <div id="shop-info" class="shop-info">
     <div class="inner">
         <img class="close" src="<?php echo get_template_directory_uri(); ?>/images/close.svg" alt="close">

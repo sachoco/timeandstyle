@@ -63,7 +63,7 @@ DEVELOPED BY
 <?php if( is_page(array( 'our-shop' )) || is_front_page()): ?>
 
                     <li class="our-shop shop-amsterdam active" data-slideid="0">Amsterdam</li>
-                    <!-- <li class="our-shop shop-3d" data-slideid="1">Amsterdam<br>shop 3D view</li> -->
+                    <li class="our-shop shop-3d" data-slideid="1">Amsterdam<br>shop 3D view</li>
                     <li class="our-shop shop-tokyo" data-slideid="2">Tokyo</li>
 <?php endif; ?>
 <!--                     <li class="clockBtn"><a href="/" id="clockBtn"><img src="<?php echo get_template_directory_uri(); ?>/images/clock.svg" alt=""></a></li>
@@ -72,7 +72,7 @@ DEVELOPED BY
 
                     <li class="instagram"><a href="https://www.instagram.com/timeandstyle_amsterdam/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
 
-                    <li class="signup"><i class="fal fa-envelope" aria-hidden="true"></i><span>sign up</span></li>
+                    <li class="signup"><i class="fal fa-envelope" aria-hidden="true"></i><span><?php if(ICL_LANGUAGE_CODE=="nl"): ?>aanmelden<?php else: ?>sign up<?php endif; ?></span></li>
 
 <!--                     <li>
 

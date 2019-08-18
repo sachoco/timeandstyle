@@ -33,15 +33,15 @@ jQuery(document).ready(function($) {
  			delay: 500,
 			duration: 1500,
 			mobileHA: false,
-			complete: function(){
-						$.magnificPopup.open({
-							items: {
-								src: '/uploads/Kengo-Kuma-exhibition-web3.jpg'
-							},
-							type: 'image',
-							mainClass: 'mfp-fade'
-						});
-			}
+			// complete: function(){
+			// 			$.magnificPopup.open({
+			// 				items: {
+			// 					src: '/uploads/Kengo-Kuma-exhibition-web3.jpg'
+			// 				},
+			// 				type: 'image',
+			// 				mainClass: 'mfp-fade'
+			// 			});
+			// }
 		});
 	}
 
