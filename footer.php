@@ -20,12 +20,28 @@
 <section id="title-flash"><div><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" class="logo"></div>
 </section>
 </div>
+<div id="my-popup" class="mfp-hide" style="width:80%;margin:auto;">
+	<?php echo do_shortcode('[videojs_video url="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.mp4" webm="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.webm" ogv="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.ogv" autoplay="true" muted="true"]'); ?>
 
+</div>
+<div id="fake_btn"></div>
 <script>
 
 
 
+
 jQuery(document).ready(function($) {
+	// $("#fake_btn").on("click", myPlay).trigger("click");
+	// function myPlay(){
+		var video_id = $("#my-popup .video-js").attr("id");
+		videojs(video_id+"_html5_api").ready(function(){
+		  var myPlayer = this;
+		  // myPlayer.play();
+			//
+			// 	myPlayer.muted(true);
+
+		});
+	// }
 
 	function showSite(){
 		window.location.hash = "home";
@@ -33,15 +49,20 @@ jQuery(document).ready(function($) {
  			delay: 500,
 			duration: 1500,
 			mobileHA: false,
-			// complete: function(){
-			// 			$.magnificPopup.open({
-			// 				items: {
-			// 					src: '/uploads/Kengo-Kuma-exhibition-web3.jpg'
-			// 				},
-			// 				type: 'image',
-			// 				mainClass: 'mfp-fade'
-			// 			});
-			// }
+			complete: function(){
+						$.magnificPopup.open({
+							// items: {
+							// 	src: '/uploads/Kengo-Kuma-exhibition-web3.jpg'
+							// },
+							items: {
+								src: '#my-popup', // CSS selector of an element on page that should be used as a popup
+								type: 'inline'
+							},
+							// type: 'image',
+							mainClass: 'mfp-fade',
+						});
+						// videojs(video_id+"_html5_api").play();
+			}
 		});
 	}
 
