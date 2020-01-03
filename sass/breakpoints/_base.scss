@@ -74,7 +74,7 @@ p {
 				a {
 					// color: #315096;
 				}
-				
+
 			}
 			// &.instagram {
 			// 	&:after {
@@ -100,7 +100,7 @@ p {
 				    margin-top: 2px;
 				    display: inline-block;
 				}
-				
+
 			}
 			&.our-shop{
 				color: $font-color;
@@ -120,10 +120,10 @@ p {
 				    font-size: 0.6em;
 				    margin-top: -4px;
 				    vertical-align: middle;
-				    margin-left: 6px;	
-				    // cursor: pointer;			
+				    margin-left: 6px;
+				    // cursor: pointer;
 				}
-			} 
+			}
 
 			&.shop-3d {
 				color: $font-color;
@@ -132,7 +132,7 @@ p {
 				cursor: pointer;
 				// text-align: left;
 			}
-			
+
 		}
 	}
 
@@ -163,7 +163,7 @@ p {
 			}
 		}
 	}
-	
+
 }
 #site-navigation {
 	position: fixed;
@@ -183,7 +183,7 @@ p {
     		// visibility: visible;
     		// opacity: 1;
     	}
-    	
+
     }
     >div {
     	position: absolute;
@@ -194,7 +194,7 @@ p {
 		// transition: opacity 0.5s;
 		// transition-delay: 0.5s;
 	    background-color: white;
-		
+
 
 		ul.menu {
 			position: absolute;
@@ -277,7 +277,7 @@ body {
 						width: 100%;
 					}
 				}
-				
+
 
 			}
 
@@ -324,13 +324,13 @@ body {
 						.overlay {
 							opacity: 1;
 						}
-					}	
+					}
 				}
-				
+
 
 			}
 		}
-		
+
 	}
 
 }
@@ -381,18 +381,18 @@ body {
 		.left {
 			// float: left;
 			// width: calc(100% - 450px);
-			
+
 		}
 		.right {
 			// width: 400px;
 			// float: right;
 		}
 	}
-}	
+}
 .shop-info-content {
 	p {
 		margin: 0 0 1em;
-	}	
+	}
 }
 .shop3dview {
 	// display: none;
@@ -427,7 +427,7 @@ section {
 			// font-size: 8vh;
 			line-height: 150%;
 		}
-		
+
 	}
 	&#title-flash {
 		position: fixed;
@@ -466,7 +466,7 @@ section {
 		// transition: opacity 1s;
 		background: url(../images/opening-bg.jpg) center center;
 		background-size: cover;
-		cursor: pointer;		
+		cursor: pointer;
 		letter-spacing: 2px;
 		color: black;
 		&.active {
@@ -490,7 +490,7 @@ section {
 				// @include animation(fadeInDown);
 				// @include animation-delay(1s);
 			}
-		}		
+		}
 	}
 	&#slick {
 		position: fixed;
@@ -502,7 +502,7 @@ section {
 	&.column {
 		// position: absolute;
 		// top: 0;
-		
+
 		width: 100%;
 		height: 100%;
 		// overflow: visible;
@@ -566,7 +566,7 @@ section {
 				    -webkit-align-items: stretch;
 				    -ms-flex-align: stretch;
 				    align-items: stretch;
-				    padding: 0em;					
+				    padding: 0em;
 					margin-top: 1rem;
 					// margin-bottom: -1rem;
 					margin-left: -0.5rem;
@@ -637,7 +637,7 @@ section {
 					// max-width: 100%;
 					// max-height: 100%;
 					display: inline-block;
-				}	
+				}
 			// }
 
 
@@ -666,7 +666,7 @@ section {
 					img {
 						width: 80%;
 						max-width: 500px;
-					}	
+					}
 					// margin-bottom: 2em;
 					// @include animation(fadeInDown);
 				}
@@ -699,10 +699,10 @@ section {
 				li {
 					margin: 1em;
 					display: inline-block;
-				}	
+				}
 			}
 		}
-		
+
 		.page-content {
 			width: 100%;
 			margin: auto;
@@ -710,9 +710,9 @@ section {
 			.inner {
 				position: relative;
 				margin: 1em;
-				padding: 2em 0;	
+				padding: 2em 0;
 			}
-			
+
 		}
 		.page-header {
 			float: left;
@@ -829,7 +829,7 @@ div.wpcf7 {
     appearance: none;
     border-radius: 3px;
     padding: .461em;
-    font-size: 1em;	
+    font-size: 1em;
 }
 
 .woocommerce form .form-row label {
@@ -928,4 +928,10 @@ div.wpcf7 {
 }
 #add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods {
 	width: 100%;
+}
+.mfp-bg {
+	z-index: 1042000 !important;
+}
+.mfp-wrap {
+	z-index: 1043000 !important;
 }

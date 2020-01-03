@@ -1089,6 +1089,14 @@ div.wpcf7 p {
   width: 100%;
 }
 
+.mfp-bg {
+  z-index: 1042000 !important;
+}
+
+.mfp-wrap {
+  z-index: 1043000 !important;
+}
+
 /*********************
 LARGER MOBILE DEVICES
 This is for devices like the Galaxy Note or something that's

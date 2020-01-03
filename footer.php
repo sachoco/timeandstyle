@@ -31,17 +31,6 @@
 
 
 jQuery(document).ready(function($) {
-	// $("#fake_btn").on("click", myPlay).trigger("click");
-	// function myPlay(){
-		var video_id = $("#my-popup .video-js").attr("id");
-		videojs(video_id+"_html5_api").ready(function(){
-		  var myPlayer = this;
-		  // myPlayer.play();
-			//
-			// 	myPlayer.muted(true);
-
-		});
-	// }
 
 	function showSite(){
 		window.location.hash = "home";
