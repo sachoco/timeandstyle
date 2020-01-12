@@ -15,7 +15,7 @@ if ( wp_is_mobile() ) { // If it is a mobile device
   endforeach;
   echo "</ul></div>";
   ?>
-  <section id="slick" class="animsition loop">
+  <section id="slick" class=" loop">
 
   <?php
   foreach($product_categories as $cat):
