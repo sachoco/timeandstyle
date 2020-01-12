@@ -60,7 +60,7 @@ DEVELOPED BY
 <?php endif; ?>
                 <ul>
 
-<?php if( is_page(array( 'our-shop' )) || is_front_page()): ?>
+<?php if( is_page(array( 'our-shop' )) || (is_front_page() && !wp_is_mobile())): ?>
 
                     <li class="our-shop shop-amsterdam active" data-slideid="0">Amsterdam</li>
                     <li class="our-shop shop-3d" data-slideid="1">Amsterdam<br>shop 3D view</li>

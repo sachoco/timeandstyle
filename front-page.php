@@ -1,4 +1,73 @@
 <?php get_header(); ?>
+<?php
+if ( wp_is_mobile() ) { // If it is a mobile device
+
+  $args = array(
+      'exclude_tree'  => array("13")
+  );
+  $product_categories = get_terms( 'product_cat', $args );
+
+  echo "<div class='column-title'><ul>";
+  $i=0;
+  foreach($product_categories as $cat):
+      echo "<li data-slideid='".$i."' data-cat='".$cat->slug."'>".$cat->name."</li>";
+      $i++;
+  endforeach;
+  echo "</ul></div>";
+  ?>
+  <section id="slick" class="animsition loop">
+
+  <?php
+  foreach($product_categories as $cat):
+
+  ?>
+
+  <?php
+      echo '<section class="column" data-cat="'.$cat->slug.'"">';
+  ?>
+
+  <ul class="products">
+      <?php
+          $args = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $cat->slug );
+          $loop = new WP_Query( $args );
+          while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+
+                  <li class="product" id="<?php echo esc_attr($loop->post->post_name ? $loop->post->post_name : $loop->post->ID); ?>">
+
+                      <a href="<?php echo get_permalink( $loop->post->ID ) ?>" title="<?php echo esc_attr($loop->post->post_title ? $loop->post->post_title : $loop->post->ID); ?>" data-id="<?php echo $loop->post->ID; ?>">
+                          <div class="image-wrapper">
+                          <?php woocommerce_show_product_sale_flash( $post, $product ); ?>
+
+                          <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'full'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
+                          </div>
+                          <h3><?php the_title(); ?></h3>
+
+
+                      </a>
+
+
+                  </li>
+
+      <?php endwhile; ?>
+      <?php wp_reset_query(); ?>
+      <li class="footer">
+          <footer class="footer">
+              <?php wp_nav_menu( array( 'menu' => 'Footer Menu') ); ?>
+               &COPY; Copyright PRESTIGE JAPAN INC. ALL rights reserved.
+          </footer>
+      </li>
+  </ul><!--/.products-->
+
+  </section>
+
+  <?php endforeach; ?>
+
+  </section>
+
+<?php
+
+} else { // If it is not a mobile device
+?>
 <section id="slick" class=" noloop">
 <?php
 $the_slug = 'shop-amsterdam';
@@ -118,6 +187,8 @@ $i=0;
 
 
 </section>
+
+<?php } ?>
 
 <div class="shop-info-toggle mobile-hide"><span><?php if(ICL_LANGUAGE_CODE=="nl"): ?>Winkelinformatie<?php else: ?>Shop Information<?php endif; ?></div>
 <div id="shop-info" class="shop-info">

@@ -203,16 +203,19 @@ p {
 			right: 0;
 			margin-right: 3em;
 			text-align: left;
+			@media screen and (max-height: 670px) {
+				margin-top: 2em;
+			}
 			li {
 				margin: 3em 1.5em;
 				@media screen and (max-height: 670px) {
-					margin: 2.5em 1.5em;
+					margin: 2.5em 1em;
 				}
 				@media screen and (max-height: 480px) {
-					margin: 2em 1.5em;
+					margin: 2em 1em;
 				}
 				@media screen and (max-height: 320px) {
-					margin: 1.5em 1.5em;
+					margin: 1.5em 1em;
 				}
 				a {
 					// padding: 1em;
