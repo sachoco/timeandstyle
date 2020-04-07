@@ -20,20 +20,7 @@
 <section id="title-flash"><div><img src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" class="logo"></div>
 </section>
 </div>
-<div id="my-popup" class="mfp-hide" >
-	<div style="background:white;padding:3em;">
-		<p>
-			We have created a new and improved website and will move to http://www.timeandstyle.com.<br>
-			All information and news about Time & Style Amsterdam will be available on the new domain from (date).<br>
-			Thank you very much for visiting and following our previous website.<br><br>
-		</p>
-		<p>
-			We want to welcome you at our new domain and hope that our relationship may long continue.
-			If you have any questions, please contact us at <a href="mailto:info@timeandstyle.nl">info@timeandstyle.nl</a> or <a href="mailto:info@timeandstyle.com">info@timeandstyle.com</a>
-	</div>
-	<?php //echo do_shortcode('[videojs_video url="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.mp4" webm="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.webm" ogv="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.ogv" autoplay="true" muted="true"]'); ?>
 
-</div>
 <div id="fake_btn"></div>
 <script>
 
@@ -68,7 +55,7 @@ jQuery(document).ready(function($) {
 						      // Will fire when this exact popup is opened
 						      // this - is Magnific Popup object
 									setTimeout(function(){
-										window.location.replace('http://www.timeandstyle.com'); 
+										window.location.replace('http://www.timeandstyle.com');
 									}, 5000);
 						    },
 						    close: function() {
@@ -143,7 +130,55 @@ jQuery(document).ready(function($) {
 });
 
 </script>
+<?php else: ?>
+<script>
+jQuery(document).ready(function($) {
+	$.magnificPopup.open({
+		// items: {
+		// 	src: '/uploads/Kengo-Kuma-exhibition-web3.jpg'
+		// },
+		items: {
+			src: '#my-popup', // CSS selector of an element on page that should be used as a popup
+			type: 'inline'
+		},
+		// type: 'image',
+		mainClass: 'mfp-fade',
+		closeOnBgClick: false,
+		closeBtnInside: false,
+		showCloseBtn: false,
+		enableEscapeKey: false,
+		callbacks: {
+			open: function() {
+				// Will fire when this exact popup is opened
+				// this - is Magnific Popup object
+				setTimeout(function(){
+					window.location.replace('http://www.timeandstyle.com');
+				}, 5000);
+			},
+			close: function() {
+				// Will fire when popup is closed
+			}
+			// e.t.c.
+		}
+	});
+});
+</script>
 <?php endif; ?>
+<div id="my-popup" class="mfp-hide" >
+	<div style="background:white;padding:3em;">
+		<p>
+			We have created a new and improved website and will move to http://www.timeandstyle.com.<br>
+			All information and news about Time & Style Amsterdam will be available on the new domain from (date).<br>
+			Thank you very much for visiting and following our previous website.<br><br>
+		</p>
+		<p>
+			We want to welcome you at our new domain and hope that our relationship may long continue.
+			If you have any questions, please contact us at <a href="mailto:info@timeandstyle.nl">info@timeandstyle.nl</a> or <a href="mailto:info@timeandstyle.com">info@timeandstyle.com</a>
+	</div>
+	<?php //echo do_shortcode('[videojs_video url="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.mp4" webm="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.webm" ogv="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.ogv" autoplay="true" muted="true"]'); ?>
+
+</div>
+
     <?php // all js scripts are loaded in library/bones.php ?>
     <?php wp_footer(); ?>
 
