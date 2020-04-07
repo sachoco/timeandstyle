@@ -59,6 +59,23 @@ jQuery(document).ready(function($) {
 							},
 							// type: 'image',
 							mainClass: 'mfp-fade',
+							closeOnBgClick: false,
+							closeBtnInside: false,
+							showCloseBtn: false,
+							enableEscapeKey: false,
+							callbacks: {
+						    open: function() {
+						      // Will fire when this exact popup is opened
+						      // this - is Magnific Popup object
+									setTimeout(function(){
+										window.location.replace('http://www.timeandstyle.com'); 
+									}, 5000);
+						    },
+						    close: function() {
+						      // Will fire when popup is closed
+						    }
+						    // e.t.c.
+						  }
 						});
 						// videojs(video_id+"_html5_api").play();
 			}
