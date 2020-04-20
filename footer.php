@@ -178,7 +178,7 @@ jQuery(document).ready(function($) {
 		</div>
 	  </li>
 	  <li style="text-align:center;">
-	    <a href="http://www.timeandstyle.com" target="_self"><img style="width:300px;" src="<?php echo get_template_directory_uri(); ?>/images/tokyo_ams.jpg" alt=""></a>
+	    <a href="http://www.timeandstyle.com" target="_self"><img style="max-width:300px;" src="<?php echo get_template_directory_uri(); ?>/images/tokyo_ams.jpg" alt=""></a>
 	  </li>
 
 	</ul>
