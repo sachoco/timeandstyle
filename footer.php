@@ -56,7 +56,7 @@ jQuery(document).ready(function($) {
 						      // this - is Magnific Popup object
 									setTimeout(function(){
 										window.location.replace('http://www.timeandstyle.com');
-									}, 5000);
+									}, 8000);
 						    },
 						    close: function() {
 						      // Will fire when popup is closed
@@ -153,7 +153,7 @@ jQuery(document).ready(function($) {
 				// this - is Magnific Popup object
 				setTimeout(function(){
 					window.location.replace('http://www.timeandstyle.com');
-				}, 5000);
+				}, 8000);
 			},
 			close: function() {
 				// Will fire when popup is closed
@@ -165,18 +165,25 @@ jQuery(document).ready(function($) {
 </script>
 <?php endif; ?>
 <div id="my-popup" class="mfp-hide" >
-	<div style="background:white;padding:3em;">
-		<p>
-			We have created a new and improved website and will move to http://www.timeandstyle.com.<br>
-			All information and news about Time & Style Amsterdam will be available on the new domain from (date).<br>
-			Thank you very much for visiting and following our previous website.<br><br>
-		</p>
-		<p>
-			We want to welcome you at our new domain and hope that our relationship may long continue.
-			If you have any questions, please contact us at <a href="mailto:info@timeandstyle.nl">info@timeandstyle.nl</a> or <a href="mailto:info@timeandstyle.com">info@timeandstyle.com</a>
-	</div>
-	<?php //echo do_shortcode('[videojs_video url="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.mp4" webm="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.webm" ogv="'.site_url().'/uploads/videos/Craftmanship_digest_movie_long.ogv" autoplay="true" muted="true"]'); ?>
+	<section class="column">
+	<ul>
+	  <li>
+	  <div style="background:white;padding:3em;text-align:left">
+			<p>
+	      Dear Customer,<br><br>
+	We have created a new and improved website and will transfer you to <a href="http://www.timeandstyle.com" target="_self">http://www.timeandstyle.com</a> automatically. All information and news about Time & Style Amsterdam is available on the new domain.<br>
+	If you have any questions, please contact us at <a href="mailto:info@timeandstyle.nl">info@timeandstyle.nl</a>.<br><br>
+	Thank you very much for visiting and following our previous website. If nothing happens please press <a href="http://www.timeandstyle.com" target="_self">this link</a>.
+			</p>
+		</div>
+	  </li>
+	  <li style="text-align:center;">
+	    <a href="http://www.timeandstyle.com" target="_self"><img style="width:300px;" src="<?php echo get_template_directory_uri(); ?>/images/tokyo_ams.jpg" alt=""></a>
+	  </li>
 
+	</ul>
+
+	</section>
 </div>
 
     <?php // all js scripts are loaded in library/bones.php ?>

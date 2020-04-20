@@ -932,14 +932,27 @@ div.wpcf7 {
 #add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods {
 	width: 100%;
 }
+#my-popup {
+	height: 100%;
+	>div {
+		height: 100%;
+	}
+	>section {
+		background-color: white;
+	}
+}
 .mfp-bg {
 	z-index: 1042000 !important;
 }
 .mfp-wrap {
 	z-index: 1043000 !important;
 }
+.mfp-container {
+	padding: 0 !important;
+}
 .mfp-inline-holder .mfp-content {
-	width: 80% !important;
+	width: 100% !important;
+	height: 100% !important;
 }
 /* overlay at start */
 .mfp-fade.mfp-bg {

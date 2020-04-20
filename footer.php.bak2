@@ -1,0 +1,12 @@
+<script>
+jQuery(document).ready(function($) {
+
+				setTimeout(function(){
+					window.location.replace('http://www.timeandstyle.com');
+				}, 8000);
+});
+</script>
+
+  </body>
+
+</html>
