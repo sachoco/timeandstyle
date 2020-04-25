@@ -939,6 +939,14 @@ div.wpcf7 {
 	}
 	>section {
 		background-color: white;
+		&.column {
+			ul {
+				max-width: 770px;
+				li {
+					margin: 1em;
+				}
+			}
+		}
 	}
 }
 .mfp-bg {

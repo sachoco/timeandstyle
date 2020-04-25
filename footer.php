@@ -54,9 +54,9 @@ jQuery(document).ready(function($) {
 						    open: function() {
 						      // Will fire when this exact popup is opened
 						      // this - is Magnific Popup object
-									setTimeout(function(){
-										window.location.replace('http://www.timeandstyle.com');
-									}, 8000);
+									// setTimeout(function(){
+									// 	window.location.replace('http://www.timeandstyle.com');
+									// }, 8000);
 						    },
 						    close: function() {
 						      // Will fire when popup is closed
@@ -151,9 +151,9 @@ jQuery(document).ready(function($) {
 			open: function() {
 				// Will fire when this exact popup is opened
 				// this - is Magnific Popup object
-				setTimeout(function(){
-					window.location.replace('http://www.timeandstyle.com');
-				}, 8000);
+				// setTimeout(function(){
+				// 	window.location.replace('http://www.timeandstyle.com');
+				// }, 8000);
 			},
 			close: function() {
 				// Will fire when popup is closed
@@ -171,14 +171,16 @@ jQuery(document).ready(function($) {
 	  <div style="background:white;padding:3em;text-align:left">
 			<p>
 	      Dear Customer,<br><br>
-	We have created a new and improved website and will transfer you to <a href="http://www.timeandstyle.com" target="_self">http://www.timeandstyle.com</a> automatically. All information and news about Time & Style Amsterdam is available on the new domain.<br>
+	We have created a new and improved website <a href="http://www.timeandstyle.com" target="_self">http://www.timeandstyle.com</a><br>
+	All information and news about Time & Style Amsterdam is available on the new domain.<br>
 	If you have any questions, please contact us at <a href="mailto:info@timeandstyle.nl">info@timeandstyle.nl</a>.<br><br>
-	Thank you very much for visiting and following our previous website. If nothing happens please press <a href="http://www.timeandstyle.com" target="_self">this link</a>.
+	Thank you very much for visiting and following our previous website.<br><br>
+	Please press <a href="http://www.timeandstyle.com" target="_self">http://www.timeandstyle.com</a> to visit the new website.
 			</p>
 		</div>
 	  </li>
 	  <li style="text-align:center;">
-	    <a href="http://www.timeandstyle.com" target="_self"><img style="max-width:300px;" src="<?php echo get_template_directory_uri(); ?>/images/tokyo_ams.jpg" alt=""></a>
+	    <a href="http://www.timeandstyle.com" target="_self"><img style="max-width:275px;" src="<?php echo get_template_directory_uri(); ?>/images/tokyo_ams.jpg" alt=""></a>
 	  </li>
 
 	</ul>
